@@ -1,4 +1,19 @@
-import { boolean, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { relations } from "drizzle-orm";
+import {
+  boolean,
+  numeric,
+  pgEnum,
+  pgTable,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core";
+
+import { goal } from "./goals";
+import { tests } from "./tests";
+import { trainingWeeks } from "./training-weeks";
+import { trainingZones } from "./training-zones";
+
+export const genderEnum = pgEnum("gender", ["male", "female", "other"]);
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -8,6 +23,12 @@ export const user = pgTable("user", {
   image: text("image"),
   createdAt: timestamp("created_at").notNull(),
   updatedAt: timestamp("updated_at").notNull(),
+  gender: genderEnum("gender"),
+  weightKg: numeric("weight_kg", { mode: "number" }),
+  heightCm: numeric("height_cm", { mode: "number" }),
+  hasCompleteOnboarding: boolean("has_complete_onboarding")
+    .notNull()
+    .default(false),
 });
 
 export const session = pgTable("session", {
@@ -49,3 +70,11 @@ export const verification = pgTable("verification", {
   createdAt: timestamp("created_at"),
   updatedAt: timestamp("updated_at"),
 });
+
+// relations
+export const userRelations = relations(user, ({ many }) => ({
+  trainingZones: many(trainingZones),
+  goals: many(goal),
+  trainingWeeks: many(trainingWeeks),
+  tests: many(tests),
+}));

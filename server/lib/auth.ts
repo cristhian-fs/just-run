@@ -10,6 +10,30 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  user: {
+    additionalFields: {
+      weightKg: {
+        type: "number",
+        required: false,
+        defaultValue: 0,
+      },
+      heightCm: {
+        type: "number",
+        required: false,
+        defaultValue: 0,
+      },
+      hasCompleteOnboarding: {
+        type: "boolean",
+        required: false,
+        defaultValue: false,
+      },
+      gender: {
+        type: "string",
+        required: false,
+        defaultValue: "male",
+      },
+    },
+  },
   socialProviders: {
     // github: {
     //   clientId: process.env.DISCORD_CLIENT_ID as string,

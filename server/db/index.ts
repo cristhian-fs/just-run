@@ -3,7 +3,24 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import { z } from "zod";
 
-import { account, session, user, verification } from "./schemas/auth";
+import {
+  account,
+  genderEnum,
+  session,
+  user,
+  userRelations,
+  verification,
+} from "./schemas/auth";
+import { goal, goalType } from "./schemas/goals";
+import { tests, testType } from "./schemas/tests";
+import {
+  trainingWeeks,
+  traningWeekRelations,
+  weekType,
+} from "./schemas/training-weeks";
+import { trainingZones } from "./schemas/training-zones";
+import { workoutLogs } from "./schemas/workout-logs";
+import { trainingType, workoutRelations, workouts } from "./schemas/workouts";
 
 const EnvSchema = z.object({
   DATABASE_URL: z.string().url(),
@@ -17,5 +34,19 @@ export const db = drizzle(queryClient, {
     account,
     session,
     verification,
+    userRelations,
+    goal,
+    goalType,
+    testType,
+    tests,
+    trainingWeeks,
+    traningWeekRelations,
+    weekType,
+    trainingZones,
+    workoutLogs,
+    trainingType,
+    workoutRelations,
+    workouts,
+    genderEnum,
   },
 });
