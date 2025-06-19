@@ -1,6 +1,6 @@
 {
-  "id": "255d06b2-5efe-4be7-a6f3-04e4d286110e",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "1386bfb7-4163-4b4c-9eda-fbe7f31f409e",
+  "prevId": "255d06b2-5efe-4be7-a6f3-04e4d286110e",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -256,6 +256,13 @@
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
+        },
+        "has_complete_onboarding": {
+          "name": "has_complete_onboarding",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
         }
       },
       "indexes": {},
