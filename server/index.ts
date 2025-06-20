@@ -8,8 +8,8 @@ const app = createApp();
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const routes = app.basePath("/api").route("/users", userRouter);
 
-app.get("*", serveStatic({ root: "./frontend/dist/" }));
-app.get("*", serveStatic({ path: "./frontend/dist/index.html" }));
+// app.get("*", serveStatic({ root: "./frontend/dist/" }));
+// app.get("*", serveStatic({ path: "./frontend/dist/index.html" }));
 
 // IMPORTANT: Development mode, export the app
 export default app;
