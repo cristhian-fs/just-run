@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { loginSchema } from "@/shared/types";
+import { loginSchema } from "@/shared/schemas";
 import { userQueryOptions } from "@/lib/api";
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";

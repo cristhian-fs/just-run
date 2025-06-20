@@ -21,8 +21,8 @@ function RootComponent() {
       <ThemeProvider defaultTheme="dark" storageKey="hono-fas">
         <Toaster richColors />
         <Outlet />
-        <ReactQueryDevtools />
-        <TanStackRouterDevtools position="bottom-left" />
+        {/* <ReactQueryDevtools />
+        <TanStackRouterDevtools position="bottom-left" /> */}
       </ThemeProvider>
     </>
   );

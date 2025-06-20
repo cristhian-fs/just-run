@@ -1,8 +1,15 @@
-import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Outlet,
+  redirect,
+  useNavigate,
+} from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 
 import { userQueryOptions } from "@/lib/api";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import LoadingScreen from "@/components/loading-screen";
 import { SiteHeader } from "@/components/site-header";
 
 export const Route = createFileRoute("/_index")({
@@ -16,6 +23,17 @@ export const Route = createFileRoute("/_index")({
 });
 
 function AppLayoutComponent() {
+  const { data: user, isLoading } = useQuery(userQueryOptions());
+  const navigate = useNavigate();
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
+  if (!user?.hasCompleteOnboarding) {
+    navigate({ to: "/onboarding" });
+  }
+
   return (
     <SidebarProvider
       style={

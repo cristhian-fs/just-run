@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
 
+import { registerSchema } from "@/shared/schemas";
 // schemas
-import { registerSchema } from "@/shared/types";
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
 import {
@@ -49,6 +49,10 @@ export const RegisterForm = () => {
         email: values.email,
         password: values.password,
         name: values.username,
+        gender: "other",
+        hasCompleteOnboarding: false,
+        heightCm: 0,
+        weightKg: 0,
       },
       {
         onSuccess: () => {

@@ -16,6 +16,7 @@ import { Route as RegisterImport } from './routes/register'
 import { Route as LoginImport } from './routes/login'
 import { Route as IndexIndexImport } from './routes/_index/index'
 import { Route as IndexUsersImport } from './routes/_index/users'
+import { Route as IndexOnboardingImport } from './routes/_index/onboarding'
 import { Route as IndexClientsImport } from './routes/_index/clients'
 import { Route as IndexAuthenticationImport } from './routes/_index/authentication'
 import { Route as IndexApisImport } from './routes/_index/apis'
@@ -49,6 +50,12 @@ const IndexIndexRoute = IndexIndexImport.update({
 const IndexUsersRoute = IndexUsersImport.update({
   id: '/users',
   path: '/users',
+  getParentRoute: () => IndexRoute,
+} as any)
+
+const IndexOnboardingRoute = IndexOnboardingImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
   getParentRoute: () => IndexRoute,
 } as any)
 
@@ -129,6 +136,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexClientsImport
       parentRoute: typeof IndexImport
     }
+    '/_index/onboarding': {
+      id: '/_index/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof IndexOnboardingImport
+      parentRoute: typeof IndexImport
+    }
     '/_index/users': {
       id: '/_index/users'
       path: '/users'
@@ -153,6 +167,7 @@ interface IndexRouteChildren {
   IndexApisRoute: typeof IndexApisRoute
   IndexAuthenticationRoute: typeof IndexAuthenticationRoute
   IndexClientsRoute: typeof IndexClientsRoute
+  IndexOnboardingRoute: typeof IndexOnboardingRoute
   IndexUsersRoute: typeof IndexUsersRoute
   IndexIndexRoute: typeof IndexIndexRoute
 }
@@ -162,6 +177,7 @@ const IndexRouteChildren: IndexRouteChildren = {
   IndexApisRoute: IndexApisRoute,
   IndexAuthenticationRoute: IndexAuthenticationRoute,
   IndexClientsRoute: IndexClientsRoute,
+  IndexOnboardingRoute: IndexOnboardingRoute,
   IndexUsersRoute: IndexUsersRoute,
   IndexIndexRoute: IndexIndexRoute,
 }
@@ -176,6 +192,7 @@ export interface FileRoutesByFullPath {
   '/apis': typeof IndexApisRoute
   '/authentication': typeof IndexAuthenticationRoute
   '/clients': typeof IndexClientsRoute
+  '/onboarding': typeof IndexOnboardingRoute
   '/users': typeof IndexUsersRoute
   '/': typeof IndexIndexRoute
 }
@@ -187,6 +204,7 @@ export interface FileRoutesByTo {
   '/apis': typeof IndexApisRoute
   '/authentication': typeof IndexAuthenticationRoute
   '/clients': typeof IndexClientsRoute
+  '/onboarding': typeof IndexOnboardingRoute
   '/users': typeof IndexUsersRoute
   '/': typeof IndexIndexRoute
 }
@@ -200,6 +218,7 @@ export interface FileRoutesById {
   '/_index/apis': typeof IndexApisRoute
   '/_index/authentication': typeof IndexAuthenticationRoute
   '/_index/clients': typeof IndexClientsRoute
+  '/_index/onboarding': typeof IndexOnboardingRoute
   '/_index/users': typeof IndexUsersRoute
   '/_index/': typeof IndexIndexRoute
 }
@@ -214,6 +233,7 @@ export interface FileRouteTypes {
     | '/apis'
     | '/authentication'
     | '/clients'
+    | '/onboarding'
     | '/users'
     | '/'
   fileRoutesByTo: FileRoutesByTo
@@ -224,6 +244,7 @@ export interface FileRouteTypes {
     | '/apis'
     | '/authentication'
     | '/clients'
+    | '/onboarding'
     | '/users'
     | '/'
   id:
@@ -235,6 +256,7 @@ export interface FileRouteTypes {
     | '/_index/apis'
     | '/_index/authentication'
     | '/_index/clients'
+    | '/_index/onboarding'
     | '/_index/users'
     | '/_index/'
   fileRoutesById: FileRoutesById
@@ -274,6 +296,7 @@ export const routeTree = rootRoute
         "/_index/apis",
         "/_index/authentication",
         "/_index/clients",
+        "/_index/onboarding",
         "/_index/users",
         "/_index/"
       ]
@@ -298,6 +321,10 @@ export const routeTree = rootRoute
     },
     "/_index/clients": {
       "filePath": "_index/clients.tsx",
+      "parent": "/_index"
+    },
+    "/_index/onboarding": {
+      "filePath": "_index/onboarding.tsx",
       "parent": "/_index"
     },
     "/_index/users": {

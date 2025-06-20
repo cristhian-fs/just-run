@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "@tanstack/react-router";
 
 import {
   DatabaseIcon,
@@ -27,6 +28,9 @@ import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
+
+import { AppLogo } from "./logo";
+import { Button } from "./ui/button";
 
 const data = {
   user: {
@@ -110,20 +114,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
-          <div className="flex items-center justify-between gap-x-2">
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                asChild
-                className="data-[slot=sidebar-menu-button]:!p-1.5"
-              >
-                <a href="#">
-                  <UserIcon className="!size-5" />
-                  <span className="text-base font-semibold">Acme Inc.</span>
-                </a>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <NavUser user={user} />
-          </div>
+          <SidebarMenuItem>
+            <Button
+              variant="ghost"
+              className="w-full justify-start font-normal"
+              asChild
+            >
+              <Link to="/">
+                <AppLogo className="!size-5" />
+                <span className="text-base font-semibold">Just Run</span>
+              </Link>
+            </Button>
+          </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
@@ -132,6 +134,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarFooter>
         <NavSecondary items={data.navSecondary} />
+        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   );
