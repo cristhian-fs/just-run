@@ -67,6 +67,31 @@ export const workoutReps = pgTable("workout_reps", {
   description: text("description"),
 });
 
+export const workoutBlocks = pgTable("workout_blocks", {
+  id: text("id").primaryKey(),
+  workoutId: text("workout_id")
+    .notNull()
+    .references(() => workouts.id, { onDelete: "cascade" }),
+
+  order: integer("order").notNull(),
+
+  // tipo de bloco: warmup, main, progression, cooldown, recovery, etc
+  type: text("type").notNull(), // 'warmup' | 'main' | 'cooldown' | 'progression' | etc
+
+  vamIntensity: numeric("vam_intensity", { mode: "number" }),
+  targetZone: integer("target_zone"),
+  pace: text("pace"),
+
+  distanceKm: numeric("distance_km", { mode: "number" }),
+  durationMin: numeric("duration_min", { mode: "number" }),
+
+  description: text("description"),
+
+  blockType: text("block_type"), // e.g., "warmup" | "main" | "progression" | "cooldown"
+  effort: text("effort"), // e.g., "easy", "moderate", "hard"
+  unit: text("unit"), // "KM" | "MINUTES"
+});
+
 // relations
 export const workoutRelations = relations(workouts, ({ many, one }) => ({
   workoutLogs: many(workoutLogs),
@@ -75,11 +100,19 @@ export const workoutRelations = relations(workouts, ({ many, one }) => ({
     references: [trainingWeeks.id],
   }),
   reps: many(workoutReps),
+  blocks: many(workoutBlocks),
 }));
 
 export const workoutRepsRelations = relations(workoutReps, ({ one }) => ({
   workout: one(workouts, {
     fields: [workoutReps.workoutId],
+    references: [workouts.id],
+  }),
+}));
+
+export const workoutBlocksRelations = relations(workoutBlocks, ({ one }) => ({
+  workout: one(workouts, {
+    fields: [workoutBlocks.workoutId],
     references: [workouts.id],
   }),
 }));
