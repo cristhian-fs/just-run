@@ -112,9 +112,9 @@ export const goalToRacePlan: Partial<
   Record<(typeof trainingGoals)[number], GoalMapping>
 > = {
   race5K: { race: "5K", weeklyKm: 25 }, // 3~4 treinos/semana
-  race10K: { race: "10K", weeklyKm: 35 }, // 4 treinos/semana
-  race21K: { race: "21K", weeklyKm: 45 }, // 4~5 treinos/semana
-  race42K: { race: "42K", weeklyKm: 65 }, // 5~6 treinos/semana
+  race10K: { race: "10K", weeklyKm: 40 }, // 4 treinos/semana
+  race21K: { race: "21K", weeklyKm: 60 }, // 4~5 treinos/semana
+  race42K: { race: "42K", weeklyKm: 80 }, // 5~6 treinos/semana
 };
 
 export const defaultWeeklyMinutesByGoal: Record<
