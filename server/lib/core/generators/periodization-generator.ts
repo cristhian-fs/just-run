@@ -41,7 +41,7 @@ export function getMonthVolumesByRace(
     return {
       monthIndex,
       monthVolumePercentage,
-      monthKm: parseFloat(monthKm.toFixed(2)),
+      monthKm: Math.round(monthKm),
     };
   });
 }
@@ -134,7 +134,7 @@ export function distributeWeeklyVolumes(
 
     return {
       weekType,
-      value: parseFloat(weeklyValue.toFixed(2)),
+      value: Math.round(weeklyValue),
       trainings,
     };
   });
