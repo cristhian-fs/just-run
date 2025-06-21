@@ -43,3 +43,8 @@ export function calculatePaceMinKm(distanceM: number, timeS: number): number {
   const pace = timeS / 60 / (distanceM / 1000);
   return +pace.toFixed(2);
 }
+
+export function calculatePace(vam: number, intensity: number): number {
+  const speedKmh = vam * intensity;
+  return 60 / speedKmh; // minutos por km
+}
