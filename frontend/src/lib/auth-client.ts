@@ -21,6 +21,9 @@ export const authClient = createAuthClient({
         gender: {
           type: "string",
         },
+        age: {
+          type: "number",
+        },
       },
     }),
   ],
