@@ -21,6 +21,7 @@ import { Route as IndexClientsImport } from './routes/_index/clients'
 import { Route as IndexAuthenticationImport } from './routes/_index/authentication'
 import { Route as IndexApisImport } from './routes/_index/apis'
 import { Route as IndexAboutImport } from './routes/_index/about'
+import { Route as IndexSettingsIndexImport } from './routes/_index/settings/index'
 
 // Create/Update Routes
 
@@ -80,6 +81,12 @@ const IndexApisRoute = IndexApisImport.update({
 const IndexAboutRoute = IndexAboutImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => IndexRoute,
+} as any)
+
+const IndexSettingsIndexRoute = IndexSettingsIndexImport.update({
+  id: '/settings/',
+  path: '/settings/',
   getParentRoute: () => IndexRoute,
 } as any)
 
@@ -157,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexIndexImport
       parentRoute: typeof IndexImport
     }
+    '/_index/settings/': {
+      id: '/_index/settings/'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof IndexSettingsIndexImport
+      parentRoute: typeof IndexImport
+    }
   }
 }
 
@@ -170,6 +184,7 @@ interface IndexRouteChildren {
   IndexOnboardingRoute: typeof IndexOnboardingRoute
   IndexUsersRoute: typeof IndexUsersRoute
   IndexIndexRoute: typeof IndexIndexRoute
+  IndexSettingsIndexRoute: typeof IndexSettingsIndexRoute
 }
 
 const IndexRouteChildren: IndexRouteChildren = {
@@ -180,6 +195,7 @@ const IndexRouteChildren: IndexRouteChildren = {
   IndexOnboardingRoute: IndexOnboardingRoute,
   IndexUsersRoute: IndexUsersRoute,
   IndexIndexRoute: IndexIndexRoute,
+  IndexSettingsIndexRoute: IndexSettingsIndexRoute,
 }
 
 const IndexRouteWithChildren = IndexRoute._addFileChildren(IndexRouteChildren)
@@ -195,6 +211,7 @@ export interface FileRoutesByFullPath {
   '/onboarding': typeof IndexOnboardingRoute
   '/users': typeof IndexUsersRoute
   '/': typeof IndexIndexRoute
+  '/settings': typeof IndexSettingsIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -207,6 +224,7 @@ export interface FileRoutesByTo {
   '/onboarding': typeof IndexOnboardingRoute
   '/users': typeof IndexUsersRoute
   '/': typeof IndexIndexRoute
+  '/settings': typeof IndexSettingsIndexRoute
 }
 
 export interface FileRoutesById {
@@ -221,6 +239,7 @@ export interface FileRoutesById {
   '/_index/onboarding': typeof IndexOnboardingRoute
   '/_index/users': typeof IndexUsersRoute
   '/_index/': typeof IndexIndexRoute
+  '/_index/settings/': typeof IndexSettingsIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -236,6 +255,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/users'
     | '/'
+    | '/settings'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/login'
@@ -247,6 +267,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/users'
     | '/'
+    | '/settings'
   id:
     | '__root__'
     | '/_index'
@@ -259,6 +280,7 @@ export interface FileRouteTypes {
     | '/_index/onboarding'
     | '/_index/users'
     | '/_index/'
+    | '/_index/settings/'
   fileRoutesById: FileRoutesById
 }
 
@@ -298,7 +320,8 @@ export const routeTree = rootRoute
         "/_index/clients",
         "/_index/onboarding",
         "/_index/users",
-        "/_index/"
+        "/_index/",
+        "/_index/settings/"
       ]
     },
     "/login": {
@@ -333,6 +356,10 @@ export const routeTree = rootRoute
     },
     "/_index/": {
       "filePath": "_index/index.tsx",
+      "parent": "/_index"
+    },
+    "/_index/settings/": {
+      "filePath": "_index/settings/index.tsx",
       "parent": "/_index"
     }
   }

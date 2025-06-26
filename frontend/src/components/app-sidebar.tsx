@@ -1,20 +1,21 @@
 import * as React from "react";
 import { Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 
 import {
+  ChartColumn,
   DatabaseIcon,
   FileSearch,
   FileText,
-  Fingerprint,
+  Goal,
   HouseIcon,
   LifeBuoy,
-  SearchIcon,
-  ServerIcon,
   SettingsIcon,
+  Sheet,
   UserIcon,
 } from "lucide-react";
 
-import { authClient } from "@/lib/auth-client";
+import { userQueryOptions } from "@/lib/api";
 import {
   Sidebar,
   SidebarContent,
@@ -45,41 +46,36 @@ const data = {
       icon: HouseIcon,
     },
     {
-      title: "Users",
+      title: "Planejamento de treinos",
+      url: "/",
+      icon: Sheet,
+    },
+    {
+      title: "Zona de treino",
       url: "/users",
-      icon: UserIcon,
+      icon: ChartColumn,
     },
     {
-      title: "Authentication",
+      title: "Testes",
       url: "/authentication",
-      icon: Fingerprint,
-    },
-    {
-      title: "Clients",
-      url: "/clients",
-      icon: ServerIcon,
-    },
-    {
-      title: "APIs",
-      url: "/apis",
-      icon: DatabaseIcon,
+      icon: Goal,
     },
   ],
   navSecondary: [
     {
-      title: "Settings",
+      title: "Perfil",
+      url: "#",
+      icon: UserIcon,
+    },
+    {
+      title: "Configurações",
       url: "#",
       icon: SettingsIcon,
     },
     {
-      title: "Get Help",
+      title: "Ajuda",
       url: "#",
       icon: LifeBuoy,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: SearchIcon,
     },
   ],
   documents: [
@@ -102,11 +98,11 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { data: sessionHook } = authClient.useSession();
+  const { data: queryuser } = useQuery(userQueryOptions());
 
   const user = {
-    name: sessionHook?.user.name ?? "shadcn",
-    email: sessionHook?.user.email ?? "m@example.com",
+    name: queryuser?.name ?? "shadcn",
+    email: queryuser?.email ?? "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   };
 
@@ -130,7 +126,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        {/* <NavDocuments items={data.documents} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavSecondary items={data.navSecondary} />
