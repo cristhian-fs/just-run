@@ -40,10 +40,12 @@ export type TTestType = (typeof testTypes)[number];
 export type Training = {
   type: TTrainingType;
   value: number; // total km
+  date: Date;
 };
 
 export interface Week {
   weekType: TWeekType;
-  value: number; // total km of the week
+  totalVolumeMin: number; // total km of the week
   trainings: Training[];
+  weekStart: Date;
 }
