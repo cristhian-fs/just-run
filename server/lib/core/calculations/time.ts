@@ -1,6 +1,22 @@
 export function timeStringToSeconds(time: string): number {
-  const [h = "0", m = "0", s = "0"] = time.split(":");
-  return Number(h) * 3600 + Number(m) * 60 + Number(s);
+  const parts = time.split(":").map(Number);
+
+  if (parts.length === 3) {
+    const [h, m, s] = parts as [number, number, number];
+    return h * 3600 + m * 60 + s;
+  }
+
+  if (parts.length === 2) {
+    const [m, s] = parts as [number, number];
+    return m * 60 + s;
+  }
+
+  if (parts.length === 1) {
+    const [s] = parts as [number];
+    return s;
+  }
+
+  throw new Error("Invalid time format");
 }
 
 export function secondsToTimeString(totalSeconds: number): string {
