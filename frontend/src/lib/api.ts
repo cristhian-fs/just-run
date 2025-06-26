@@ -1,6 +1,7 @@
 import { hc, InferResponseType } from "hono/client";
 import { queryOptions } from "@tanstack/react-query";
 
+import { UserBasicSettingsData } from "@/shared/schemas";
 import type { ApiRoutes, ErrorResponse } from "@/shared/types";
 
 import { authClient } from "./auth-client";
@@ -48,4 +49,41 @@ export const getUsers = async () => {
   }
   const data = await res.json();
   return data;
+};
+
+export type GetUserLastTestResponse = InferResponseType<
+  (typeof client.users)["last-test"]["$get"]
+>;
+export const getUserLastTest = async () => {
+  const res = await client.users["last-test"].$get();
+
+  if (res.ok) {
+    const data = await res.json();
+    return data;
+  } else {
+    const data = (await res.json()) as unknown as ErrorResponse;
+    throw new Error(data.error);
+  }
+};
+
+export const updateProfile = async (
+  userId: string,
+  data: UserBasicSettingsData,
+) => {
+  const res = await client.users[":id"]["update-profile"].$post({
+    param: {
+      id: userId,
+    },
+    form: {
+      ...data,
+    },
+  });
+
+  if (res.ok) {
+    const data = await res.json();
+    return data;
+  } else {
+    const data = (await res.json()) as unknown as ErrorResponse;
+    throw new Error(data.error);
+  }
 };
