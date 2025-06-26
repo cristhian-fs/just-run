@@ -40,7 +40,7 @@ export function generateIntervalWorkout({
   targetKm: number;
   intensityKm: number;
   vam?: number;
-}): IntervalTemplate | undefined {
+}): IntervalTemplate {
   const lowVolume = targetKm - intensityKm;
 
   const warmUpVolume = lowVolume * 0.4;
@@ -161,5 +161,5 @@ export function generateIntervalWorkout({
     (a, b) =>
       Math.abs(a.totalEstimatedDistanceKm! - targetKm) -
       Math.abs(b.totalEstimatedDistanceKm! - targetKm),
-  )[randomIndex];
+  )[randomIndex] as IntervalTemplate;
 }

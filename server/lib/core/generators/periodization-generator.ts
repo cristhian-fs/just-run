@@ -1,3 +1,6 @@
+import { addDays } from "date-fns";
+import { nextMonday } from "date-fns/nextMonday";
+
 import type {
   RaceOption,
   TTrainingType,
@@ -115,7 +118,18 @@ export function distributeWeeklyVolumes(
     const monthIndex = Math.floor(weekIndex / 4);
     const month = monthlyVolumeData.find((m) => m.monthIndex === monthIndex);
 
-    if (!month) return { weekType, value: 0, trainings: [] };
+    const weekStart =
+      weekIndex === 0
+        ? new Date()
+        : nextMonday(addDays(new Date(), (weekIndex - 1) * 7));
+
+    if (!month)
+      return {
+        weekType,
+        totalVolumeMin: 0,
+        trainings: [],
+        weekStart,
+      };
 
     const weeklyValue = getPhaseVolume(weekType, month.value);
 
@@ -134,8 +148,9 @@ export function distributeWeeklyVolumes(
 
     return {
       weekType,
-      value: Math.round(weeklyValue),
+      totalVolumeMin: Math.round(weeklyValue),
       trainings,
+      weekStart,
     };
   });
 }

@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FARTLEK_PATTERNS } from "@/lib/config/workouts.contants";
 import type {
+  FartlekBlock,
   FartlekOptions,
-  FartlekSegment,
   FartlekTemplate,
   GeneratedFartlek,
 } from "@/lib/types";
 
 import { calculatePace } from "../../calculations/time";
 
-const EFFORT_VAM_MAPPING: Record<FartlekSegment["effort"], number> = {
+const EFFORT_VAM_MAPPING: Record<FartlekBlock["effort"], number> = {
   EASY: 0.65, // 65% VAM - Zona 1-2
   MODERATE: 0.78, // 78% VAM - Zona 3
   HARD: 0.88, // 88% VAM - Zona 4
   VERY_HARD: 0.95, // 95% VAM - Zona 5
 };
 
-function estimateSegmentDuration(segment: FartlekSegment, vam: number): number {
+function estimateSegmentDuration(segment: FartlekBlock, vam: number): number {
   if (segment.duration) {
     return segment.duration;
   }
@@ -88,7 +88,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): GeneratedFartlek {
   );
 
   // Gerar segmentos finais escalados
-  const segmentsFinal: FartlekSegment[] = base?.segments.map((segment) => {
+  const segmentsFinal: FartlekBlock[] = base?.segments.map((segment) => {
     const newSegment: FartlekSegment = { ...segment };
 
     if (opts.unit === "MINUTES" && segment.duration) {
@@ -222,7 +222,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): GeneratedFartlek {
     name: `${base.name} (Personalizado)`,
     level: opts.level,
     unit: opts.unit,
-    segments: segmentsFinal,
+    blocks: segmentsFinal,
     totalVolume: Math.round(adjustedFinalVolume * 10) / 10,
     intenseVolume: Math.round(adjustedFinalIntenseVolume * 10) / 10,
     basedOn: base.name,

@@ -1,5 +1,5 @@
-import type { TrainingLevel, Week } from "@/shared/types";
-import type { ProgressiveWorkout } from "@/lib/types";
+import type { Training, TrainingLevel } from "@/shared/types";
+import type { IntervalTemplate } from "@/lib/types";
 
 import { generateFartlekWorkout } from "./workouts/fartleks";
 import { generateIntervalWorkout } from "./workouts/intervals";
@@ -8,33 +8,34 @@ import { generateProgressiveWorkout } from "./workouts/progressive";
 import { generateThresholdWorkout } from "./workouts/thresholds";
 
 export function generateWorkoutsPerWeek(
-  week: Week,
+  trainings: Training[],
+  totalVolumeMin: number,
   trainingLevel: TrainingLevel,
   vam: number,
 ) {
-  const totalWeekVolume = week.value;
-  const totalIntensityVolume = totalWeekVolume * 0.2;
+  const totalWeekVolume = totalVolumeMin;
+  const totalIntensityVolume = totalWeekVolume * 0.3;
 
   const intenseTypes = ["INTERVAL", "FARTLEK", "TEMPO_RUN"];
 
-  const intenseTrainings = week.trainings.filter((t) =>
+  const intenseTrainings = trainings.filter((t) =>
     intenseTypes.includes(t.type),
   );
 
   const intensityPerTraining = totalIntensityVolume / intenseTrainings.length;
 
-  return week.trainings.map((training) => {
+  return trainings.map((training) => {
     const isIntense = intenseTypes.includes(training.type);
 
     if (training.type === "INTERVAL") {
-      const intervalWorkout = generateIntervalWorkout({
+      const intervalWorkout: IntervalTemplate = generateIntervalWorkout({
         level: trainingLevel,
         targetKm: training.value,
         intensityKm: isIntense ? intensityPerTraining : 0,
         vam,
       });
 
-      return intervalWorkout;
+      return { ...intervalWorkout, type: training.type, date: training.date };
     }
 
     if (training.type === "FARTLEK") {
@@ -45,7 +46,7 @@ export function generateWorkoutsPerWeek(
         intenseKms: isIntense ? intensityPerTraining : 0,
         vam,
       });
-      return fartlekWorkout;
+      return { ...fartlekWorkout, type: training.type, date: training.date };
     }
 
     if (training.type === "THRESHOLD_RUN") {
@@ -56,7 +57,11 @@ export function generateWorkoutsPerWeek(
         unit: "MINUTES",
       });
 
-      return thresholdWorkout;
+      return {
+        ...thresholdWorkout,
+        type: training.type,
+        date: training.date,
+      };
     }
 
     if (training.type === "PROGRESSIVE_RUN") {
@@ -69,10 +74,12 @@ export function generateWorkoutsPerWeek(
 
       return {
         name: `Treino progressivo ${training.value}km`,
+        date: training.date,
+        type: training.type,
         blocks: progressiveWorkout,
         level: trainingLevel,
         totalVolume: training.value,
-      } as ProgressiveWorkout;
+      };
     }
 
     if (
@@ -88,6 +95,8 @@ export function generateWorkoutsPerWeek(
       });
       return {
         name: `Treino longo ${training.value}km`,
+        type: training.type,
+        date: training.date,
         blocks: longRunWorkout,
         level: trainingLevel,
         totalVolume: training.value,

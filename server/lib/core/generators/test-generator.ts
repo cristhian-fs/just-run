@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import type { TestFormData } from "@/shared/schemas";
 import { type TOnboarding } from "@/shared/types/index";
 
 import {
@@ -9,6 +10,7 @@ import {
 import {
   calculatePaceMinKm,
   calculateVamKmh,
+  formatPace,
   timeStringToSeconds,
 } from "../calculations/time";
 import { calculateTrainingZones } from "../calculations/zones";
@@ -18,27 +20,37 @@ import { calculateTrainingZones } from "../calculations/zones";
  * @param onboarding Dados de onboarding do usuário
  * @returns Um objeto com os dados do teste
  */
-export function generateTest(onboarding: TOnboarding) {
-  const timeInSeconds = timeStringToSeconds(onboarding.time!);
-  const vam = calculateVamKmh(onboarding.distanceM!, timeInSeconds);
-  const paceMinKm = calculatePaceMinKm(onboarding.distanceM!, timeInSeconds);
+export function generateTest({
+  userAge,
+  testData,
+}: {
+  userAge: number;
+  testData: TestFormData;
+}) {
+  const timeInSeconds = timeStringToSeconds(testData.time!);
+  const vam = calculateVamKmh(testData.distanceM, timeInSeconds);
+  const paceMinKm = calculatePaceMinKm(testData.distanceM, timeInSeconds);
+  const formattedPace = formatPace(paceMinKm);
 
-  const fcmax = estimateFCmax(onboarding.age!);
-  const [_hours, min, seconds] = onboarding.time.split(":").map(Number);
-  const vo2Max = estimateVO2ByTestType(onboarding.testType, min!, seconds!);
+  const fcmax = estimateFCmax(userAge);
+  const [_hours, min, seconds] = testData.time.split(":").map(Number);
+  const vo2Max = estimateVO2ByTestType(
+    testData.testType,
+    min!,
+    seconds!,
+  ) as number;
 
   const trainingZones = calculateTrainingZones(fcmax, vo2Max!);
 
   return {
-    distanceM: onboarding.distanceM,
-    durationS: +onboarding.time,
+    distanceM: testData.distanceM,
+    durationS: timeInSeconds,
     vam,
-    paceMinKm,
+    paceMinKm: formattedPace,
     fcmax,
     vo2Max,
     vo2: estimateVO2(vam),
-    testType: onboarding.testType,
-    testDate: new Date().toISOString(),
+    testType: testData.testType,
     trainingZones,
   };
 }
