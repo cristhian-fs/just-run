@@ -14,6 +14,11 @@ import { trainingWeeks } from "./training-weeks";
 import { trainingZones } from "./training-zones";
 
 export const genderEnum = pgEnum("gender", ["male", "female", "other"]);
+export const trainingLevelEnum = pgEnum("training_level", [
+  "beginner",
+  "intermediate",
+  "advanced",
+]);
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -23,9 +28,11 @@ export const user = pgTable("user", {
   image: text("image"),
   createdAt: timestamp("created_at").notNull(),
   updatedAt: timestamp("updated_at").notNull(),
+  age: numeric("age", { mode: "number" }),
   gender: genderEnum("gender"),
   weightKg: numeric("weight_kg", { mode: "number" }),
   heightCm: numeric("height_cm", { mode: "number" }),
+  trainingLevel: trainingLevelEnum("training_level"),
   hasCompleteOnboarding: boolean("has_complete_onboarding")
     .notNull()
     .default(false),

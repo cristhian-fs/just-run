@@ -1,5 +1,5 @@
 {
-  "id": "255d06b2-5efe-4be7-a6f3-04e4d286110e",
+  "id": "97673011-837b-4a3e-9c50-e40d569f71a5",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -238,6 +238,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "age": {
+          "name": "age",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
         "gender": {
           "name": "gender",
           "type": "gender",
@@ -256,6 +262,20 @@
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
+        },
+        "training_level": {
+          "name": "training_level",
+          "type": "training_level",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "has_complete_onboarding": {
+          "name": "has_complete_onboarding",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
         }
       },
       "indexes": {},
@@ -329,9 +349,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -344,11 +365,17 @@
           "type": "goal_type",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "target_time": {
           "name": "target_time",
-          "type": "time",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "weekly_frequency": {
+          "name": "weekly_frequency",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
@@ -356,7 +383,7 @@
           "name": "event_date",
           "type": "date",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",
@@ -393,9 +420,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -422,8 +450,32 @@
           "primaryKey": false,
           "notNull": true
         },
+        "vam": {
+          "name": "vam",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
         "pace_min_km": {
           "name": "pace_min_km",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fcmax": {
+          "name": "fcmax",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "vo2_max": {
+          "name": "vo2_max",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "vo2": {
+          "name": "vo2",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
@@ -463,9 +515,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -527,9 +580,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -537,71 +591,47 @@
           "primaryKey": false,
           "notNull": true
         },
-        "vam_kmh": {
-          "name": "vam_kmh",
-          "type": "numeric",
+        "name": {
+          "name": "name",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
-        "zone_1_min": {
-          "name": "zone_1_min",
-          "type": "numeric",
+        "workouts": {
+          "name": "workouts",
+          "type": "text[]",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "zone_1_max": {
-          "name": "zone_1_max",
+        "vo2_percentage": {
+          "name": "vo2_percentage",
           "type": "numeric",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "zone_2_min": {
-          "name": "zone_2_min",
-          "type": "numeric",
+        "pace": {
+          "name": "pace",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "zone_2_max": {
-          "name": "zone_2_max",
+        "velocity": {
+          "name": "velocity",
           "type": "numeric",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "zone_3_min": {
-          "name": "zone_3_min",
+        "cardio_frequency": {
+          "name": "cardio_frequency",
           "type": "numeric",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "zone_3_max": {
-          "name": "zone_3_max",
+        "vo2_max": {
+          "name": "vo2_max",
           "type": "numeric",
           "primaryKey": false,
-          "notNull": true
-        },
-        "zone_4_min": {
-          "name": "zone_4_min",
-          "type": "numeric",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "zone_4_max": {
-          "name": "zone_4_max",
-          "type": "numeric",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "zone_5_min": {
-          "name": "zone_5_min",
-          "type": "numeric",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "zone_5_max": {
-          "name": "zone_5_max",
-          "type": "numeric",
-          "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",
@@ -638,9 +668,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -650,7 +681,7 @@
         },
         "workout_id": {
           "name": "workout_id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
@@ -726,13 +757,14 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "training_week_id": {
           "name": "training_week_id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
@@ -765,7 +797,7 @@
           "name": "duration_min",
           "type": "integer",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "duration_km": {
           "name": "duration_km",
@@ -778,6 +810,74 @@
           "type": "boolean",
           "primaryKey": false,
           "notNull": true
+        },
+        "unit": {
+          "name": "unit",
+          "type": "workout_unit",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_volume": {
+          "name": "total_volume",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rest_between_reps_min": {
+          "name": "rest_between_reps_min",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "intense_volume": {
+          "name": "intense_volume",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_zones": {
+          "name": "target_zones",
+          "type": "integer[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "total_reps": {
+          "name": "total_reps",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reps_pace": {
+          "name": "reps_pace",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reps_distance_km": {
+          "name": "reps_distance_km",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rest_type": {
+          "name": "rest_type",
+          "type": "rest_type",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "warmup_distance_km": {
+          "name": "warmup_distance_km",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cooldown_distance_km": {
+          "name": "cooldown_distance_km",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},
@@ -806,6 +906,118 @@
         }
       },
       "isRLSEnabled": false
+    },
+    "public.workout_blocks": {
+      "name": "workout_blocks",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "workout_id": {
+          "name": "workout_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "order": {
+          "name": "order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "vam_intensity": {
+          "name": "vam_intensity",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_zone": {
+          "name": "target_zone",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pace": {
+          "name": "pace",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "distance_km": {
+          "name": "distance_km",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "duration_min": {
+          "name": "duration_min",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "phase": {
+          "name": "phase",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "block_type": {
+          "name": "block_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "effort": {
+          "name": "effort",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "unit": {
+          "name": "unit",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "workout_blocks_workout_id_workouts_id_fk": {
+          "name": "workout_blocks_workout_id_workouts_id_fk",
+          "tableFrom": "workout_blocks",
+          "tableTo": "workouts",
+          "columnsFrom": [
+            "workout_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     }
   },
   "enums": {
@@ -818,25 +1030,39 @@
         "other"
       ]
     },
+    "public.training_level": {
+      "name": "training_level",
+      "schema": "public",
+      "values": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
     "public.goal_type": {
       "name": "goal_type",
       "schema": "public",
       "values": [
-        "5K",
-        "10K",
-        "21K",
-        "42K"
+        "startRunning",
+        "improveHealth",
+        "loseWeight",
+        "runFaster",
+        "runLonger",
+        "race5K",
+        "race10K",
+        "race21K",
+        "race42K"
       ]
     },
     "public.test_type": {
       "name": "test_type",
       "schema": "public",
       "values": [
-        "3K",
-        "5K",
-        "6K",
-        "10K",
-        "21K"
+        "1600m",
+        "2400m",
+        "3200m",
+        "3000m",
+        "5000m"
       ]
     },
     "public.traning_type": {
@@ -849,6 +1075,7 @@
         "FARTLEK",
         "PROGRESSIVE_RUN",
         "REPETITION",
+        "THRESHOLD_RUN",
         "RECOVERY_RUN"
       ]
     },
@@ -856,10 +1083,22 @@
       "name": "week_type",
       "schema": "public",
       "values": [
+        "INTRO",
+        "TEST",
         "BASE",
         "BUILD",
         "PEAK",
-        "DELOAD"
+        "TAPER",
+        "DELOAD",
+        "COMPETITION"
+      ]
+    },
+    "public.workout_unit": {
+      "name": "workout_unit",
+      "schema": "public",
+      "values": [
+        "KM",
+        "MINUTES"
       ]
     }
   },

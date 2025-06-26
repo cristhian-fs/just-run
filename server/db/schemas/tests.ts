@@ -6,21 +6,32 @@ import {
   pgEnum,
   pgTable,
   text,
+  uuid,
 } from "drizzle-orm/pg-core";
 
 import { user } from "./auth";
 
-export const testType = pgEnum("test_type", ["3K", "5K", "6K", "10K", "21K"]);
+export const testType = pgEnum("test_type", [
+  "1600m",
+  "2400m",
+  "3200m",
+  "3000m",
+  "5000m",
+]);
 
 export const tests = pgTable("tests", {
-  id: text("id").primaryKey(),
+  id: uuid("id").defaultRandom().primaryKey(),
   userId: text("user_id")
     .notNull()
     .references(() => user.id, { onDelete: "cascade" }),
   testType: testType("test_type").notNull(),
   distanceM: integer("distance_m").notNull(),
   durationS: integer("duration_s").notNull(),
-  paceMinKm: numeric("pace_min_km", { mode: "number" }),
+  vam: numeric("vam", { mode: "number" }),
+  paceMinKm: text("pace_min_km"),
+  fcmax: numeric("fcmax", { mode: "number" }),
+  vo2Max: numeric("vo2_max", { mode: "number" }),
+  vo2: numeric("vo2", { mode: "number" }),
   testDate: date("test_date").notNull(),
 });
 

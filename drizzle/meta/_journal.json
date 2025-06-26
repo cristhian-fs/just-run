@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1749920406281,
-      "tag": "0000_organic_shinko_yamashiro",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1750084334740,
-      "tag": "0001_chief_joseph",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1750368235385,
-      "tag": "0002_crazy_punisher",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1750470195311,
-      "tag": "0003_easy_anita_blake",
+      "when": 1750951021614,
+      "tag": "0000_glossy_logan",
       "breakpoints": true
     }
   ]

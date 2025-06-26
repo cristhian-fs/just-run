@@ -6,20 +6,25 @@ import {
   pgTable,
   text,
   timestamp,
+  uuid,
 } from "drizzle-orm/pg-core";
 
 import { user } from "./auth";
 import { workouts } from "./workouts";
 
 export const weekType = pgEnum("week_type", [
-  "BASE",
-  "BUILD",
-  "PEAK",
-  "DELOAD",
+  "INTRO", // Introdutório
+  "TEST", // Semana de teste
+  "BASE", // Volume moderado, foco técnico
+  "BUILD", // Intensidade crescente
+  "PEAK", // Pré-competição
+  "TAPER", // Ajuste antes da prova
+  "DELOAD", // Recuperação ativa
+  "COMPETITION", // Semana da prova
 ]);
 
 export const trainingWeeks = pgTable("training_weeks", {
-  id: text("id").primaryKey(),
+  id: uuid("id").defaultRandom().primaryKey(),
   userId: text("user_id")
     .notNull()
     .references(() => user.id, { onDelete: "cascade" }),

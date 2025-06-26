@@ -1,15 +1,15 @@
 import { relations } from "drizzle-orm";
-import { integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { integer, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
 import { user } from "./auth";
 import { workouts } from "./workouts";
 
 export const workoutLogs = pgTable("workout_logs", {
-  id: text("id").primaryKey(),
+  id: uuid("id").defaultRandom().primaryKey(),
   userId: text("user_id")
     .notNull()
     .references(() => user.id, { onDelete: "cascade" }),
-  workoutId: text("workout_id")
+  workoutId: uuid("workout_id")
     .notNull()
     .references(() => workouts.id, { onDelete: "cascade" }),
   actualTimeS: integer("actual_time_s").notNull(),

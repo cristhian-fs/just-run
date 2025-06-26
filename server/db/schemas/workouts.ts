@@ -8,6 +8,7 @@ import {
   pgEnum,
   pgTable,
   text,
+  uuid,
 } from "drizzle-orm/pg-core";
 
 import { trainingWeeks } from "./training-weeks";
@@ -24,26 +25,40 @@ export const trainingType = pgEnum("traning_type", [
   "RECOVERY_RUN",
 ]);
 
+export const workoutUnit = pgEnum("workout_unit", ["KM", "MINUTES"]);
+const restType = pgEnum("rest_type", ["PASSIVE", "ACTIVE"]);
+
 export const workouts = pgTable(
   "workouts",
   {
-    id: text("id").primaryKey(),
-    trainingWeekId: text("training_week_id")
+    id: uuid("id").defaultRandom().primaryKey(),
+    trainingWeekId: uuid("training_week_id")
       .notNull()
       .references(() => trainingWeeks.id, { onDelete: "cascade" }),
     date: date("date").notNull(),
     type: trainingType("type").notNull(),
     description: text("description"),
     intensityZone: integer("intensity_zone"),
-    durationMin: integer("duration_min").notNull(),
+    durationMin: integer("duration_min"),
     durationKm: numeric("duration_km", { mode: "number" }),
     isCompleted: boolean("is_completed").notNull(),
 
-    // novos campos opcionais
-    warmupKm: numeric("warmup_km", { mode: "number" }),
-    cooldownKm: numeric("cooldown_km", { mode: "number" }),
+    // novos campos opcionais para treinos intervalados, fartlek, threshold, etc
+    unit: workoutUnit("unit"),
+    totalVolume: numeric("total_volume", { mode: "number" }),
     restBetweenRepsMin: numeric("rest_between_reps_min", { mode: "number" }),
+    intenseVolume: numeric("intense_volume", { mode: "number" }),
+    targetZones: integer("target_zones").array(),
+
+    // reps
     totalReps: integer("total_reps"), // para indicar quantas reps existem
+    repsPace: text("reps_pace"),
+    repsDistanceKm: numeric("reps_distance_km", { mode: "number" }),
+    restType: restType("rest_type"),
+
+    // warmup e cooldown
+    warmupDistanceKm: numeric("warmup_distance_km", { mode: "number" }),
+    cooldownDistanceKm: numeric("cooldown_distance_km", { mode: "number" }),
   },
   (table) => [
     check(
@@ -53,30 +68,16 @@ export const workouts = pgTable(
   ],
 );
 
-export const workoutReps = pgTable("workout_reps", {
-  id: text("id").primaryKey(),
-  workoutId: text("workout_id")
-    .notNull()
-    .references(() => workouts.id, { onDelete: "cascade" }),
-
-  order: integer("order").notNull(), // ordem da repetição
-  distanceKm: numeric("distance_km", { mode: "number" }).notNull(),
-  durationMin: numeric("duration_min", { mode: "number" }),
-  targetZone: integer("target_zone"), // Z1 a Z5, se quiser explicitar
-
-  description: text("description"),
-});
-
 export const workoutBlocks = pgTable("workout_blocks", {
-  id: text("id").primaryKey(),
-  workoutId: text("workout_id")
+  id: uuid("id").defaultRandom().primaryKey(),
+  workoutId: uuid("workout_id")
     .notNull()
     .references(() => workouts.id, { onDelete: "cascade" }),
 
   order: integer("order").notNull(),
 
   // tipo de bloco: warmup, main, progression, cooldown, recovery, etc
-  type: text("type").notNull(), // 'warmup' | 'main' | 'cooldown' | 'progression' | etc
+  type: text("type"), // 'warmup' | 'main' | 'cooldown' | 'progression' | etc
 
   vamIntensity: numeric("vam_intensity", { mode: "number" }),
   targetZone: integer("target_zone"),
@@ -86,7 +87,7 @@ export const workoutBlocks = pgTable("workout_blocks", {
   durationMin: numeric("duration_min", { mode: "number" }),
 
   description: text("description"),
-
+  phase: text("phase"),
   blockType: text("block_type"), // e.g., "warmup" | "main" | "progression" | "cooldown"
   effort: text("effort"), // e.g., "easy", "moderate", "hard"
   unit: text("unit"), // "KM" | "MINUTES"
@@ -99,15 +100,7 @@ export const workoutRelations = relations(workouts, ({ many, one }) => ({
     fields: [workouts.trainingWeekId],
     references: [trainingWeeks.id],
   }),
-  reps: many(workoutReps),
   blocks: many(workoutBlocks),
-}));
-
-export const workoutRepsRelations = relations(workoutReps, ({ one }) => ({
-  workout: one(workouts, {
-    fields: [workoutReps.workoutId],
-    references: [workouts.id],
-  }),
 }));
 
 export const workoutBlocksRelations = relations(workoutBlocks, ({ one }) => ({
