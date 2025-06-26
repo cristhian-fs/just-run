@@ -24,7 +24,8 @@ export type TrainingUnit = "KM" | "MINUTES";
 
 export type WeeklyKmTrainingDistribution = {
   weekType: TWeekType;
-  value: number;
+  totalVolumeMin: number;
+  weekStart: Date;
   trainings: {
     type: TTrainingType;
     value: number;
@@ -61,7 +62,7 @@ export interface IntervalTemplate {
   targetZones?: number[];
 }
 
-export type FartlekSegment = {
+export type FartlekBlock = {
   effort: "EASY" | "MODERATE" | "HARD" | "VERY_HARD";
   duration?: number; // minutes
   distance?: number; // meters
@@ -72,7 +73,7 @@ export type FartlekTemplate = {
   name: string;
   level: TrainingLevel;
   unit: TrainingUnit;
-  segments: FartlekSegment[];
+  segments: FartlekBlock[];
   totalVolumeEstimate?: number;
 };
 
@@ -80,7 +81,7 @@ export type GeneratedFartlek = {
   name: string;
   level: TrainingLevel;
   unit: TrainingUnit;
-  segments: FartlekSegment[];
+  blocks: FartlekBlock[];
   totalVolume: number;
   intenseVolume: number;
   basedOn: string; // Nome do template usado como base
