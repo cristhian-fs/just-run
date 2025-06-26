@@ -32,6 +32,11 @@ export const auth = betterAuth({
         required: false,
         defaultValue: "male",
       },
+      age: {
+        type: "number",
+        required: false,
+        defaultValue: 0,
+      },
     },
   },
   socialProviders: {
