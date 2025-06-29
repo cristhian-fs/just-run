@@ -37,3 +37,13 @@ export const trainingTypes = [
 export const WeekAmountOptions = [8, 12, 16, 20, 24] as const;
 
 export const testTypes = ["1600m", "2400m", "3200m", "3000m", "5000m"] as const;
+
+export const segmentKinds = [
+  "WORK",
+  "REST",
+  "FLOAT",
+  "THRESHOLD",
+  "PROGRESSIVE",
+  "WARMUP",
+  "COOLDOWN",
+] as const;
