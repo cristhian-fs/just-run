@@ -1,26 +1,28 @@
-import type { TrainingLevel } from "@/shared/types";
-import { INTERVAL_PATTERNS } from "@/lib/config/workouts.contants";
-import type { IntervalTemplate, TrainingUnit } from "@/lib/types";
-import { roundDecimals } from "@/lib/utils/numbers";
+import type { Block, TrainingLevel, Workout } from "@/shared/types";
+import type { TrainingUnit } from "@/lib/types";
 
 import { formatPace } from "../../calculations/time";
 import { getPace } from "../../calculations/zones";
 
+// CONSTANTS
+const FLOAT_REST_INTERMEDIATE_RELATION = 1.2;
+const MAX_ATTEMPTS = 10;
+
 function isValidInterval({
   unit,
   reps,
-  repDistanceKm,
-  intensityKm,
+  repLength,
+  level,
 }: {
   unit: TrainingUnit;
   reps: number;
-  repDistanceKm?: number;
-  intensityKm: number;
+  repLength?: number;
+  level: TrainingLevel;
 }) {
   if (unit === "KM") {
-    if (!repDistanceKm) return false;
+    if (!repLength) return false;
     if (reps < 3 || reps > 20) return false;
-    if (intensityKm / repDistanceKm > 20) return false;
+    if (level === "intermediate" && repLength > 1000) return false;
   }
 
   if (unit === "MINUTES") {
@@ -30,136 +32,290 @@ function isValidInterval({
   return true;
 }
 
+function getRandomIntervalDistance(
+  trainingLevel: TrainingLevel,
+  mainPart: number,
+  vam: number,
+): [number, number] {
+  const meterOptionsByVolume: Record<number, Array<number>> = {
+    5: [100, 200, 300, 400, 500],
+    10: [100, 200, 300, 400, 500, 600, 800, 1000],
+    15: [
+      100, 200, 300, 400, 500, 600, 800, 1000, 1200, 1500, 1600, 2000, 3000,
+      5000,
+    ],
+  };
+
+  if (trainingLevel !== "beginner") {
+    // Pega as chaves do objeto e ordena em ordem crescente
+    const volumeKeys = Object.keys(meterOptionsByVolume)
+      .map(Number)
+      .sort((a, b) => a - b);
+
+    // Encontra a chave apropriada baseada no volume
+    let selectedKey = volumeKeys[volumeKeys.length - 1]; // Default para a maior chave
+
+    for (const key of volumeKeys) {
+      if (mainPart <= key) {
+        selectedKey = key;
+        break;
+      }
+    }
+    // Retorna um valor aleatório do array da chave selecionada
+    const options = meterOptionsByVolume[selectedKey as number] as number[];
+    const distance = options[
+      Math.floor(Math.random() * options.length)
+    ] as number;
+
+    const durationS = distance / ((vam * 1000) / 3600);
+
+    const tMin = durationS / 60; // minutos estimados do tiro
+    const pShort = 1.05; // 105 % VAM no “tiro curtinho”
+    const vamFraction = Math.max(0.88, pShort - 0.02 * tMin); // –2 pp por minuto
+    return [distance, vamFraction];
+  }
+
+  const secondsOptions = Array.from({ length: 10 }).map((_, i) => 30 * (i + 1));
+  const durationS = secondsOptions[
+    Math.floor(Math.random() * secondsOptions.length)
+  ] as number;
+
+  const tMin = durationS / 60; // minutos estimados do tiro
+  const pShort = 1.05; // 105 % VAM no “tiro curtinho”
+  const vamFraction = Math.max(0.88, pShort - 0.02 * tMin); // –2 pp por minuto
+
+  return [durationS, vamFraction];
+}
+
 export function generateIntervalWorkout({
+  date,
   level = "intermediate",
-  targetKm,
+  targetVolume,
   intensityKm,
   vam = 14, // Velocidade aeróbica máxima em km/h
 }: {
+  date: Date;
   level: TrainingLevel;
-  targetKm: number;
+  targetVolume: number;
   intensityKm: number;
   vam?: number;
-}): IntervalTemplate {
-  const lowVolume = targetKm - intensityKm;
+}): Workout {
+  let attempts = 0;
 
-  const warmUpVolume = lowVolume * 0.4;
-  const cooldownVolume = lowVolume * 0.4;
+  if (level !== "beginner") {
+    const volumeToMeters = targetVolume * 1000;
+    const warmup = Math.round(volumeToMeters * 0.15);
+    const cooldown = Math.round(volumeToMeters * 0.1);
+    const mainPart = Math.floor(volumeToMeters - warmup - cooldown);
 
-  const unit: TrainingUnit = level === "beginner" ? "MINUTES" : "KM";
+    const [intervalDuration, vamForInterval] = getRandomIntervalDistance(
+      level,
+      mainPart,
+      vam,
+    );
+    const numReps = Math.floor(mainPart / intervalDuration);
 
-  const availablePatterns = INTERVAL_PATTERNS.filter(
-    (p) => p.level === level && p.unit === unit,
+    if (
+      !isValidInterval({
+        unit: "KM",
+        reps: numReps,
+        level,
+        repLength: intervalDuration,
+      })
+    ) {
+      attempts++;
+
+      if (attempts >= MAX_ATTEMPTS) {
+        throw new Error("Could not generate a valid interval workout.");
+      }
+      return generateIntervalWorkout({
+        date,
+        level,
+        targetVolume,
+        intensityKm,
+        vam,
+      });
+    }
+
+    const blocks: Block[] = [];
+    const warmupVelocity = vam * 0.65;
+    const warmupPace = formatPace(getPace(warmupVelocity));
+    const pace = formatPace(getPace(vamForInterval * vam));
+
+    const durationS = Math.floor(intervalDuration / ((vam * 1000) / 3600));
+    const isShort = durationS <= 90; // Default para 90 segundos em tiro curto
+
+    const useFloat =
+      (level === "intermediate" && isShort) ||
+      (level === "advanced" && isShort && numReps > 8);
+
+    blocks.push({
+      blockKind: "WARMUP",
+      repeatCount: 1,
+      orderIndex: 1,
+      description: `Aquecimento leve | Pace ${warmupPace}`,
+      segments: [
+        {
+          plannedDistanceM: warmup,
+          orderInBlock: 1,
+          segmentKind: "WARMUP",
+          targetPaceSPerKm: Math.round(3600 / warmupVelocity),
+        },
+      ],
+    });
+    blocks.push({
+      blockKind: "WORK",
+      repeatCount: numReps,
+      orderIndex: 2,
+      description: `${numReps} x ${intervalDuration}m @ ${Math.floor(vamForInterval * 100)}% Vam | pace ${pace}`,
+      segments: [
+        {
+          plannedDistanceM: intervalDuration,
+          orderInBlock: 1,
+          segmentKind: "WORK",
+          targetPaceSPerKm: Math.round(3600 / (vamForInterval * vam)),
+          plannedDurationS: durationS,
+          notes: [
+            `${intervalDuration}m forte @ ${Math.floor(vamForInterval * 100)}% Vam`,
+          ],
+        },
+        {
+          plannedDistanceM: intervalDuration,
+          orderInBlock: 2,
+          segmentKind: useFloat ? "FLOAT" : "REST",
+          targetPaceSPerKm: useFloat
+            ? Math.round(3600 / (vam * 0.6))
+            : undefined,
+          plannedDurationS:
+            level === "intermediate"
+              ? Math.floor(durationS * FLOAT_REST_INTERMEDIATE_RELATION)
+              : durationS,
+          notes: [`Descanso ${useFloat ? "trotando" : "parado"}`],
+        },
+      ],
+    });
+    blocks.push({
+      blockKind: "COOLDOWN",
+      repeatCount: 1,
+      orderIndex: 3,
+      description: `Desaquecimento leve | Pace ${warmupPace}`,
+      segments: [
+        {
+          plannedDistanceM: cooldown,
+          orderInBlock: 1,
+          segmentKind: "COOLDOWN",
+          targetPaceSPerKm: Math.round(3600 / warmupVelocity),
+        },
+      ],
+    });
+
+    return {
+      runType: "INTERVAL",
+      scheduledStart: date,
+      title: `Treino Intervalado | ${numReps} x ${intervalDuration}m`,
+      blocks,
+      plannedDistanceM: Math.round(targetVolume * 1000),
+      notes: `Intervalo de ${targetVolume}km com ~${intensityKm}km de intensidade. VAM ${vam}km/h. Nível ${level}.`,
+    };
+  }
+
+  const warmup = Math.min(5, Math.floor(targetVolume * 0.15));
+  const cooldown = Math.min(5, Math.floor(targetVolume * 0.1));
+  const mainPartMinutes = targetVolume - warmup - cooldown;
+
+  const [intervalDuration, vamForInterval] = getRandomIntervalDistance(
+    level,
+    mainPartMinutes,
+    vam,
   );
+  const numReps = Math.floor((mainPartMinutes * 60) / intervalDuration);
 
-  const generatedOptions: IntervalTemplate[] = [];
+  if (
+    !isValidInterval({
+      unit: "MINUTES",
+      reps: numReps,
+      level,
+      repLength: intervalDuration,
+    })
+  ) {
+    attempts++;
 
-  for (const pattern of availablePatterns) {
-    const velocity = pattern.vamIntensity * vam; // em km/h
-
-    if (unit === "KM") {
-      const repDistanceKm = pattern.repsDistanceKm;
-      if (!repDistanceKm) continue;
-
-      const numReps = Math.round(intensityKm / repDistanceKm);
-      if (
-        !isValidInterval({
-          unit,
-          reps: numReps,
-          repDistanceKm,
-          intensityKm,
-        })
-      )
-        continue;
-
-      const actualKm = numReps * repDistanceKm;
-      const workDurationMin = (repDistanceKm / velocity) * 60;
-      const restDurationMin =
-        workDurationMin * (pattern.restDurationFactor ?? 1);
-
-      const pace = getPace(velocity); // <- passa a velocidade correta
-      const formattedPace = formatPace(pace);
-
-      generatedOptions.push({
-        name: `${numReps}x${Math.round(repDistanceKm * 1000)}m a ${Math.round(
-          pattern.vamIntensity * 100,
-        )}% VAM`,
-        level,
-        unit,
-        vamIntensity: pattern.vamIntensity,
-        reps: numReps,
-        repsDistanceKm: repDistanceKm,
-        workDurationMin: Number(workDurationMin.toFixed(2)),
-        restDurationSeconds: Math.floor(restDurationMin * 60),
-        restType: pattern.restType,
-        totalEstimatedDistanceKm: Math.floor(
-          actualKm + warmUpVolume + cooldownVolume,
-        ),
-        targetZones: pattern.targetZones ?? [4],
-        warmUpDistanceKm: roundDecimals(warmUpVolume, 1),
-        cooldownDistanceKm: roundDecimals(cooldownVolume, 1),
-        repsPace: formattedPace,
-      });
+    if (attempts >= MAX_ATTEMPTS) {
+      throw new Error("Could not generate a valid interval workout.");
     }
-
-    if (unit === "MINUTES") {
-      const workDurationMin = pattern.workDurationMin ?? 1;
-      const numReps = pattern.reps;
-      const totalWorkMin = workDurationMin * numReps;
-      const intensityDistanceKm = (totalWorkMin * velocity) / 60;
-
-      if (
-        !isValidInterval({
-          unit,
-          reps: numReps,
-          intensityKm,
-        })
-      )
-        continue;
-
-      const restDurationMin =
-        workDurationMin * (pattern.restDurationFactor ?? 1);
-
-      const totalEstimatedDistanceKm =
-        intensityDistanceKm + warmUpVolume + cooldownVolume;
-      const pace = getPace(velocity);
-      const formattedPace = formatPace(pace);
-
-      generatedOptions.push({
-        name: `${numReps}x${workDurationMin}min a ${Math.round(
-          pattern.vamIntensity * 100,
-        )}% VAM`,
-        level,
-        unit,
-        vamIntensity: pattern.vamIntensity,
-        reps: numReps,
-        repsDistanceKm: Number((intensityDistanceKm / numReps).toFixed(2)),
-        workDurationMin,
-        restDurationSeconds: Math.floor(restDurationMin * 60),
-        restType: pattern.restType,
-        repsPace: formattedPace,
-        totalEstimatedDistanceKm,
-        targetZones: pattern.targetZones ?? [3],
-        warmUpDurationMin: roundDecimals(
-          +((warmUpVolume / velocity) * 60).toFixed(2),
-          1,
-        ),
-        cooldownDurationMin: roundDecimals(
-          +((cooldownVolume / velocity) * 60),
-          1,
-        ),
-      });
-    }
+    return generateIntervalWorkout({
+      date,
+      level,
+      targetVolume,
+      intensityKm,
+      vam,
+    });
   }
 
-  if (generatedOptions.length === 0) {
-    throw new Error("Nenhum template válido encontrado para os parâmetros.");
-  }
+  const blocks: Block[] = [];
 
-  const randomIndex = Math.floor(Math.random() * generatedOptions.length);
-  return generatedOptions.sort(
-    (a, b) =>
-      Math.abs(a.totalEstimatedDistanceKm! - targetKm) -
-      Math.abs(b.totalEstimatedDistanceKm! - targetKm),
-  )[randomIndex] as IntervalTemplate;
+  const warmupVelocity = vam * 0.65;
+  const warmupPace = formatPace(getPace(warmupVelocity));
+  const pace = formatPace(getPace(vamForInterval * vam));
+
+  blocks.push({
+    blockKind: "WARMUP",
+    repeatCount: 1,
+    orderIndex: 1,
+    description: `Aquecimento leve | Pace ${warmupPace}`,
+    segments: [
+      {
+        plannedDurationS: warmup * 60,
+        orderInBlock: 1,
+        segmentKind: "WARMUP",
+        targetPaceSPerKm: Math.floor(3600 / warmupVelocity),
+      },
+    ],
+  });
+
+  blocks.push({
+    blockKind: "WORK",
+    repeatCount: numReps,
+    orderIndex: 2,
+    description: `${numReps} x ${intervalDuration}s @ ${Math.floor(vamForInterval * 100)}% Vam | pace ${pace}`,
+    segments: [
+      {
+        plannedDurationS: intervalDuration,
+        orderInBlock: 1,
+        segmentKind: "WORK",
+        targetPaceSPerKm: Math.round(3600 / (vamForInterval * vam)),
+        notes: [`Fazer os intervalos a ${pace}`],
+      },
+      {
+        plannedDurationS: intervalDuration * 2,
+        orderInBlock: 2,
+        segmentKind: "REST",
+        notes: [`Descansar por ${intervalDuration}s parado`],
+      },
+    ],
+  });
+
+  blocks.push({
+    blockKind: "COOLDOWN",
+    repeatCount: 1,
+    orderIndex: 3,
+    description: `Desaquecimento leve | Pace ${warmupPace}`,
+    segments: [
+      {
+        plannedDurationS: cooldown * 60, // Valor em segundos
+        orderInBlock: 1,
+        segmentKind: "COOLDOWN",
+        targetPaceSPerKm: Math.floor(3600 / warmupVelocity),
+      },
+    ],
+  });
+
+  return {
+    runType: "INTERVAL",
+    scheduledStart: date,
+    title: `Treino Intervalado | ${numReps} x ${intervalDuration}s`,
+    blocks: blocks,
+    plannedDurationS: targetVolume,
+    notes: `Intervalo de ${Math.floor(targetVolume)} minutos. VAM ${vam}km/h. Nível ${level}.`,
+  };
 }

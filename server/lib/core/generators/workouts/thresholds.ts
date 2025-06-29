@@ -1,93 +1,146 @@
-import type { TrainingLevel } from "@/shared/types";
+import type { Block, TrainingLevel, Workout } from "@/shared/types";
+import type { TrainingUnit } from "@/lib/types";
 
 import { formatPace } from "../../calculations/time";
 import { getPace } from "../../calculations/zones";
 
-export function generateThresholdWorkout({
-  level,
-  vo2Max,
-  volume, // total do treino em minutos ou km
-  unit = "MINUTES",
-}: {
-  level: TrainingLevel;
-  vo2Max: number;
-  volume: number;
-  unit?: "MINUTES" | "KM";
-}) {
-  const vam = vo2Max; // já vem convertido, ex: 16 km/h
-  const thresholdIntensity = 0.9;
-  const thresholdVelocity = vam * thresholdIntensity; // km/h
-  const thresholdPace = getPace(thresholdVelocity); // min/km
-  const formattedPace = formatPace(thresholdPace);
+interface ThresholdRunInput {
+  date: Date;
+  level?: TrainingLevel; // default: intermediate
+  vam?: number; // km/h – default: 14
+  targetVolume: number; // valor numérico na unidade escolhida
+  unit: TrainingUnit; // "KM" → distância, "MINUTES" → tempo
+}
 
-  // Volume dividido
-  const warmUpPart = 0.1;
-  const cooldownPart = 0.1;
-  const mainPart = 0.8;
+export function generateThresholdRun({
+  date,
+  level = "intermediate",
+  vam = 14,
+  targetVolume,
+  unit,
+}: ThresholdRunInput): Workout {
+  /* ---------- 1. FRAÇÕES FIXAS ---------- */
+  const FRACTION_WU = 0.2; // 20 %
+  const FRACTION_CD = 0.15; // 15 %
+  const LT_FRAC: Record<TrainingLevel, number> = {
+    beginner: 0.88,
+    intermediate: 0.92,
+    advanced: 0.94,
+  };
 
-  let warmUp: number;
-  let cooldown: number;
-  let thresholdWork: number;
-
-  if (unit === "MINUTES") {
-    warmUp = volume * warmUpPart;
-    cooldown = volume * cooldownPart;
-    thresholdWork = volume * mainPart;
-
-    const isInterval = thresholdWork >= 25;
-    const workBlock = isInterval ? 10 : thresholdWork;
-    const reps = isInterval ? Math.floor(thresholdWork / workBlock) : 1;
-    const rest = isInterval ? 2 : 0;
-
-    return {
-      name: isInterval
-        ? `${reps}x${workBlock}min @ 90% VAM`
-        : `${Math.round(thresholdWork)}min contínuo @ 90% VAM`,
-      type: isInterval ? "INTERVALS" : "CONTINUOUS",
-      unit: "MINUTES",
-      level,
-      reps,
-      workDurationMin: Math.round(workBlock),
-      totalWorkMin: Math.round(thresholdWork),
-      restDurationSeconds: rest * 60,
-      restType: isInterval ? "active" : undefined,
-      targetZones: [3],
-      wam: Number(warmUp.toFixed(1)),
-      cooldown: Number(cooldown.toFixed(1)),
-      pace: formattedPace,
-    };
-  }
+  /* ---------- 2. CONVERSÃO UNIDADE → METROS/SEGUNDOS ---------- */
+  let totalDistanceM = 0;
+  let totalDurationS = 0;
 
   if (unit === "KM") {
-    warmUp = volume * warmUpPart;
-    cooldown = volume * cooldownPart;
-    thresholdWork = volume * mainPart;
-
-    const isInterval = thresholdWork >= 6;
-    const blockKm = isInterval ? 2 : thresholdWork;
-    const reps = isInterval ? Math.floor(thresholdWork / blockKm) : 1;
-    const durationPerRep = (blockKm / thresholdVelocity) * 60; // min
-    const rest = isInterval ? 2 : 0;
-
-    return {
-      name: isInterval
-        ? `${reps}x${blockKm}km @ 90% VAM`
-        : `${thresholdWork.toFixed(1)}km contínuo @ 90% VAM`,
-      type: isInterval ? "INTERVALS" : "CONTINUOUS",
-      unit: "KM",
-      level,
-      reps,
-      repsDistanceKm: blockKm,
-      workDurationMin: Number(durationPerRep.toFixed(1)),
-      totalWorkKm: +thresholdWork.toFixed(1),
-      restDurationSeconds: rest * 60,
-      restType: isInterval ? "active" : undefined,
-      targetZones: [3],
-      warmUpDistanceKm: Number(warmUp.toFixed(1)),
-      cooldownDistanceKm: Number(cooldown.toFixed(1)),
-      pace: formattedPace,
-    };
+    totalDistanceM = targetVolume * 1_000;
+  } else {
+    totalDurationS = targetVolume * 60;
   }
 
-  throw new Error("Unidade inválida");
+  /* ---------- 3. DIMENSIONAMENTO ---------- */
+  const warmupPart =
+    unit === "KM"
+      ? Math.round(totalDistanceM * FRACTION_WU)
+      : Math.round(totalDurationS * FRACTION_WU);
+
+  const cooldownPart =
+    unit === "KM"
+      ? Math.round(totalDistanceM * FRACTION_CD)
+      : Math.round(totalDurationS * FRACTION_CD);
+
+  const thresholdPart =
+    unit === "KM"
+      ? Math.round(totalDistanceM - warmupPart - cooldownPart)
+      : Math.round(totalDurationS - warmupPart - cooldownPart);
+
+  /* ---------- 4. VELOCIDADES & PACES ---------- */
+  const vWarm = vam * 0.65;
+  const vLact = vam * LT_FRAC[level];
+  const paceWarmS = Math.round(3600 / vWarm);
+  const paceLactS = Math.round(3600 / vLact);
+
+  /* ---------- 5. BLOCOS ---------- */
+  const blocks: Block[] = [];
+
+  // warm‑up
+  blocks.push({
+    blockKind: "WARMUP",
+    repeatCount: 1,
+    orderIndex: 1,
+    description: `Aquecimento | Pace ${formatPace(getPace(vWarm))}`,
+    segments: [
+      unit === "KM"
+        ? {
+            segmentKind: "WARMUP",
+            orderInBlock: 1,
+            plannedDistanceM: warmupPart,
+            targetPaceSPerKm: paceWarmS,
+          }
+        : {
+            segmentKind: "WARMUP",
+            orderInBlock: 1,
+            plannedDurationS: warmupPart,
+            targetPaceSPerKm: paceWarmS,
+          },
+    ],
+  });
+
+  // work (threshold)
+  blocks.push({
+    blockKind: "WORK",
+    repeatCount: 1,
+    orderIndex: 2,
+    description: `Limiar contínuo | Pace ${formatPace(getPace(vLact))}`,
+    segments: [
+      unit === "KM"
+        ? {
+            segmentKind: "WORK",
+            orderInBlock: 1,
+            plannedDistanceM: thresholdPart,
+            targetPaceSPerKm: paceLactS,
+          }
+        : {
+            segmentKind: "WORK",
+            orderInBlock: 1,
+            plannedDurationS: thresholdPart,
+            targetPaceSPerKm: paceLactS,
+          },
+    ],
+  });
+
+  // cool‑down
+  blocks.push({
+    blockKind: "COOLDOWN",
+    repeatCount: 1,
+    orderIndex: 3,
+    description: `Desaquecimento | Pace ${formatPace(getPace(vWarm))}`,
+    segments: [
+      unit === "KM"
+        ? {
+            segmentKind: "COOLDOWN",
+            orderInBlock: 1,
+            plannedDistanceM: cooldownPart,
+            targetPaceSPerKm: paceWarmS,
+          }
+        : {
+            segmentKind: "COOLDOWN",
+            orderInBlock: 1,
+            plannedDurationS: cooldownPart,
+            targetPaceSPerKm: paceWarmS,
+          },
+    ],
+  });
+
+  /* ---------- 6. OBJETO WORKOUT ---------- */
+  return {
+    runType: "THRESHOLD_RUN",
+    scheduledStart: date,
+    title: "Treino de limiar/ritmado",
+    blocks,
+    ...(unit === "KM"
+      ? { plannedDistanceM: totalDistanceM }
+      : { plannedDurationS: totalDurationS }),
+    notes: `Treino de limiar (${unit === "KM" ? `${targetVolume} km` : `${targetVolume} min`}) em ${formatPace(getPace(paceLactS))}.`,
+  };
 }

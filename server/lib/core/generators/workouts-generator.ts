@@ -1,18 +1,18 @@
-import type { Training, TrainingLevel } from "@/shared/types";
-import type { IntervalTemplate } from "@/lib/types";
+import type { Test, Training, TrainingLevel, Workout } from "@/shared/types";
 
 import { generateFartlekWorkout } from "./workouts/fartleks";
 import { generateIntervalWorkout } from "./workouts/intervals";
-import { generateLongRun } from "./workouts/long-run";
+import { generateBaseRun } from "./workouts/long-run";
 import { generateProgressiveWorkout } from "./workouts/progressive";
-import { generateThresholdWorkout } from "./workouts/thresholds";
+import { generateThresholdRun } from "./workouts/thresholds";
 
 export function generateWorkoutsPerWeek(
   trainings: Training[],
   totalVolumeMin: number,
   trainingLevel: TrainingLevel,
   vam: number,
-) {
+  testData: Test,
+): Workout[] {
   const totalWeekVolume = totalVolumeMin;
   const totalIntensityVolume = totalWeekVolume * 0.3;
 
@@ -28,40 +28,36 @@ export function generateWorkoutsPerWeek(
     const isIntense = intenseTypes.includes(training.type);
 
     if (training.type === "INTERVAL") {
-      const intervalWorkout: IntervalTemplate = generateIntervalWorkout({
+      const intervalWorkout: Workout = generateIntervalWorkout({
         level: trainingLevel,
-        targetKm: training.value,
+        targetVolume: training.value,
         intensityKm: isIntense ? intensityPerTraining : 0,
         vam,
+        date: training.date,
       });
 
-      return { ...intervalWorkout, type: training.type, date: training.date };
+      return intervalWorkout;
     }
 
     if (training.type === "FARTLEK") {
-      const fartlekWorkout = generateFartlekWorkout({
+      const fartlekWorkout: Workout = generateFartlekWorkout({
         level: trainingLevel,
-        unit: "MINUTES",
-        volume: training.value,
-        intenseKms: isIntense ? intensityPerTraining : 0,
         vam,
+        lastUserTestData: testData,
       });
-      return { ...fartlekWorkout, type: training.type, date: training.date };
+      return fartlekWorkout;
     }
 
     if (training.type === "THRESHOLD_RUN") {
-      const thresholdWorkout = generateThresholdWorkout({
+      const thresholdWorkout = generateThresholdRun({
+        date: training.date,
         level: trainingLevel,
-        volume: training.value,
-        vo2Max: vam,
-        unit: "MINUTES",
+        targetVolume: training.value,
+        vam: vam,
+        unit: trainingLevel === "beginner" ? "MINUTES" : "KM",
       });
 
-      return {
-        ...thresholdWorkout,
-        type: training.type,
-        date: training.date,
-      };
+      return thresholdWorkout;
     }
 
     if (training.type === "PROGRESSIVE_RUN") {
@@ -69,17 +65,11 @@ export function generateWorkoutsPerWeek(
         level: trainingLevel,
         unit: "KM",
         vam,
-        volume: training.value,
+        targetVolume: training.value,
+        date: training.date,
       });
 
-      return {
-        name: `Treino progressivo ${training.value}km`,
-        date: training.date,
-        type: training.type,
-        blocks: progressiveWorkout,
-        level: trainingLevel,
-        totalVolume: training.value,
-      };
+      return progressiveWorkout;
     }
 
     if (
@@ -87,27 +77,23 @@ export function generateWorkoutsPerWeek(
       training.type === "EASY_RUN" ||
       training.type === "RECOVERY_RUN"
     ) {
-      const longRunWorkout = generateLongRun({
+      const longRunWorkout = generateBaseRun({
         level: trainingLevel,
         vam,
-        volumeKm: training.value,
-        includeProgression: false,
-      });
-      return {
-        name: `Treino longo ${training.value}km`,
-        type: training.type,
+        targetVolume: training.value,
         date: training.date,
-        blocks: longRunWorkout,
-        level: trainingLevel,
-        totalVolume: training.value,
-      };
+        runType: training.type,
+        unit: trainingLevel === "beginner" ? "MINUTES" : "KM",
+      });
+      return longRunWorkout;
     }
 
-    // Para tipos não intensos, você pode retornar direto:
     return {
-      type: training.type,
-      value: training.value,
-      note: "Treino leve ou sem estrutura complexa",
+      runType: "EASY_RUN",
+      title: "Sem treino",
+      scheduledStart: training.date,
+      blocks: [],
+      segments: [],
     };
   });
 }

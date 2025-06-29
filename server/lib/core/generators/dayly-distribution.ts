@@ -2,6 +2,7 @@ import { addDays, nextMonday } from "date-fns";
 
 import type {
   RaceOption,
+  Test,
   Training,
   TrainingLevel,
   TTrainingType,
@@ -12,7 +13,7 @@ import { WEEKLY_TEMPLATES } from "@/lib/config/workouts.contants";
 import { distributeWeeklyVolumes } from "./periodization-generator";
 import { generateWorkoutsPerWeek } from "./workouts-generator";
 
-export function distributeTrainingsInWeek(
+function distributeTrainingsInWeek(
   trainings: Array<{ type: TTrainingType; value: number }>,
   weekStartDate: Date,
   weeklyFrequency: number,
@@ -79,6 +80,7 @@ export function distributeWeeklyVolumesWithDays(
   startDate: Date,
   trainingLevel: TrainingLevel,
   vam: number,
+  testData: Test,
 ) {
   const basicDistribution = distributeWeeklyVolumes(
     weeks,
@@ -93,7 +95,6 @@ export function distributeWeeklyVolumesWithDays(
       weekIndex === 0
         ? startDate
         : nextMonday(addDays(startDate, (weekIndex - 1) * 7));
-    // weekStartDate.setDate(startDate.getDate() + weekIndex * 7);
 
     const trainingDays = distributeTrainingsInWeek(
       week.trainings,
@@ -101,19 +102,18 @@ export function distributeWeeklyVolumesWithDays(
       weeklyFrequency,
     );
 
-    // const workouts = generateWorkoutsPerWeek(week, trainingLevel, vam);
     const workouts = generateWorkoutsPerWeek(
       trainingDays,
       week.totalVolumeMin,
       trainingLevel,
       vam,
+      testData,
     );
 
-    const { trainings, ...restWeek } = week;
-
     return {
-      ...restWeek,
+      week,
       weekStart: weekStartDate,
+      trainingDays,
       workouts,
     };
   });
