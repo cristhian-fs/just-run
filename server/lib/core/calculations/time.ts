@@ -1,3 +1,5 @@
+import { getDay, nextMonday } from "date-fns";
+
 export function timeStringToSeconds(time: string): number {
   const parts = time.split(":").map(Number);
 
@@ -63,4 +65,17 @@ export function calculatePaceMinKm(distanceM: number, timeS: number): number {
 export function calculatePace(vam: number, intensity: number): number {
   const speedKmh = vam * intensity;
   return 60 / speedKmh; // minutos por km
+}
+
+/**
+ * Se hoje for sábado (6) ou domingo (0) começa na próxima segunda.
+ * Caso contrário, começa hoje mesmo.
+ */
+export function getStartDate(): Date {
+  const today = new Date();
+  const weekday = getDay(today); // 0=dom, 1=seg, …, 6=sáb
+
+  return weekday === 6 || weekday === 0
+    ? nextMonday(today) // pula p/ a próxima segunda
+    : today; // segunda‑sexta → usa hoje
 }
