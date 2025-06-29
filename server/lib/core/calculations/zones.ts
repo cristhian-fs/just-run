@@ -1,5 +1,6 @@
 import type { TTrainingType } from "@/shared/types";
-import type { TrainingZone } from "@/lib/types/training.types";
+import { raceDistances } from "@/lib/config/workouts.contants";
+import type { RaceTarget, TrainingZone } from "@/lib/types/training.types";
 
 import { formatPace } from "./time";
 
@@ -90,4 +91,29 @@ export function calculateTrainingZones(
       cardioFrequency: getCardioFrequency(fcmax, zone.vo2Percentage),
     };
   });
+}
+
+export function estimateVelocitiesFromTest({
+  distanceM,
+  durationS,
+  decayK = 1.06, // padrão para atletas amadores
+  vam,
+}: {
+  distanceM: number;
+  durationS: number;
+  vam?: number;
+  decayK?: number;
+}): Record<RaceTarget, number> {
+  const v0 = vam ?? distanceM / (durationS / 3600); // km/h
+  const d0 = distanceM;
+
+  const result: Record<RaceTarget, number> = {} as Record<RaceTarget, number>;
+
+  for (const [key, d] of Object.entries(raceDistances)) {
+    const paceRatio = Math.pow(d / d0, decayK); // aumento relativo no pace
+    const v = v0 / paceRatio; // nova velocidade
+    result[key as RaceTarget] = v;
+  }
+
+  return result;
 }
