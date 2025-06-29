@@ -1,6 +1,6 @@
 {
-  "id": "bc52f0c9-7e49-41ea-ab13-55f9ef0fb092",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "51b3504a-90f7-4594-9b24-27ae8df19bfe",
+  "prevId": "bc52f0c9-7e49-41ea-ab13-55f9ef0fb092",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -244,9 +244,9 @@
           "primaryKey": false,
           "notNull": false
         },
-        "user_gender": {
-          "name": "user_gender",
-          "type": "user_gender",
+        "gender": {
+          "name": "gender",
+          "type": "gender",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
@@ -1078,8 +1078,8 @@
     }
   },
   "enums": {
-    "public.user_gender": {
-      "name": "user_gender",
+    "public.gender": {
+      "name": "gender",
       "schema": "public",
       "values": [
         "male",

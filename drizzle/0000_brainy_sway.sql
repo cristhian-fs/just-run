@@ -1,10 +1,10 @@
-CREATE TYPE "public"."gender" AS ENUM('male', 'female', 'other');--> statement-breakpoint
+CREATE TYPE "public"."user_gender" AS ENUM('male', 'female', 'other');--> statement-breakpoint
 CREATE TYPE "public"."training_level" AS ENUM('beginner', 'intermediate', 'advanced');--> statement-breakpoint
 CREATE TYPE "public"."goal_type" AS ENUM('startRunning', 'improveHealth', 'loseWeight', 'runFaster', 'runLonger', 'race5K', 'race10K', 'race21K', 'race42K');--> statement-breakpoint
 CREATE TYPE "public"."test_type" AS ENUM('1600m', '2400m', '3200m', '3000m', '5000m');--> statement-breakpoint
-CREATE TYPE "public"."traning_type" AS ENUM('EASY_RUN', 'LONG_RUN', 'INTERVAL', 'FARTLEK', 'PROGRESSIVE_RUN', 'REPETITION', 'THRESHOLD_RUN', 'RECOVERY_RUN');--> statement-breakpoint
+CREATE TYPE "public"."traning_type" AS ENUM('EASY_RUN', 'LONG_RUN', 'INTERVAL', 'FARTLEK', 'PROGRESSIVE_RUN', 'REPETITION', 'RECOVERY_RUN', 'THRESHOLD_RUN');--> statement-breakpoint
 CREATE TYPE "public"."week_type" AS ENUM('INTRO', 'TEST', 'BASE', 'BUILD', 'PEAK', 'TAPER', 'DELOAD', 'COMPETITION');--> statement-breakpoint
-CREATE TYPE "public"."workout_unit" AS ENUM('KM', 'MINUTES');--> statement-breakpoint
+CREATE TYPE "public"."segment_kind" AS ENUM('WORK', 'REST', 'FLOAT', 'THRESHOLD', 'PROGRESSIVE', 'WARMUP', 'COOLDOWN');--> statement-breakpoint
 CREATE TABLE "account" (
 	"id" text PRIMARY KEY NOT NULL,
 	"account_id" text NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE "user" (
 	"created_at" timestamp NOT NULL,
 	"updated_at" timestamp NOT NULL,
 	"age" numeric,
-	"gender" "gender",
+	"user_gender" "user_gender",
 	"weight_kg" numeric,
 	"height_cm" numeric,
 	"training_level" "training_level",
@@ -119,42 +119,47 @@ CREATE TABLE "workout_logs" (
 CREATE TABLE "workouts" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"training_week_id" uuid NOT NULL,
-	"date" date NOT NULL,
-	"type" "traning_type" NOT NULL,
-	"description" text,
-	"intensity_zone" integer,
-	"duration_min" integer,
-	"duration_km" numeric,
-	"is_completed" boolean NOT NULL,
-	"unit" "workout_unit",
-	"total_volume" numeric,
-	"rest_between_reps_min" numeric,
-	"intense_volume" numeric,
-	"target_zones" integer[],
-	"total_reps" integer,
-	"reps_pace" text,
-	"reps_distance_km" numeric,
-	"rest_type" "rest_type",
-	"warmup_distance_km" numeric,
-	"cooldown_distance_km" numeric,
-	CONSTRAINT "intensity_zone" CHECK ("workouts"."intensity_zone" >= 1 and "workouts"."intensity_zone" <= 10)
+	"scheduled_start" date NOT NULL,
+	"run_type" "traning_type" NOT NULL,
+	"title" text,
+	"notes" text,
+	"planned_distance_m" integer,
+	"planned_duration_s" integer,
+	"actual_distance_m" integer,
+	"actual_duration_s" integer,
+	"avg_pace_s_per_km" integer,
+	"avg_hr" integer,
+	"elevation_gain_m" numeric,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "workout_blocks" (
+CREATE TABLE "block" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"workout_id" uuid NOT NULL,
-	"order" integer NOT NULL,
-	"type" text,
-	"vam_intensity" numeric,
-	"target_zone" integer,
-	"pace" text,
-	"distance_km" numeric,
-	"duration_min" numeric,
-	"description" text,
-	"phase" text,
-	"block_type" text,
-	"effort" text,
-	"unit" text
+	"block_kind" "segment_kind" NOT NULL,
+	"repeat_count" integer DEFAULT 1 NOT NULL,
+	"order_index" integer NOT NULL,
+	"description" text
+);
+--> statement-breakpoint
+CREATE TABLE "segment" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"workout_id" uuid,
+	"block_id" uuid,
+	"order_in_block" integer NOT NULL,
+	"segment_kind" "segment_kind" NOT NULL,
+	"planned_distance_m" integer,
+	"planned_duration_s" integer,
+	"target_pace_s_per_km" integer,
+	"target_hr" integer,
+	"rest_distance_m" integer,
+	"rest_duration_s" integer,
+	"actual_distance_m" integer,
+	"actual_duration_s" integer,
+	"avg_pace_s_per_km" integer,
+	"avg_hr" integer,
+	"notes" text
 );
 --> statement-breakpoint
 ALTER TABLE "account" ADD CONSTRAINT "account_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
@@ -166,4 +171,6 @@ ALTER TABLE "training_zones" ADD CONSTRAINT "training_zones_user_id_user_id_fk" 
 ALTER TABLE "workout_logs" ADD CONSTRAINT "workout_logs_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "workout_logs" ADD CONSTRAINT "workout_logs_workout_id_workouts_id_fk" FOREIGN KEY ("workout_id") REFERENCES "public"."workouts"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "workouts" ADD CONSTRAINT "workouts_training_week_id_training_weeks_id_fk" FOREIGN KEY ("training_week_id") REFERENCES "public"."training_weeks"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "workout_blocks" ADD CONSTRAINT "workout_blocks_workout_id_workouts_id_fk" FOREIGN KEY ("workout_id") REFERENCES "public"."workouts"("id") ON DELETE cascade ON UPDATE no action;
+ALTER TABLE "block" ADD CONSTRAINT "block_workout_id_workouts_id_fk" FOREIGN KEY ("workout_id") REFERENCES "public"."workouts"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "segment" ADD CONSTRAINT "segment_workout_id_workouts_id_fk" FOREIGN KEY ("workout_id") REFERENCES "public"."workouts"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "segment" ADD CONSTRAINT "segment_block_id_block_id_fk" FOREIGN KEY ("block_id") REFERENCES "public"."block"("id") ON DELETE cascade ON UPDATE no action;
