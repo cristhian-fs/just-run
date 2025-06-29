@@ -13,13 +13,3 @@ export type ErrorResponse = {
   error: string;
   isFormError?: boolean;
 };
-
-export type Test = {
-  id: string;
-  userId: string;
-  testType: "3K" | "5K" | "6K" | "10K" | "21K";
-  distanceM: number;
-  durationS: number;
-  paceMinKm: number | null;
-  testDate: string;
-};

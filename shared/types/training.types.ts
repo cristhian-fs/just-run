@@ -1,5 +1,6 @@
 import type {
   raceOptions,
+  segmentKinds,
   testTypes,
   trainingGoals,
   trainingTypes,
@@ -29,23 +30,103 @@ export type TrainingGoalConfig = {
   periodization: "linear" | "undulating" | "polarized";
 };
 
-export type WeekAmount = (typeof WeekAmountOptions)[number];
-
-export type TWeekType = (typeof weekTypes)[number];
-
-export type WeekPattern = TWeekType[];
-
-export type TTestType = (typeof testTypes)[number];
-
 export type Training = {
   type: TTrainingType;
-  value: number; // total km
+  value: number;
   date: Date;
+};
+
+export type WeekAmount = (typeof WeekAmountOptions)[number];
+export type TWeekType = (typeof weekTypes)[number];
+export type WeekPattern = TWeekType[];
+export type TTestType = (typeof testTypes)[number];
+export type TSegmentKind = (typeof segmentKinds)[number];
+
+/**
+ * Segment – passo atômico dentro de um bloco (ou do treino, se bloco for nulo)
+ */
+export interface Segment {
+  orderInBlock: number;
+  segmentKind: TSegmentKind;
+
+  // -- Alvo/Planejamento
+  plannedDistanceM?: number;
+  plannedDurationS?: number;
+  targetPaceSPerKm?: number;
+  targetHr?: number;
+
+  // -- Se o segmento for "descanso ativo" ou intervalo parado
+  restDistanceM?: number;
+  restDurationS?: number;
+
+  // -- Realizado
+  actualDistanceM?: number;
+  actualDurationS?: number;
+  avgPaceSPerKm?: number;
+  avgHr?: number;
+
+  notes?: Array<string>;
+}
+
+/**
+ * Block – agrupa segmentos que podem ser repetidos
+ */
+export interface Block {
+  blockKind: TSegmentKind;
+  repeatCount: number;
+  orderIndex: number;
+  description?: string;
+
+  /* Passos pertencentes a este bloco */
+  segments: Segment[];
+}
+
+/**
+ * Workout – representa UMA sessão de treino, mesmo que tenha vários blocos/segmentos
+ */
+export interface Workout {
+  scheduledStart: Date;
+  runType: TTrainingType;
+  title: string;
+  notes?: string;
+
+  /* ----- Planejamento ----- */
+  plannedDistanceM?: number;
+  plannedDurationS?: number;
+
+  /* ----- Executado ----- */
+  actualDistanceM?: number;
+  actualDurationS?: number;
+  avgPaceSPerKm?: number;
+  avgHr?: number;
+  elevationGainM?: number;
+
+  /* Se NÃO tiver blocos, os segmentos “soltos” ficam aqui */
+  segments?: Segment[];
+  /* Blocos estruturados (cada um com seus próprios segments) */
+  blocks?: Block[];
+}
+
+/**
+ * Test - representa os dados de um teste adicionado pelo usuário que é retornado do banco de dados
+ */
+export type Test = {
+  id: string;
+  userId: string;
+  testType: "1600m" | "2400m" | "3200m" | "3000m" | "5000m";
+  distanceM: number;
+  durationS: number;
+  vam: number | null;
+  paceMinKm: string | null;
+  fcmax: number | null;
+  vo2Max: number | null;
+  vo2: number | null;
+  testDate: string;
 };
 
 export interface Week {
   weekType: TWeekType;
   totalVolumeMin: number; // total km of the week
-  trainings: Training[];
+  workouts: Workout[];
   weekStart: Date;
 }
