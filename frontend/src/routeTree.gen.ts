@@ -15,9 +15,13 @@ import { Route as IndexImport } from './routes/_index'
 import { Route as RegisterImport } from './routes/register'
 import { Route as LoginImport } from './routes/login'
 import { Route as IndexIndexImport } from './routes/_index/index'
+import { Route as IndexZonasDeTreinoImport } from './routes/_index/zonas-de-treino'
 import { Route as IndexUsersImport } from './routes/_index/users'
+import { Route as IndexTestesImport } from './routes/_index/testes'
+import { Route as IndexPlanejamentoImport } from './routes/_index/planejamento'
 import { Route as IndexOnboardingImport } from './routes/_index/onboarding'
 import { Route as IndexClientsImport } from './routes/_index/clients'
+import { Route as IndexCalculadoraImport } from './routes/_index/calculadora'
 import { Route as IndexAuthenticationImport } from './routes/_index/authentication'
 import { Route as IndexApisImport } from './routes/_index/apis'
 import { Route as IndexAboutImport } from './routes/_index/about'
@@ -48,9 +52,27 @@ const IndexIndexRoute = IndexIndexImport.update({
   getParentRoute: () => IndexRoute,
 } as any)
 
+const IndexZonasDeTreinoRoute = IndexZonasDeTreinoImport.update({
+  id: '/zonas-de-treino',
+  path: '/zonas-de-treino',
+  getParentRoute: () => IndexRoute,
+} as any)
+
 const IndexUsersRoute = IndexUsersImport.update({
   id: '/users',
   path: '/users',
+  getParentRoute: () => IndexRoute,
+} as any)
+
+const IndexTestesRoute = IndexTestesImport.update({
+  id: '/testes',
+  path: '/testes',
+  getParentRoute: () => IndexRoute,
+} as any)
+
+const IndexPlanejamentoRoute = IndexPlanejamentoImport.update({
+  id: '/planejamento',
+  path: '/planejamento',
   getParentRoute: () => IndexRoute,
 } as any)
 
@@ -63,6 +85,12 @@ const IndexOnboardingRoute = IndexOnboardingImport.update({
 const IndexClientsRoute = IndexClientsImport.update({
   id: '/clients',
   path: '/clients',
+  getParentRoute: () => IndexRoute,
+} as any)
+
+const IndexCalculadoraRoute = IndexCalculadoraImport.update({
+  id: '/calculadora',
+  path: '/calculadora',
   getParentRoute: () => IndexRoute,
 } as any)
 
@@ -136,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexAuthenticationImport
       parentRoute: typeof IndexImport
     }
+    '/_index/calculadora': {
+      id: '/_index/calculadora'
+      path: '/calculadora'
+      fullPath: '/calculadora'
+      preLoaderRoute: typeof IndexCalculadoraImport
+      parentRoute: typeof IndexImport
+    }
     '/_index/clients': {
       id: '/_index/clients'
       path: '/clients'
@@ -150,11 +185,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexOnboardingImport
       parentRoute: typeof IndexImport
     }
+    '/_index/planejamento': {
+      id: '/_index/planejamento'
+      path: '/planejamento'
+      fullPath: '/planejamento'
+      preLoaderRoute: typeof IndexPlanejamentoImport
+      parentRoute: typeof IndexImport
+    }
+    '/_index/testes': {
+      id: '/_index/testes'
+      path: '/testes'
+      fullPath: '/testes'
+      preLoaderRoute: typeof IndexTestesImport
+      parentRoute: typeof IndexImport
+    }
     '/_index/users': {
       id: '/_index/users'
       path: '/users'
       fullPath: '/users'
       preLoaderRoute: typeof IndexUsersImport
+      parentRoute: typeof IndexImport
+    }
+    '/_index/zonas-de-treino': {
+      id: '/_index/zonas-de-treino'
+      path: '/zonas-de-treino'
+      fullPath: '/zonas-de-treino'
+      preLoaderRoute: typeof IndexZonasDeTreinoImport
       parentRoute: typeof IndexImport
     }
     '/_index/': {
@@ -180,9 +236,13 @@ interface IndexRouteChildren {
   IndexAboutRoute: typeof IndexAboutRoute
   IndexApisRoute: typeof IndexApisRoute
   IndexAuthenticationRoute: typeof IndexAuthenticationRoute
+  IndexCalculadoraRoute: typeof IndexCalculadoraRoute
   IndexClientsRoute: typeof IndexClientsRoute
   IndexOnboardingRoute: typeof IndexOnboardingRoute
+  IndexPlanejamentoRoute: typeof IndexPlanejamentoRoute
+  IndexTestesRoute: typeof IndexTestesRoute
   IndexUsersRoute: typeof IndexUsersRoute
+  IndexZonasDeTreinoRoute: typeof IndexZonasDeTreinoRoute
   IndexIndexRoute: typeof IndexIndexRoute
   IndexSettingsIndexRoute: typeof IndexSettingsIndexRoute
 }
@@ -191,9 +251,13 @@ const IndexRouteChildren: IndexRouteChildren = {
   IndexAboutRoute: IndexAboutRoute,
   IndexApisRoute: IndexApisRoute,
   IndexAuthenticationRoute: IndexAuthenticationRoute,
+  IndexCalculadoraRoute: IndexCalculadoraRoute,
   IndexClientsRoute: IndexClientsRoute,
   IndexOnboardingRoute: IndexOnboardingRoute,
+  IndexPlanejamentoRoute: IndexPlanejamentoRoute,
+  IndexTestesRoute: IndexTestesRoute,
   IndexUsersRoute: IndexUsersRoute,
+  IndexZonasDeTreinoRoute: IndexZonasDeTreinoRoute,
   IndexIndexRoute: IndexIndexRoute,
   IndexSettingsIndexRoute: IndexSettingsIndexRoute,
 }
@@ -207,9 +271,13 @@ export interface FileRoutesByFullPath {
   '/about': typeof IndexAboutRoute
   '/apis': typeof IndexApisRoute
   '/authentication': typeof IndexAuthenticationRoute
+  '/calculadora': typeof IndexCalculadoraRoute
   '/clients': typeof IndexClientsRoute
   '/onboarding': typeof IndexOnboardingRoute
+  '/planejamento': typeof IndexPlanejamentoRoute
+  '/testes': typeof IndexTestesRoute
   '/users': typeof IndexUsersRoute
+  '/zonas-de-treino': typeof IndexZonasDeTreinoRoute
   '/': typeof IndexIndexRoute
   '/settings': typeof IndexSettingsIndexRoute
 }
@@ -220,9 +288,13 @@ export interface FileRoutesByTo {
   '/about': typeof IndexAboutRoute
   '/apis': typeof IndexApisRoute
   '/authentication': typeof IndexAuthenticationRoute
+  '/calculadora': typeof IndexCalculadoraRoute
   '/clients': typeof IndexClientsRoute
   '/onboarding': typeof IndexOnboardingRoute
+  '/planejamento': typeof IndexPlanejamentoRoute
+  '/testes': typeof IndexTestesRoute
   '/users': typeof IndexUsersRoute
+  '/zonas-de-treino': typeof IndexZonasDeTreinoRoute
   '/': typeof IndexIndexRoute
   '/settings': typeof IndexSettingsIndexRoute
 }
@@ -235,9 +307,13 @@ export interface FileRoutesById {
   '/_index/about': typeof IndexAboutRoute
   '/_index/apis': typeof IndexApisRoute
   '/_index/authentication': typeof IndexAuthenticationRoute
+  '/_index/calculadora': typeof IndexCalculadoraRoute
   '/_index/clients': typeof IndexClientsRoute
   '/_index/onboarding': typeof IndexOnboardingRoute
+  '/_index/planejamento': typeof IndexPlanejamentoRoute
+  '/_index/testes': typeof IndexTestesRoute
   '/_index/users': typeof IndexUsersRoute
+  '/_index/zonas-de-treino': typeof IndexZonasDeTreinoRoute
   '/_index/': typeof IndexIndexRoute
   '/_index/settings/': typeof IndexSettingsIndexRoute
 }
@@ -251,9 +327,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/apis'
     | '/authentication'
+    | '/calculadora'
     | '/clients'
     | '/onboarding'
+    | '/planejamento'
+    | '/testes'
     | '/users'
+    | '/zonas-de-treino'
     | '/'
     | '/settings'
   fileRoutesByTo: FileRoutesByTo
@@ -263,9 +343,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/apis'
     | '/authentication'
+    | '/calculadora'
     | '/clients'
     | '/onboarding'
+    | '/planejamento'
+    | '/testes'
     | '/users'
+    | '/zonas-de-treino'
     | '/'
     | '/settings'
   id:
@@ -276,9 +360,13 @@ export interface FileRouteTypes {
     | '/_index/about'
     | '/_index/apis'
     | '/_index/authentication'
+    | '/_index/calculadora'
     | '/_index/clients'
     | '/_index/onboarding'
+    | '/_index/planejamento'
+    | '/_index/testes'
     | '/_index/users'
+    | '/_index/zonas-de-treino'
     | '/_index/'
     | '/_index/settings/'
   fileRoutesById: FileRoutesById
@@ -317,9 +405,13 @@ export const routeTree = rootRoute
         "/_index/about",
         "/_index/apis",
         "/_index/authentication",
+        "/_index/calculadora",
         "/_index/clients",
         "/_index/onboarding",
+        "/_index/planejamento",
+        "/_index/testes",
         "/_index/users",
+        "/_index/zonas-de-treino",
         "/_index/",
         "/_index/settings/"
       ]
@@ -342,6 +434,10 @@ export const routeTree = rootRoute
       "filePath": "_index/authentication.tsx",
       "parent": "/_index"
     },
+    "/_index/calculadora": {
+      "filePath": "_index/calculadora.tsx",
+      "parent": "/_index"
+    },
     "/_index/clients": {
       "filePath": "_index/clients.tsx",
       "parent": "/_index"
@@ -350,8 +446,20 @@ export const routeTree = rootRoute
       "filePath": "_index/onboarding.tsx",
       "parent": "/_index"
     },
+    "/_index/planejamento": {
+      "filePath": "_index/planejamento.tsx",
+      "parent": "/_index"
+    },
+    "/_index/testes": {
+      "filePath": "_index/testes.tsx",
+      "parent": "/_index"
+    },
     "/_index/users": {
       "filePath": "_index/users.tsx",
+      "parent": "/_index"
+    },
+    "/_index/zonas-de-treino": {
+      "filePath": "_index/zonas-de-treino.tsx",
       "parent": "/_index"
     },
     "/_index/": {
