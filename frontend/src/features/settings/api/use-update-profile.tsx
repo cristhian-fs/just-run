@@ -19,7 +19,7 @@ export const useUpdateProfile = () => {
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async ({ param, form }) => {
-      const response = await await client.users[":id"]["update-profile"].$post({
+      const response = await client.users[":id"]["update-profile"].$post({
         param: {
           id: param.id,
         },
