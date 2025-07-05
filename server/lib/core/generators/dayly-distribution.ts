@@ -8,64 +8,64 @@ import type {
   TTrainingType,
   WeekAmount,
 } from "@/shared/types";
-import { WEEKLY_TEMPLATES } from "@/lib/config/workouts.contants";
 
 import { distributeWeeklyVolumes } from "./periodization-generator";
 import { generateWorkoutsPerWeek } from "./workouts-generator";
 
-function distributeTrainingsInWeek(
-  trainings: Array<{ type: TTrainingType; value: number }>,
+interface TrainingInput {
+  type: TTrainingType;
+  value: number;
+}
+
+// Versão alternativa com algoritmo de distribuição dinâmica
+function distributeTrainingsInWeekDynamic(
+  trainings: TrainingInput[],
   weekStartDate: Date,
   weeklyFrequency: number,
 ): Training[] {
-  const template =
-    WEEKLY_TEMPLATES[weeklyFrequency as keyof typeof WEEKLY_TEMPLATES];
-  if (!template) {
-    throw new Error(
-      `Template não encontrado para ${weeklyFrequency} treinos por semana}`,
-    );
-  }
+  if (!trainings.length) return [];
 
-  const startDayOfWeek = weekStartDate.getDay();
-  const daysRemainingInWeek = 7 - startDayOfWeek;
+  const startDay = weekStartDate.getDay(); // 0=dom … 6=sáb
+  const daysLeft = 7 - startDay; // quantos dias até domingo
 
-  // Se começou muito tarde na semana(quinta, sexta, sábado), ajustar quantidade
-  // const adjustedTrainings = adjustTrainingsForLateStart(
-  //   trainings,
-  //   startDayOfWeek,
-  //   daysRemainingInWeek,
-  // );
+  /* ------ dias preferidos por frequência ------ */
+  const preferredDays = (() => {
+    switch (weeklyFrequency) {
+      case 3:
+        return [1, 3, 6]; // seg, qua, sáb
+      case 4:
+        return [1, 3, 5, 0]; // seg, qua, sex, dom
+      case 5:
+        return [1, 2, 4, 5, 0]; // seg, ter, qui, sex, dom
+      case 6:
+        return [1, 2, 3, 4, 5, 0]; // seg…sex, dom
+      default:
+        return [1, 3, 5]; // fallback
+    }
+  })();
 
-  const isLateStart = startDayOfWeek >= 4; // qui = 4, sex = 5, sáb = 6
-  const maxTrainings = isLateStart
-    ? daysRemainingInWeek // cabe só o que resta
-    : trainings.length; // usa todos
+  /* ------ calcula offsets e descarta o que passa do domingo ------ */
+  const availableDays = preferredDays
+    .map((day) => {
+      const offset = (day - startDay + 7) % 7; // 0…6 dias à frente
+      return { day, offset };
+    })
+    .filter((d) => d.offset <= daysLeft) // <= domingo
+    .sort((a, b) => a.offset - b.offset); // ordem cronológica
 
-  const adjustedTrainings = trainings.slice(0, maxTrainings);
+  /* ------ corta a lista de treinos ao nº de dias realmente livre ------ */
+  const maxTrainings = Math.min(trainings.length, availableDays.length);
+  const selected = trainings.slice(0, maxTrainings);
 
-  // Mapeia treinos para os melhores dias disponíveis
-  const trainingDays: Training[] = [];
-
-  template.pattern.forEach((dayTemplate, index) => {
-    // Pular treinos da semana que não cabem na semana atual
-    if (index >= adjustedTrainings.length) return;
-
-    const training = adjustedTrainings[index];
-
-    if (!training) return;
-
-    // Novo cálculo do deslocamento
-    const offset = (dayTemplate.day - startDayOfWeek + 7) % 7;
-    const trainingDate = addDays(weekStartDate, offset); // date-fns
-
-    trainingDays.push({
-      date: trainingDate,
-      type: training.type as TTrainingType,
-      value: training.value,
-    });
+  /* ------ monta resultado ------ */
+  return selected.map((t, i) => {
+    const { offset } = availableDays[i] || { offset: 0 };
+    return {
+      date: addDays(weekStartDate, offset),
+      type: t.type,
+      value: t.value,
+    };
   });
-
-  return trainingDays.sort((a, b) => a.date.getTime() - b.date.getTime());
 }
 
 /**
@@ -96,7 +96,7 @@ export function distributeWeeklyVolumesWithDays(
         ? startDate
         : nextMonday(addDays(startDate, (weekIndex - 1) * 7));
 
-    const trainingDays = distributeTrainingsInWeek(
+    const trainingDays = distributeTrainingsInWeekDynamic(
       week.trainings,
       weekStartDate,
       weeklyFrequency,
