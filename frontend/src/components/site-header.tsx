@@ -1,24 +1,12 @@
-import { Button } from "@/components/ui/button";
-
 import { ModeToggle } from "./mode-toggle";
 
 export function SiteHeader() {
   return (
-    <header className="h-(--header-height) group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height) flex shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear">
-      <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
-        <h1 className="text-base font-medium">Documents</h1>
+    <header className="group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height) bg-sidebar flex shrink-0 items-center gap-2 rounded-md border px-2 py-2 transition-[width,height] ease-linear">
+      <div className="flex w-full items-center gap-1 px-2 lg:gap-2 lg:px-4">
+        <h1 className="text-base font-medium">Dashboard</h1>
         <div className="ml-auto flex items-center gap-2">
           <ModeToggle />
-          <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
-            <a
-              href="https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="dark:text-foreground"
-            >
-              GitHub
-            </a>
-          </Button>
         </div>
       </div>
     </header>
