@@ -96,23 +96,27 @@ export function calculateTrainingZones(
 export function estimateVelocitiesFromTest({
   distanceM,
   durationS,
-  decayK = 1.06, // padrão para atletas amadores
+  decayK = 0.06, // 6% de queda de velocidade a cada dobra de distância
   vam,
 }: {
-  distanceM: number;
-  durationS: number;
-  vam?: number;
-  decayK?: number;
+  distanceM: number; // teste: metros
+  durationS: number; // teste: segundos
+  vam?: number; // velocidade em km/h (opcional)
+  decayK?: number; // coeficiente de fadiga (0.06 a 0.08 p/ amadores)
 }): Record<RaceTarget, number> {
-  const v0 = vam ?? distanceM / (durationS / 3600); // km/h
-  const d0 = distanceM;
+  const v0 =
+    vam ??
+    distanceM /
+      1000 / // ➜ km
+      (durationS / 3600); // ➜ horas → km/h
 
-  const result: Record<RaceTarget, number> = {} as Record<RaceTarget, number>;
+  const d0 = distanceM; // manter em mesma unidade (metros)
+
+  const result = {} as Record<RaceTarget, number>;
 
   for (const [key, d] of Object.entries(raceDistances)) {
-    const paceRatio = Math.pow(d / d0, decayK); // aumento relativo no pace
-    const v = v0 / paceRatio; // nova velocidade
-    result[key as RaceTarget] = v;
+    const paceRatio = Math.pow(d / d0, decayK); // fator (>1 p/ dist. maiores)
+    result[key as RaceTarget] = v0 / paceRatio; // nova velocidade km/h
   }
 
   return result;
