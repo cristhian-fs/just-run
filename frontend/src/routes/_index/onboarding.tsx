@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { queryOptions, useQuery } from "@tanstack/react-query";
 
 import { OnboardingProfileCard } from "@/features/onboarding/components/onboarding-profile-card";
+import { useGeneratePeriodization } from "@/features/trainings/api/use-generate-periodization";
 import { ChevronRight } from "lucide-react";
 
 import { getUserLastTest, userQueryOptions } from "@/lib/api";
@@ -29,9 +30,16 @@ function RouteComponent() {
 
   const { data: lastTest } = useQuery(testQueryOptions());
 
+  const { mutate: generatePeriodization, isPending: isGenerating } =
+    useGeneratePeriodization();
+
   if (!user) {
     return null;
   }
+
+  const handleGeneratePeriodization = () => {
+    generatePeriodization({ param: { userId: user.id } });
+  };
 
   return (
     <div className="p-4 md:p-6">
@@ -52,8 +60,13 @@ function RouteComponent() {
               Deixe que nós montamos toda sua programação de treinos
             </CardDescription>
             {lastTest?.data && user?.hasCompleteOnboarding ? (
-              <Button variant="secondary" className="mt-3 w-fit">
-                Criar programação de treinos
+              <Button
+                variant="secondary"
+                className="relative mt-3 w-fit overflow-hidden"
+                onClick={handleGeneratePeriodization}
+                disabled={isGenerating}
+              >
+                {isGenerating ? "Criando..." : "Criar programação de treinos"}
                 <ChevronRight className="size-4" />
               </Button>
             ) : (

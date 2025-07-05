@@ -70,7 +70,12 @@ export const OnboardingProfileCard = ({
             Nos ajude a conhecer melhor você
           </CardDescription>
           <Button variant="secondary" className="mt-3 w-fit" asChild>
-            <Link to="/settings">
+            <Link
+              to="/settings"
+              search={{
+                from: "onboarding",
+              }}
+            >
               Completar perfil
               <ChevronRight />
             </Link>
