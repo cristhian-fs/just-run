@@ -35,3 +35,8 @@ export function timeStringToSeconds(time: string): number {
   if ([hh, mm, ss].some(isNaN)) return 0;
   return hh * 3600 + mm * 60 + ss;
 }
+
+export const percent = new Intl.NumberFormat("en-US", {
+  style: "percent",
+  maximumFractionDigits: 2,
+});
