@@ -1,4 +1,5 @@
 import { getDay, nextMonday } from "date-fns";
+import { parseISO } from "date-fns/parseISO";
 
 export function timeStringToSeconds(time: string): number {
   const parts = time.split(":").map(Number);
@@ -72,7 +73,7 @@ export function calculatePace(vam: number, intensity: number): number {
  * Caso contrário, começa hoje mesmo.
  */
 export function getStartDate(): Date {
-  const today = new Date();
+  const today = parseISO(new Date().toISOString());
   const weekday = getDay(today); // 0=dom, 1=seg, …, 6=sáb
 
   return weekday === 6 || weekday === 0
