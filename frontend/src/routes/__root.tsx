@@ -5,6 +5,7 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import { Toaster } from "sonner";
 
+import { Modals } from "@/components/modals";
 import { ThemeProvider } from "@/components/theme-provider";
 
 interface RouterContext {
@@ -20,9 +21,10 @@ function RootComponent() {
     <>
       <ThemeProvider defaultTheme="dark" storageKey="hono-fas">
         <Toaster richColors />
+        <Modals />
         <Outlet />
-        {/* <ReactQueryDevtools />
-        <TanStackRouterDevtools position="bottom-left" /> */}
+        <ReactQueryDevtools />
+        <TanStackRouterDevtools position="bottom-left" />
       </ThemeProvider>
     </>
   );
