@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 
 import {
+  Calculator,
   ChartColumn,
   DatabaseIcon,
   FileSearch,
@@ -22,7 +23,6 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { NavDocuments } from "@/components/nav-documents";
@@ -47,17 +47,22 @@ const data = {
     },
     {
       title: "Planejamento de treinos",
-      url: "/",
+      url: "/planejamento",
       icon: Sheet,
     },
     {
-      title: "Zona de treino",
-      url: "/users",
+      title: "Zonas de treino",
+      url: "/zonas-de-treino",
       icon: ChartColumn,
     },
     {
+      title: "Calculadora",
+      url: "/calculadora",
+      icon: Calculator,
+    },
+    {
       title: "Testes",
-      url: "/authentication",
+      url: "/testes",
       icon: Goal,
     },
   ],
@@ -69,7 +74,7 @@ const data = {
     },
     {
       title: "Configurações",
-      url: "#",
+      url: "/settings",
       icon: SettingsIcon,
     },
     {
