@@ -43,6 +43,7 @@ export type FartlekOptions = {
   level: TrainingLevel;
   vam: number;
   lastUserTestData: Test;
+  date: Date;
 };
 
 /**

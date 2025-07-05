@@ -107,6 +107,53 @@ export interface Workout {
   blocks?: Block[];
 }
 
+export type WorkoutSelect = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  trainingWeekId: string;
+  scheduledStart: string;
+  runType: TTrainingType;
+  title: string | null;
+  notes: string | null;
+  plannedDistanceM: number | null;
+  plannedDurationS: number | null;
+  actualDistanceM: number | null;
+  actualDurationS: number | null;
+  avgPaceSPerKm: number | null;
+  avgHr: number | null;
+  elevationGainM: number | null;
+  isCompleted: boolean;
+};
+
+export type BlockSelect = {
+  id: string;
+  workoutId: string;
+  blockKind: TSegmentKind;
+  repeatCount: number;
+  orderIndex: number;
+  description: string | null;
+};
+
+export type SegmentSelect = {
+  id: string;
+  notes: string[] | null;
+  plannedDistanceM: number | null;
+  plannedDurationS: number | null;
+  actualDistanceM: number | null;
+  actualDurationS: number | null;
+  avgPaceSPerKm: number | null;
+  avgHr: number | null;
+  workoutId: string | null;
+  blockId: string | null;
+  orderInBlock: number;
+  segmentKind: TSegmentKind;
+  targetPaceSPerKm: number | null;
+  targetHr: number | null;
+  restDistanceM: number | null;
+  restDurationS: number | null;
+};
+
 /**
  * Test - representa os dados de um teste adicionado pelo usuário que é retornado do banco de dados
  */
@@ -130,3 +177,33 @@ export interface Week {
   workouts: Workout[];
   weekStart: Date;
 }
+
+/**
+ * Training Zone
+ */
+
+export type TraningZoneSelect = {
+  id: string;
+  name: string;
+  createdAt: Date;
+  userId: string;
+  workouts: string[] | null;
+  vo2Percentage: number | null;
+  pace: string | null;
+  velocity: number | null;
+  cardioFrequency: number | null;
+  vo2Max: number | null;
+};
+
+export type TrainingWeekSelect = {
+  id: string;
+  createdAt: Date;
+  userId: string;
+  weekStart: string;
+  weekType: TWeekType;
+  totalVolumeMin: number;
+};
+
+export type PlanningSelect = TrainingWeekSelect & {
+  workouts: WorkoutSelect[];
+};
