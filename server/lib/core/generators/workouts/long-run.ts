@@ -57,7 +57,7 @@ export function generateBaseRun({
     blockKind: "WARMUP",
     repeatCount: 1,
     orderIndex: 1,
-    description: `Aquecimento | pace ${formatPace(paceEasy)}`,
+    description: `Aquecimento | pace ${formatPace(getPace(vEasyLow))}`,
     segments: [
       unit === "KM"
         ? {
@@ -176,7 +176,7 @@ export function generateBaseRun({
   const common = {
     runType,
     scheduledStart: date,
-    title: `${runType.replace("_", " ").toLowerCase()}`,
+    title: `Corrida longa - ${unit === "KM" ? targetVolume + " km" : targetVolume + " min"}.`,
     blocks,
     notes:
       `${runType} de ${unit === "KM" ? targetVolume + " km" : targetVolume + " min"}. ` +
@@ -184,6 +184,6 @@ export function generateBaseRun({
   };
 
   return unit === "KM"
-    ? { ...common, plannedDistanceM: targetVolume * 1_000 }
-    : { ...common, plannedDurationS: targetVolume * 60 };
+    ? { ...common, plannedDistanceM: Math.round(targetVolume * 1_000) }
+    : { ...common, plannedDurationS: Math.round(targetVolume * 60) };
 }

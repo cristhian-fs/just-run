@@ -75,14 +75,14 @@ export function generateProgressiveWorkout({
           ? {
               segmentKind: ph.zoneKey === "Z1" ? "WARMUP" : "WORK",
               orderInBlock: 1,
-              plannedDistanceM: part,
-              targetPaceSPerKm: paceS,
+              plannedDistanceM: Math.round(part!),
+              targetPaceSPerKm: Math.round(paceS),
             }
           : {
               segmentKind: ph.zoneKey === "Z1" ? "WARMUP" : "WORK",
               orderInBlock: 1,
-              plannedDurationS: part,
-              targetPaceSPerKm: paceS,
+              plannedDurationS: Math.round(part!),
+              targetPaceSPerKm: Math.round(paceS),
             },
       ],
     };
@@ -98,8 +98,8 @@ export function generateProgressiveWorkout({
       `${unit === "KM" ? `${targetVolume} km` : `${targetVolume} min`})`,
     blocks,
     ...(unit === "KM"
-      ? { plannedDistanceM: targetVolume * 1_000 }
-      : { plannedDurationS: targetVolume * 60 }),
+      ? { plannedDistanceM: Math.round(targetVolume * 1_000) }
+      : { plannedDurationS: Math.round(targetVolume * 60) }),
     notes:
       `Progressivo de ${phases.length} fases ` +
       `(Z1→Z${phases[phases.length - 1]!.zoneKey.slice(1)}) ` +

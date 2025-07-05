@@ -33,9 +33,9 @@ export function generateThresholdRun({
   let totalDurationS = 0;
 
   if (unit === "KM") {
-    totalDistanceM = targetVolume * 1_000;
+    totalDistanceM = Math.round(targetVolume * 1_000);
   } else {
-    totalDurationS = targetVolume * 60;
+    totalDurationS = Math.round(targetVolume * 60);
   }
 
   /* ---------- 3. DIMENSIONAMENTO ---------- */
@@ -74,14 +74,14 @@ export function generateThresholdRun({
         ? {
             segmentKind: "WARMUP",
             orderInBlock: 1,
-            plannedDistanceM: warmupPart,
-            targetPaceSPerKm: paceWarmS,
+            plannedDistanceM: Math.round(warmupPart),
+            targetPaceSPerKm: Math.round(paceWarmS),
           }
         : {
             segmentKind: "WARMUP",
             orderInBlock: 1,
-            plannedDurationS: warmupPart,
-            targetPaceSPerKm: paceWarmS,
+            plannedDurationS: Math.round(warmupPart),
+            targetPaceSPerKm: Math.round(paceWarmS),
           },
     ],
   });

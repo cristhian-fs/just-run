@@ -9,19 +9,31 @@ const REST_MULTIPLIER_BY_LEVEL: Record<TrainingLevel, number> = {
   advanced: 1,
 };
 
+const REPS_COUNT_BY_LEVEL: Record<TrainingLevel, number> = {
+  beginner: 4,
+  intermediate: 5,
+  advanced: 7,
+};
+
 export function generateFartlekWorkout(opts: FartlekOptions): Workout {
   const velocities = estimateVelocitiesFromTest({
     distanceM: opts.lastUserTestData.distanceM,
     durationS: opts.lastUserTestData.durationS,
-    decayK: 1.06,
+    decayK: 0.06,
     vam: opts.vam,
   });
 
+  const WarmUpVelocity = opts.vam * 0.6;
+  const WarmUpTimeInSeconds = 60 * 10;
+  const WarmUpDistanceKm = WarmUpVelocity * (WarmUpTimeInSeconds / (60 * 60));
+  const WarmUpPaceInS = Math.round(3600 / WarmUpVelocity);
+
   const templates: Workout[] = [
     {
-      scheduledStart: new Date(),
+      scheduledStart: opts.date,
       runType: "FARTLEK",
       title: "Intervalado de cruzeiro",
+      plannedDurationS: 3000,
       blocks: [
         {
           blockKind: "WARMUP",
@@ -32,7 +44,9 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
             {
               segmentKind: "WARMUP",
               orderInBlock: 1,
-              plannedDurationS: 60 * 10,
+              plannedDurationS: WarmUpTimeInSeconds,
+              targetPaceSPerKm: WarmUpPaceInS,
+              plannedDistanceM: Math.round(WarmUpDistanceKm * 1000),
             },
           ],
         },
@@ -66,18 +80,21 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
             {
               segmentKind: "COOLDOWN",
               orderInBlock: 1,
-              plannedDurationS: 60 * 10,
+              plannedDurationS: WarmUpTimeInSeconds,
+              targetPaceSPerKm: WarmUpPaceInS,
+              plannedDistanceM: Math.round(WarmUpDistanceKm * 1000),
             },
           ],
         },
       ],
     },
     {
-      scheduledStart: new Date(),
+      scheduledStart: opts.date,
       runType: "FARTLEK",
       title: "Estimular velocidade - Sensação progressiva",
       notes:
         "Sentir o feeling do fartlek, entender como o corpo reage a cada velocidade",
+      plannedDurationS: 3000,
       blocks: [
         {
           blockKind: "WARMUP",
@@ -88,7 +105,10 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
             {
               segmentKind: "WARMUP",
               orderInBlock: 1,
-              plannedDurationS: 60 * 10,
+              plannedDurationS: WarmUpTimeInSeconds,
+              targetPaceSPerKm: WarmUpPaceInS,
+              plannedDistanceM: Math.round(WarmUpDistanceKm * 1000),
+              notes: ["10:00 Aquecimento"],
             },
           ],
         },
@@ -102,7 +122,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               segmentKind: "WORK",
               orderInBlock: 1,
               plannedDurationS: 6 * 60,
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v10k)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v10k),
             },
             {
               segmentKind: "FLOAT",
@@ -124,7 +144,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               segmentKind: "WORK",
               orderInBlock: 1,
               plannedDurationS: 5 * 60,
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v10k) - 5),
+              targetPaceSPerKm: Math.round(3600 / velocities.v10k - 5),
             },
             {
               segmentKind: "FLOAT",
@@ -146,7 +166,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               segmentKind: "WORK",
               orderInBlock: 1,
               plannedDurationS: 4 * 60,
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v5000)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v5000),
             },
             {
               segmentKind: "FLOAT",
@@ -168,7 +188,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               segmentKind: "WORK",
               orderInBlock: 1,
               plannedDurationS: 3 * 60,
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v5000)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v5000),
             },
             {
               segmentKind: "FLOAT",
@@ -190,7 +210,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               segmentKind: "WORK",
               orderInBlock: 1,
               plannedDurationS: 2 * 60,
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v3000)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v3000),
             },
             {
               segmentKind: "FLOAT",
@@ -212,7 +232,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               segmentKind: "WORK",
               orderInBlock: 1,
               plannedDurationS: 1 * 60,
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v1500)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v1500),
             },
             {
               segmentKind: "FLOAT",
@@ -233,16 +253,20 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
             {
               segmentKind: "COOLDOWN",
               orderInBlock: 1,
-              plannedDurationS: 60 * 10,
+              plannedDurationS: WarmUpTimeInSeconds,
+              targetPaceSPerKm: WarmUpPaceInS,
+              plannedDistanceM: Math.round(WarmUpDistanceKm * 1000),
+              notes: ["10:00 Desaquecimento"],
             },
           ],
         },
       ],
     },
     {
-      scheduledStart: new Date(),
+      scheduledStart: opts.date,
       runType: "FARTLEK",
-      title: "Intervalado de cruzeiro",
+      title: "Percepção de esforço",
+      plannedDurationS: 3_120,
       blocks: [
         {
           blockKind: "WARMUP",
@@ -253,13 +277,16 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
             {
               segmentKind: "WARMUP",
               orderInBlock: 1,
-              plannedDurationS: 60 * 10,
+              plannedDurationS: WarmUpTimeInSeconds,
+              targetPaceSPerKm: WarmUpPaceInS,
+              plannedDistanceM: Math.round(WarmUpDistanceKm * 1000),
+              notes: ["10:00 de trote leve"],
             },
           ],
         },
         {
           blockKind: "WORK",
-          repeatCount: 4,
+          repeatCount: REPS_COUNT_BY_LEVEL[opts.level],
           orderIndex: 2,
           description: "4 repetições do bloco",
           segments: [
@@ -268,7 +295,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               orderInBlock: 1,
               plannedDurationS: 120,
               notes: ["2 minutos correndo na velocidade v10000"],
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v10k)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v10k),
             },
             {
               segmentKind: "FLOAT",
@@ -284,7 +311,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               orderInBlock: 3,
               plannedDurationS: 60,
               notes: ["1min correndo na velocidade v5000"],
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v5000)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v5000),
             },
             {
               segmentKind: "FLOAT",
@@ -300,7 +327,7 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
               orderInBlock: 5,
               plannedDurationS: 30,
               notes: ["30s correndo na velocidade v3000"],
-              targetPaceSPerKm: Math.round(3600 / getPace(velocities.v3000)),
+              targetPaceSPerKm: Math.round(3600 / velocities.v3000),
             },
             {
               segmentKind: "FLOAT",
@@ -322,7 +349,10 @@ export function generateFartlekWorkout(opts: FartlekOptions): Workout {
             {
               segmentKind: "COOLDOWN",
               orderInBlock: 1,
-              plannedDurationS: 60 * 10,
+              plannedDurationS: WarmUpTimeInSeconds,
+              targetPaceSPerKm: WarmUpPaceInS,
+              plannedDistanceM: Math.round(WarmUpDistanceKm * 1000),
+              notes: ["10:00 de trote leve para desaquecer"],
             },
           ],
         },

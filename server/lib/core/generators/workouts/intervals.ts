@@ -180,7 +180,7 @@ export function generateIntervalWorkout({
           ],
         },
         {
-          plannedDistanceM: intervalDuration,
+          plannedDistanceM: useFloat ? intervalDuration : 0,
           orderInBlock: 2,
           segmentKind: useFloat ? "FLOAT" : "REST",
           targetPaceSPerKm: useFloat
