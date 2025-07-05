@@ -1,5 +1,6 @@
 import { relations, sql } from "drizzle-orm";
 import {
+  boolean,
   date,
   integer,
   numeric,
@@ -41,12 +42,13 @@ export const workouts = pgTable("workouts", {
   avgPaceSPerKm: integer("avg_pace_s_per_km"),
   avgHr: integer("avg_hr"),
   elevationGainM: numeric("elevation_gain_m", { mode: "number" }),
+  isCompleted: boolean("is_completed").notNull().default(false),
 
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const block = pgTable("block", {
+export const blocks = pgTable("blocks", {
   id: uuid("id").defaultRandom().primaryKey(),
   workoutId: uuid("workout_id")
     .notNull()
@@ -58,14 +60,14 @@ export const block = pgTable("block", {
 });
 
 export const segmentsTable = pgTable(
-  "segment",
+  "segments",
   {
     id: uuid("id").defaultRandom().primaryKey(),
     workoutId: uuid("workout_id").references(() => workouts.id, {
       onDelete: "cascade",
     }),
 
-    blockId: uuid("block_id").references(() => block.id, {
+    blockId: uuid("block_id").references(() => blocks.id, {
       onDelete: "cascade",
     }),
     orderInBlock: integer("order_in_block").notNull(),
@@ -107,25 +109,25 @@ export const workoutRelations = relations(workouts, ({ many, one }) => ({
     fields: [workouts.trainingWeekId],
     references: [trainingWeeks.id],
   }),
-  blocks: many(block),
+  blocks: many(blocks),
   segments: many(segmentsTable),
 }));
 
-export const workoutBlocksRelations = relations(block, ({ one }) => ({
+export const workoutBlocksRelations = relations(blocks, ({ one, many }) => ({
   workout: one(workouts, {
-    fields: [block.workoutId],
+    fields: [blocks.workoutId],
     references: [workouts.id],
   }),
+  segments: many(segmentsTable),
 }));
 
 export const workoutSegmentRelations = relations(segmentsTable, ({ one }) => ({
-  /* renomeie 'segment' → 'workout' */
   workout: one(workouts, {
     fields: [segmentsTable.workoutId],
     references: [workouts.id],
   }),
-  block: one(block, {
+  block: one(blocks, {
     fields: [segmentsTable.blockId],
-    references: [block.id],
+    references: [blocks.id],
   }),
 }));

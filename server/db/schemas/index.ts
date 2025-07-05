@@ -15,4 +15,13 @@ export {
 } from "./training-weeks";
 export { trainingZones } from "./training-zones";
 export { workoutLogs } from "./workout-logs";
-export { trainingType, workoutRelations, workouts } from "./workouts";
+export {
+  trainingType,
+  workoutRelations,
+  workouts,
+  blocks,
+  segmentKind,
+  segmentsTable,
+  workoutBlocksRelations,
+  workoutSegmentRelations,
+} from "./workouts";

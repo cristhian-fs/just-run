@@ -33,6 +33,7 @@ export const tests = pgTable("tests", {
   vo2Max: numeric("vo2_max", { mode: "number" }),
   vo2: numeric("vo2", { mode: "number" }),
   testDate: date("test_date").notNull(),
+  createdAt: date("created_at").notNull().defaultNow(),
 });
 
 export const testRelations = relations(tests, ({ one }) => ({

@@ -20,7 +20,16 @@ import {
 } from "./schemas/training-weeks";
 import { trainingZones } from "./schemas/training-zones";
 import { workoutLogs } from "./schemas/workout-logs";
-import { trainingType, workoutRelations, workouts } from "./schemas/workouts";
+import {
+  blocks,
+  segmentKind,
+  segmentsTable,
+  trainingType,
+  workoutBlocksRelations,
+  workoutRelations,
+  workouts,
+  workoutSegmentRelations,
+} from "./schemas/workouts";
 
 const EnvSchema = z.object({
   DATABASE_URL: z.string().url(),
@@ -48,5 +57,10 @@ export const db = drizzle(queryClient, {
     workoutRelations,
     workouts,
     genderEnum,
+    blocks,
+    segmentKind,
+    segmentsTable,
+    workoutBlocksRelations,
+    workoutSegmentRelations,
   },
 });
