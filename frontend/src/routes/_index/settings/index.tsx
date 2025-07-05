@@ -1,15 +1,18 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 
 import { ProfileTabContent } from "@/features/settings/components/profile-tab-content";
 import { TestsTabContent } from "@/features/settings/components/tests-tab-content";
-import { FileChartColumn, LockIcon, UserIcon } from "lucide-react";
+import { ChevronLeft, FileChartColumn, LockIcon, UserIcon } from "lucide-react";
+import { z } from "zod";
 
 import { userQueryOptions } from "@/lib/api";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const Route = createFileRoute("/_index/settings/")({
   component: RouteComponent,
+  validateSearch: z.object({ from: z.string().optional() }),
   beforeLoad: ({ context, location }) => {
     const user = context.queryClient.ensureQueryData(userQueryOptions());
     if (!user) {
@@ -20,7 +23,7 @@ export const Route = createFileRoute("/_index/settings/")({
 
 function RouteComponent() {
   const { data: user } = useQuery(userQueryOptions());
-
+  const { from } = Route.useSearch();
   if (!user) return null;
 
   return (
@@ -61,6 +64,16 @@ function RouteComponent() {
         <ProfileTabContent />
         <TestsTabContent userId={user.id} />
       </Tabs>
+      <div className="px-4 md:px-8">
+        {from === "onboarding" && (
+          <Button asChild variant="secondary" className="mt-4">
+            <Link to="/onboarding">
+              <ChevronLeft />
+              Voltar para o onboarding
+            </Link>
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
