@@ -8,44 +8,40 @@ export const TRAINING_INTENSITY = {
   SPECIAL: ["LONG_RUN"], // Treino longo tem regras especiais
 } as const;
 
-// Template ideal para distribuição semanal (assumindo semana começando segunda)
+// Template melhorado com dias únicos e melhor organização
 export const WEEKLY_TEMPLATES = {
   3: {
-    // 3 treinos por semana
     pattern: [
       { day: 1, intensities: ["MODERATE", "HIGH"] }, // Segunda
       { day: 3, intensities: ["HIGH", "MODERATE"] }, // Quarta
-      { day: 6, intensities: ["SPECIAL"] }, // Sábado - Long Run
+      { day: 6, intensities: ["SPECIAL"] }, // Sábado
     ],
   },
   4: {
-    // 4 treinos por semana
     pattern: [
       { day: 1, intensities: ["MODERATE"] }, // Segunda
       { day: 3, intensities: ["HIGH"] }, // Quarta
       { day: 5, intensities: ["MODERATE", "HIGH"] }, // Sexta
-      { day: 0, intensities: ["SPECIAL"] }, // Domingo - Long Run
+      { day: 0, intensities: ["SPECIAL"] }, // Domingo
     ],
   },
   5: {
-    // 5 treinos por semana
     pattern: [
-      { day: 1, intensities: ["LOW"] }, // Segunda - Easy
+      { day: 1, intensities: ["LOW"] }, // Segunda
       { day: 2, intensities: ["HIGH"] }, // Terça
       { day: 4, intensities: ["MODERATE"] }, // Quinta
       { day: 5, intensities: ["HIGH"] }, // Sexta
-      { day: 0, intensities: ["SPECIAL"] }, // Domingo - Long Run
+      { day: 0, intensities: ["SPECIAL"] }, // Domingo
     ],
   },
   6: {
-    // 5 treinos por semana
     pattern: [
-      { day: 1, intensities: ["LOW"] }, // Segunda - Easy
+      { day: 1, intensities: ["LOW"] }, // Segunda
       { day: 2, intensities: ["HIGH"] }, // Terça
-      { day: 4, intensities: ["MODERATE"] }, // Quinta
+      { day: 3, intensities: ["MODERATE"] }, // Quarta - mudei de quinta para quarta
+      { day: 4, intensities: ["LOW"] }, // Quinta - mudei para quinta
       { day: 5, intensities: ["HIGH"] }, // Sexta
-      { day: 6, intensities: ["LOW"] }, // Sexta
-      { day: 0, intensities: ["SPECIAL"] }, // Domingo - Long Run
+      { day: 0, intensities: ["SPECIAL"] }, // Domingo
     ],
   },
 } as const;
