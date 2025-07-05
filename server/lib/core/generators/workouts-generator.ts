@@ -14,7 +14,7 @@ export function generateWorkoutsPerWeek(
   testData: Test,
 ): Workout[] {
   const totalWeekVolume = totalVolumeMin;
-  const totalIntensityVolume = totalWeekVolume * 0.3;
+  const totalIntensityVolume = totalWeekVolume * 0.5;
 
   const intenseTypes = ["INTERVAL", "FARTLEK", "TEMPO_RUN"];
 
@@ -44,6 +44,7 @@ export function generateWorkoutsPerWeek(
         level: trainingLevel,
         vam,
         lastUserTestData: testData,
+        date: training.date,
       });
       return fartlekWorkout;
     }
