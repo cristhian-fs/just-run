@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
-import { and, eq, gte } from "drizzle-orm";
+import { and, eq, gte, inArray } from "drizzle-orm";
 
 import { db } from "@/db";
 import {
@@ -9,20 +9,30 @@ import {
   trainingWeeks,
   trainingZones as trainingZonesTable,
   user,
+  workoutLogs,
   workouts as workoutsTable,
 } from "@/db/schemas";
-import { blocks as blockTable, segmentsTable } from "@/db/schemas/workouts";
+import {
+  blocks as blockTable,
+  segmentsTable,
+  workouts,
+} from "@/db/schemas/workouts";
 import { loggedIn } from "@/middlewares/logged-in";
+import { zValidator } from "@hono/zod-validator";
 import { format } from "date-fns";
+import { isMonday } from "date-fns/fp";
 import { previousMonday } from "date-fns/previousMonday";
 import { startOfToday } from "date-fns/startOfToday";
+import { z } from "zod";
 
+import { registerWorkoutSchema } from "@/shared/schemas";
 import {
   type PlanningSelect,
   type SuccessResponse,
   type TrainingGoal,
   type TraningZoneSelect,
   type WorkoutSelect,
+  type WorkoutWithBlocks,
 } from "@/shared/types";
 import {
   defaultWeeklyMinutesByGoal,
@@ -196,7 +206,10 @@ export const trainingRouter = new Hono<Context>()
     async (c) => {
       const { userId } = c.req.param();
 
-      const weekMondayStr = format(previousMonday(new Date()), "yyyy-MM-dd");
+      const today = new Date();
+      const weekMondayStr = isMonday(today)
+        ? format(today, "yyyy-MM-dd")
+        : format(previousMonday(today), "yyyy-MM-dd");
 
       const week = await db.query.trainingWeeks.findFirst({
         where: and(
@@ -275,15 +288,7 @@ export const trainingRouter = new Hono<Context>()
       const planning = await db.query.trainingWeeks.findMany({
         where: eq(trainingWeeks.userId, userId),
         with: {
-          workouts: {
-            with: {
-              blocks: {
-                with: {
-                  segments: true,
-                },
-              },
-            },
-          },
+          workouts: true,
         },
       });
 
@@ -298,14 +303,112 @@ export const trainingRouter = new Hono<Context>()
     },
   )
   .get(
-    "/:userId/test-endpoint",
-    // loggedIn,
+    "/:userId/workout/:workoutId",
+    zValidator(
+      "param",
+      z.object({
+        userId: z.string(),
+        workoutId: z.string(),
+      }),
+    ),
     async (c) => {
-      const { userId } = c.req.param();
+      const { userId, workoutId } = c.req.param();
 
-      return c.json({
-        success: true,
-        message: `Test fetched successfully ${userId}`,
+      const trainingWeekIds = db
+        .select({ id: trainingWeeks.id })
+        .from(trainingWeeks)
+        .where(eq(trainingWeeks.userId, userId));
+
+      const workout = await db.query.workouts.findFirst({
+        where: and(
+          eq(workouts.id, workoutId),
+          inArray(workouts.trainingWeekId, trainingWeekIds),
+        ),
+        with: {
+          blocks: {
+            with: {
+              segments: true,
+            },
+          },
+        },
       });
+
+      if (!workout) {
+        throw new HTTPException(404, { message: "Nenhum treino encontrado" });
+      }
+
+      return c.json<SuccessResponse<WorkoutWithBlocks>>(
+        {
+          success: true,
+          message: "Treino encontrado",
+          data: workout as WorkoutWithBlocks,
+        },
+        200,
+      );
+    },
+  )
+  .post(
+    "/:userId/register-workout/:workoutId",
+    zValidator(
+      "param",
+      z.object({ userId: z.string(), workoutId: z.string() }),
+    ),
+    zValidator("form", registerWorkoutSchema),
+    async (c) => {
+      const { userId, workoutId } = c.req.param();
+      const { duration, distance, perceivedEffort, observations } =
+        c.req.valid("form");
+
+      const distanceInMeters = Number.parseFloat(distance) * 1_000;
+      const [hh, mm, ss] = duration.split(":") as [string, string, string];
+
+      const durationInS =
+        Number.parseInt(hh) * 3600 +
+        Number.parseInt(mm) * 60 +
+        Number.parseInt(ss);
+
+      const avgPaceSPerKm = Math.floor(durationInS / (distanceInMeters / 1000));
+
+      const workoutLogId = await db.transaction(async (tx) => {
+        await tx
+          .update(workouts)
+          .set({
+            isCompleted: true,
+            actualDistanceM: distanceInMeters,
+            actualDurationS: durationInS,
+            avgPaceSPerKm,
+          })
+          .where(eq(workouts.id, workoutId));
+
+        const [logId] = await tx
+          .insert(workoutLogs)
+          .values({
+            notes: observations,
+            workoutId,
+            userId,
+            actualTimeS: durationInS,
+            actualDistanceM: distanceInMeters,
+            perceivedEffort: Number.parseInt(perceivedEffort),
+            createdAt: new Date(),
+          })
+          .returning({ id: workoutLogs.id });
+
+        return logId;
+      });
+
+      if (!workoutLogId) {
+        throw new HTTPException(500, {
+          message: "Falha ao registrar treino",
+        });
+      }
+
+      return c.json<SuccessResponse<{ id: string }>>(
+        {
+          success: true,
+          message: "Treino registrado com sucesso",
+          data: workoutLogId,
+        },
+        200,
+      );
     },
   );
