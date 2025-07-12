@@ -44,7 +44,7 @@ export const WorkoutCard = ({
     <Card
       className="bg-muted hover:bg-muted/70 relative cursor-pointer overflow-hidden py-4 transition-all duration-200"
       onClick={() => {
-        state.setWorkout(workout);
+        state.setWorkoutId(workout.id);
         state.setIsOpen(true);
       }}
     >
@@ -80,7 +80,7 @@ export const WorkoutCard = ({
               {RUN_TYPE_MAPPING[workout.runType]}
             </RunTypeBadge>
           </div>
-          <Checkbox />
+          <Checkbox checked={workout.isCompleted} />
         </div>
         <CardTitle className="truncate text-base">{workout.title}</CardTitle>
         {workout.plannedDurationS && (
