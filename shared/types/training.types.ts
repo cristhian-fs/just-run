@@ -154,6 +154,16 @@ export type SegmentSelect = {
   restDurationS: number | null;
 };
 
+/** BlockSelect enriquecido com seus segmentos */
+export type BlockWithSegments = BlockSelect & {
+  segments: SegmentSelect[];
+};
+
+/** WorkoutSelect enriquecido com seus blocos */
+export type WorkoutWithBlocks = WorkoutSelect & {
+  blocks: BlockWithSegments[];
+};
+
 /**
  * Test - representa os dados de um teste adicionado pelo usuário que é retornado do banco de dados
  */

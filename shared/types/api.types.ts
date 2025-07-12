@@ -13,3 +13,25 @@ export type ErrorResponse = {
   error: string;
   isFormError?: boolean;
 };
+
+export interface WeeklyVolumeData {
+  weekGoalM: number;
+  currentWeekVolume: number;
+  lastWeekVolume: number;
+  weekProgress: number;
+  progressOverWeek: number;
+}
+
+export interface MonthSummary {
+  totalDistance: number;
+  goalDistance: number;
+  totalRuns: number;
+  totalTimeMinutes: number;
+  avgPaceS: number;
+}
+
+export interface VolumeProgression {
+  date: string;
+  volume: number | null;
+  minutes: number | null;
+}
