@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 
+import { getMonthlySummary } from "@/features/home/api/get-monthly-summary";
+import { getVolumeProgression } from "@/features/home/api/get-volume-progression";
+import { getWeeklyVolume } from "@/features/home/api/get-weekly-volume";
+import { MonthlySummaryCard } from "@/features/home/components/monthly-summary-card";
+import { RunningProgressionCard } from "@/features/home/components/running-progression-card";
+import { WeeklyIntensityCard } from "@/features/home/components/weekly-intensity-card";
+import { WeeklyVolumeCard } from "@/features/home/components/weekly-volume-card";
 import { getNextWorkout } from "@/features/trainings/api/use-get-next-workout";
 import { WorkoutCard } from "@/features/trainings/components/workouts/workout-card";
 import { parseISO } from "date-fns";
-import { ChevronRight, Flag } from "lucide-react";
+import { ChevronRight, Zap } from "lucide-react";
 
 import { userQueryOptions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
@@ -23,6 +31,9 @@ export const Route = createFileRoute("/_index/")({
 
 function RouteComponent() {
   const { data: user } = useQuery(userQueryOptions());
+  const [period, setPeriod] = useState<"7 days" | "14 days" | "30 days">(
+    "7 days",
+  );
   if (!user) {
     return null;
   }
@@ -31,6 +42,28 @@ function RouteComponent() {
     queryKey: ["user", "next-workout"],
     queryFn: () => getNextWorkout(user.id),
   });
+
+  const { data: weeklyVolume, isLoading: isWeeklyVolumeLoading } = useQuery({
+    queryKey: ["weekly-volume"],
+    queryFn: () => getWeeklyVolume(user.id),
+  });
+
+  const { data: monthlySummary, isLoading: isMonthlySummaryLoading } = useQuery(
+    {
+      queryKey: ["monthly-summary"],
+      queryFn: () => getMonthlySummary(user.id),
+    },
+  );
+
+  const { data: volumeProgression, isLoading: isVolumeProgressionLoading } =
+    useQuery({
+      queryKey: ["volume-progression", period],
+      queryFn: () =>
+        getVolumeProgression({
+          userId: user.id,
+          period,
+        }),
+    });
 
   const nextWorkoutToday =
     nextWorkout?.data?.scheduledStart?.split("T")[0] ===
@@ -62,14 +95,14 @@ function RouteComponent() {
       </div>
       <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
         <Card className="gap-0 overflow-hidden py-0">
-          <CardHeader className="items-center border-b py-4 pb-0">
+          <CardHeader className="items-center gap-0 border-b py-4 pb-0">
             <div className="flex items-center gap-x-2">
-              <Flag className="size-4" />
-              <CardTitle className="text-lg md:text-xl">
-                Proximo treino
-              </CardTitle>
+              <div className="bg-background shadow-xs rounded-md border p-3">
+                <Zap className="text-muted-foreground h-4 w-4" />
+              </div>
+              <CardTitle>Proximo treino</CardTitle>
             </div>
-            <CardAction>
+            <CardAction className="self-auto">
               <Hint description="Ver todos os treinos" side="top">
                 <Button size="icon" variant="outline" asChild>
                   <Link to="/">
@@ -84,6 +117,7 @@ function RouteComponent() {
               <WorkoutCard.Loading />
             ) : nextWorkout?.data ? (
               <WorkoutCard
+                inCalendar={false}
                 workout={{
                   ...nextWorkout.data,
                   createdAt: parseISO(nextWorkout.data.createdAt),
@@ -93,29 +127,34 @@ function RouteComponent() {
             ) : null}
           </CardContent>
         </Card>
-        <Card className="gap-0 overflow-hidden py-0 xl:col-span-2">
-          <CardHeader className="border-b py-4 pb-0">
-            <CardTitle className="text-lg md:text-xl">Resumo semanal</CardTitle>
-            <CardAction>
-              <Hint description="Ver os treinos da semana" side="top">
-                <Button size="icon" variant="outline" asChild>
-                  <Link to="/">
-                    <ChevronRight />
-                  </Link>
-                </Button>
-              </Hint>
-            </CardAction>
-          </CardHeader>
-          <CardContent className="py-4"></CardContent>
-        </Card>
-        <Card className="gap-0 overflow-hidden py-0 xl:col-span-2">
-          <CardHeader className="border-b py-4 pb-0">
-            <CardTitle className="text-lg md:text-xl">
-              Volume de treino
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="py-4"></CardContent>
-        </Card>
+        {isWeeklyVolumeLoading ? (
+          <WeeklyVolumeCard.Loading />
+        ) : (
+          weeklyVolume && <WeeklyVolumeCard data={weeklyVolume} />
+        )}
+        {isMonthlySummaryLoading ? (
+          <MonthlySummaryCard.Loading />
+        ) : (
+          monthlySummary && (
+            <MonthlySummaryCard
+              data={monthlySummary}
+              className="lg:col-span-2 xl:col-span-1"
+            />
+          )
+        )}
+        {isVolumeProgressionLoading ? (
+          <RunningProgressionCard.Loading className="xl:col-span-2" />
+        ) : (
+          volumeProgression && (
+            <RunningProgressionCard
+              className="xl:col-span-2"
+              data={volumeProgression}
+              onPeriodChange={setPeriod}
+              period={period}
+            />
+          )
+        )}
+        <WeeklyIntensityCard />
       </div>
     </main>
   );
