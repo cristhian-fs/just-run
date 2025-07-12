@@ -4,7 +4,6 @@ import { ArrowUpDown } from "lucide-react";
 
 import { TraningZoneSelect, TTrainingType } from "@/shared/types";
 import { percent } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 import { RunTypeBadge } from "../run-type-badge";
@@ -39,7 +38,7 @@ export const Columns: ColumnDef<TraningZoneSelect>[] = [
     cell: ({ row }) => {
       const workouts = row.original.workouts as TTrainingType[];
       return (
-        <div className="flex flex-wrap gap-x-1">
+        <div className="flex flex-wrap gap-1">
           {workouts?.map((workout) => (
             <RunTypeBadge variant={workout} key={workout}>
               {RUN_TYPE_MAPPING[workout]}
