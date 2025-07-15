@@ -188,6 +188,21 @@ export interface Week {
   weekStart: Date;
 }
 
+export type TestSelect = {
+  id: string;
+  createdAt: string;
+  userId: string;
+  testType: "1600m" | "2400m" | "3200m" | "3000m" | "5000m";
+  distanceM: number;
+  durationS: number;
+  vam: number | null;
+  paceMinKm: string | null;
+  fcmax: number | null;
+  vo2Max: number | null;
+  vo2: number | null;
+  testDate: string;
+};
+
 /**
  * Training Zone
  */
