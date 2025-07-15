@@ -52,7 +52,7 @@ export function ResponsiveDialog({
             }}
           >
             <div className="bg-muted mx-auto my-4 h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
-            <div className="bg-background max-h-[80vh] min-h-[150px] w-full items-center justify-center overflow-auto pb-8 align-middle">
+            <div className="bg-background max-h-[80vh] min-h-[150px] w-full items-center justify-center overflow-auto align-middle">
               {content}
             </div>
           </Drawer.Content>

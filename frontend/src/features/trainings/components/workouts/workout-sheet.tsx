@@ -34,7 +34,7 @@ const containerVariant = {
   },
 } as Variants;
 
-export const WorkoutSheet = ({ isOpen = true }: WorkoutSheetProps) => {
+export const WorkoutSheet = ({ isOpen }: WorkoutSheetProps) => {
   const [isRegistering, setIsRegistering] = useState(false);
   const { data: user } = useQuery(userQueryOptions());
   if (!user) {
@@ -48,6 +48,7 @@ export const WorkoutSheet = ({ isOpen = true }: WorkoutSheetProps) => {
     queryKey: ["workout", workoutId],
     queryFn: () =>
       getWorkout({ userId: user.id, workoutId: workoutId as string }),
+    enabled: !!workoutId && isOpen,
   });
 
   const { mutate: registerWorkout, isPending: isRegisteringWorkout } =
