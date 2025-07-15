@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import {
+  raceOptions,
   testTypes,
   trainingGoals,
   trainingTypes,
@@ -49,3 +50,18 @@ export const registerWorkoutSchema = z.object({
 });
 
 export type RegisterWorkoutFormData = z.infer<typeof registerWorkoutSchema>;
+
+export const newPeriodizationPlanSchema = z.object({
+  weeks: z.coerce.number(),
+  race: z.enum(raceOptions),
+  baseValuePerWeek: z.coerce.number(),
+  weeklyFrequency: z.coerce.number().min(3).max(6),
+  unit: z.enum(["KM", "MINUTES"]),
+  startDate: z.coerce.date({
+    required_error: "Data é obrigatória",
+  }),
+});
+
+export type NewPeriodizationPlanFormData = z.infer<
+  typeof newPeriodizationPlanSchema
+>;

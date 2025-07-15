@@ -10,6 +10,7 @@ import { RunningProgressionCard } from "@/features/home/components/running-progr
 import { WeeklyIntensityCard } from "@/features/home/components/weekly-intensity-card";
 import { WeeklyVolumeCard } from "@/features/home/components/weekly-volume-card";
 import { getNextWorkout } from "@/features/trainings/api/use-get-next-workout";
+import { CreatePeriodizationDialog } from "@/features/trainings/components/workouts-planning/create-periodization-dialog";
 import { WorkoutCard } from "@/features/trainings/components/workouts/workout-card";
 import { parseISO } from "date-fns";
 import { ChevronRight, Zap } from "lucide-react";
@@ -90,7 +91,7 @@ function RouteComponent() {
           )}
         </div>
         <div className="flex gap-x-2">
-          <Button>Criar nova programação</Button>
+          <CreatePeriodizationDialog />
         </div>
       </div>
       <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
