@@ -71,17 +71,27 @@ function distributeTrainingsInWeekDynamic(
 /**
  * Versão melhorada da função original incluindo distribuição por dias
  */
-export function distributeWeeklyVolumesWithDays(
-  weeks: WeekAmount,
-  race: RaceOption,
-  baseValuePerWeek: number,
-  weeklyFrequency: number,
-  unit: "KM" | "MINUTES",
-  startDate: Date,
-  trainingLevel: TrainingLevel,
-  vam: number,
-  testData: Test,
-) {
+export function distributeWeeklyVolumesWithDays({
+  weeks,
+  baseValuePerWeek,
+  race,
+  startDate,
+  testData,
+  trainingLevel,
+  unit,
+  vam,
+  weeklyFrequency,
+}: {
+  weeks: WeekAmount;
+  race: RaceOption;
+  baseValuePerWeek: number;
+  weeklyFrequency: number;
+  unit: "KM" | "MINUTES";
+  startDate: Date;
+  trainingLevel: TrainingLevel;
+  vam: number;
+  testData: Test;
+}) {
   const basicDistribution = distributeWeeklyVolumes(
     weeks,
     race,
