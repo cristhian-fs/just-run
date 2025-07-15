@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import {
   UserBasicSettingsData,
   userBasicSettingsSchema,
 } from "@/shared/schemas";
-import { updateProfile, userQueryOptions } from "@/lib/api";
+import { userQueryOptions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -50,7 +50,17 @@ export const ProfileTabContent = () => {
     useUpdateProfile();
 
   const onSubmit = (data: UserBasicSettingsData) => {
-    updateProfileMutate({ param: { id: user?.id ?? "" }, form: data });
+    updateProfileMutate({
+      form: {
+        age: data.age.toString(),
+        email: data.email,
+        gender: data.gender,
+        heightCm: data.heightCm.toString(),
+        name: data.name,
+        weightKg: data.weightKg.toString(),
+        trainingLevel: data.trainingLevel,
+      },
+    });
   };
 
   return (

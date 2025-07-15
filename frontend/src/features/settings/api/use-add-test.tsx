@@ -7,21 +7,18 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 type ResponseType = InferResponseType<
-  (typeof client.users)[":id"]["add-test"]["$post"],
+  (typeof client.users)["add-test"]["$post"],
   200
 >;
-type RequestType = InferRequestType<
-  (typeof client.users)[":id"]["add-test"]["$post"]
->;
+type RequestType = InferRequestType<(typeof client.users)["add-test"]["$post"]>;
 
 export const useAddTest = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
-    mutationFn: async ({ form, param }) => {
-      const response = await client.users[":id"]["add-test"].$post({
+    mutationFn: async ({ form }) => {
+      const response = await client.users["add-test"].$post({
         form,
-        param,
       });
       if (response.ok) {
         const data = await response.json();

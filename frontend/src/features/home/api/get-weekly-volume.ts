@@ -1,12 +1,8 @@
 import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
-export const getWeeklyVolume = async (userId: string) => {
-  const res = await client.analytics[":userId"]["weekly-volume"].$get({
-    param: {
-      userId,
-    },
-  });
+export const getWeeklyVolume = async () => {
+  const res = await client.analytics["weekly-volume"].$get();
   const data = await res.json();
   if (res.ok && data.success) {
     return data.data;

@@ -18,7 +18,7 @@ function RouteComponent() {
   }
   const { data: planning } = useQuery({
     queryKey: ["planning"],
-    queryFn: () => getUserPlanning(user.id),
+    queryFn: () => getUserPlanning(),
   });
 
   const workouts = planning?.map((week) => week.workouts).flat();

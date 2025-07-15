@@ -7,22 +7,19 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 type ResponseType = InferResponseType<
-  (typeof client.users)[":id"]["update-profile"]["$post"],
+  (typeof client.users)["update-profile"]["$post"],
   200
 >;
 type RequestType = InferRequestType<
-  (typeof client.users)[":id"]["update-profile"]["$post"]
+  (typeof client.users)["update-profile"]["$post"]
 >;
 
 export const useUpdateProfile = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
-    mutationFn: async ({ param, form }) => {
-      const response = await client.users[":id"]["update-profile"].$post({
-        param: {
-          id: param.id,
-        },
+    mutationFn: async ({ form }) => {
+      const response = await client.users["update-profile"].$post({
         form,
       });
 

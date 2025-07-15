@@ -45,10 +45,16 @@ import { getStartDate } from "@/lib/core/calculations/time";
 import { distributeWeeklyVolumesWithDays } from "@/lib/core/generators/dayly-distribution";
 
 export const trainingRouter = new Hono<Context>()
-  .post("/:userId/generate", loggedIn, async (c) => {
-    const { userId } = c.req.param();
+  .post("/generate", loggedIn, async (c) => {
+    const userContext = c.get("user");
+
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+
+    const { id } = userContext;
     const userData = await db.query.user.findFirst({
-      where: eq(user.id, userId),
+      where: eq(user.id, id),
     });
 
     if (!userData) {
@@ -59,11 +65,11 @@ export const trainingRouter = new Hono<Context>()
     }
 
     const lastUserTest = await db.query.tests.findFirst({
-      where: eq(tests.userId, userId),
+      where: eq(tests.userId, id),
       orderBy: (tests, { desc }) => desc(tests.createdAt),
     });
     const lastUserGoal = await db.query.goal.findFirst({
-      where: eq(goal.userId, userId),
+      where: eq(goal.userId, id),
       orderBy: (goal, { desc }) => desc(goal.createdAt),
     });
 
@@ -90,7 +96,7 @@ export const trainingRouter = new Hono<Context>()
         vam: lastUserTest.vam!,
         testData: lastUserTest,
       });
-      await saveTrainingsWeekWithWorkouts({ userId, trainings });
+      await saveTrainingsWeekWithWorkouts({ userId: id, trainings });
 
       return c.json(
         {
@@ -126,8 +132,14 @@ export const trainingRouter = new Hono<Context>()
       );
     }
   })
-  .get("/:userId/next-workout", loggedIn, async (c) => {
-    const { userId } = c.req.param();
+  .get("/next-workout", loggedIn, async (c) => {
+    const userContext = c.get("user");
+
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+
+    const { id } = userContext;
 
     const today = new Date();
     const weekMondayStr = isMonday(today)
@@ -136,7 +148,7 @@ export const trainingRouter = new Hono<Context>()
 
     const week = await db.query.trainingWeeks.findFirst({
       where: and(
-        eq(trainingWeeks.userId, userId),
+        eq(trainingWeeks.userId, id),
         gte(trainingWeeks.weekStart, weekMondayStr),
       ),
       orderBy: (trainingWeeks, { asc }) => asc(trainingWeeks.weekStart),
@@ -178,8 +190,14 @@ export const trainingRouter = new Hono<Context>()
       200,
     );
   })
-  .get("/:userId/training-zones", loggedIn, async (c) => {
-    const { userId } = c.req.param();
+  .get("/training-zones", loggedIn, async (c) => {
+    const userContext = c.get("user");
+
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+
+    const { id: userId } = userContext;
 
     const trainingZones = await db.query.trainingZones.findMany({
       where: eq(trainingZonesTable.userId, userId),
@@ -201,8 +219,14 @@ export const trainingRouter = new Hono<Context>()
       200,
     );
   })
-  .get("/:userId/planning", loggedIn, async (c) => {
-    const { userId } = c.req.param();
+  .get("/planning", loggedIn, async (c) => {
+    const userContext = c.get("user");
+
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+
+    const { id: userId } = userContext;
 
     const planning = await db.query.trainingWeeks.findMany({
       where: eq(trainingWeeks.userId, userId),
@@ -221,17 +245,21 @@ export const trainingRouter = new Hono<Context>()
     );
   })
   .get(
-    "/:userId/workout/:workoutId",
+    "/workout/:workoutId",
     loggedIn,
     zValidator(
       "param",
       z.object({
-        userId: z.string(),
         workoutId: z.string(),
       }),
     ),
     async (c) => {
-      const { userId, workoutId } = c.req.param();
+      const userContext = c.get("user");
+      if (!userContext) {
+        throw new Error("User not found");
+      }
+      const { id: userId } = userContext;
+      const { workoutId } = c.req.param();
 
       const trainingWeekIds = db
         .select({ id: trainingWeeks.id })
@@ -267,15 +295,17 @@ export const trainingRouter = new Hono<Context>()
     },
   )
   .post(
-    "/:userId/register-workout/:workoutId",
+    "/register-workout/:workoutId",
     loggedIn,
-    zValidator(
-      "param",
-      z.object({ userId: z.string(), workoutId: z.string() }),
-    ),
+    zValidator("param", z.object({ workoutId: z.string() })),
     zValidator("form", registerWorkoutSchema),
     async (c) => {
-      const { userId, workoutId } = c.req.param();
+      const userContext = c.get("user");
+      if (!userContext) {
+        throw new Error("User not found");
+      }
+      const { id: userId } = userContext;
+      const { workoutId } = c.req.param();
       const { duration, distance, perceivedEffort, observations } =
         c.req.valid("form");
 
@@ -333,11 +363,15 @@ export const trainingRouter = new Hono<Context>()
     },
   )
   .post(
-    "/:userId/new-periodization-plan",
+    "/new-periodization-plan",
     loggedIn,
     zValidator("form", newPeriodizationPlanSchema),
     async (c) => {
-      const { userId } = c.req.param();
+      const userContext = c.get("user");
+      if (!userContext) {
+        throw new Error("User not found");
+      }
+      const { id: userId } = userContext;
 
       const userData = await db.query.user.findFirst({
         where: eq(user.id, userId),
@@ -398,29 +432,28 @@ export const trainingRouter = new Hono<Context>()
       );
     },
   )
-  .get(
-    "/:userId/last-running-test",
-    loggedIn,
-    zValidator("param", z.object({ userId: z.string() })),
-    async (c) => {
-      const { userId } = c.req.param();
+  .get("/last-running-test", loggedIn, async (c) => {
+    const userContext = c.get("user");
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+    const { id: userId } = userContext;
 
-      const lastUserTest = await db.query.tests.findFirst({
-        where: eq(tests.userId, userId),
-        orderBy: (tests, { desc }) => desc(tests.createdAt),
-      });
+    const lastUserTest = await db.query.tests.findFirst({
+      where: eq(tests.userId, userId),
+      orderBy: (tests, { desc }) => desc(tests.createdAt),
+    });
 
-      if (!lastUserTest) {
-        throw new HTTPException(404, { message: "Nenhum teste encontrado" });
-      }
+    if (!lastUserTest) {
+      throw new HTTPException(404, { message: "Nenhum teste encontrado" });
+    }
 
-      return c.json<SuccessResponse<TestSelect>>(
-        {
-          success: true,
-          message: "Último teste realizado encontrado",
-          data: lastUserTest,
-        },
-        200,
-      );
-    },
-  );
+    return c.json<SuccessResponse<TestSelect>>(
+      {
+        success: true,
+        message: "Último teste realizado encontrado",
+        data: lastUserTest,
+      },
+      200,
+    );
+  });

@@ -1,16 +1,9 @@
 import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
-export const getWorkout = async ({
-  userId,
-  workoutId,
-}: {
-  userId: string;
-  workoutId: string;
-}) => {
-  const res = await client.trainings[":userId"]["workout"][":workoutId"].$get({
+export const getWorkout = async ({ workoutId }: { workoutId: string }) => {
+  const res = await client.trainings["workout"][":workoutId"].$get({
     param: {
-      userId,
       workoutId,
     },
   });

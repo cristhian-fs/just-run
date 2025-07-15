@@ -1,12 +1,8 @@
 import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
-export const getNextWorkout = async (userId: string) => {
-  const res = await client.trainings[":userId"]["next-workout"].$get({
-    param: {
-      userId,
-    },
-  });
+export const getNextWorkout = async () => {
+  const res = await client.trainings["next-workout"].$get();
 
   if (res.ok) {
     const data = await res.json();

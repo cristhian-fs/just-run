@@ -6,20 +6,15 @@ import { client } from "@/lib/api";
 type Period = "7 days" | "14 days" | "30 days";
 
 type ResponseType = InferResponseType<
-  (typeof client.analytics)[":userId"]["volume-progression"]["$get"]
+  (typeof client.analytics)["volume-progression"]["$get"]
 >;
 
 export const getVolumeProgression = async ({
-  userId,
   period,
 }: {
-  userId: string;
   period: Period;
 }): Promise<ResponseType["data"]> => {
-  const res = await client.analytics[":userId"]["volume-progression"].$get({
-    param: {
-      userId,
-    },
+  const res = await client.analytics["volume-progression"].$get({
     query: {
       period,
     },

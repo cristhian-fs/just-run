@@ -1,12 +1,8 @@
 import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
-export const getMonthlySummary = async (userId: string) => {
-  const res = await client.analytics[":userId"]["monthly-summary"].$get({
-    param: {
-      userId,
-    },
-  });
+export const getMonthlySummary = async () => {
+  const res = await client.analytics["monthly-summary"].$get();
   const data = await res.json();
   if (res.ok && data.success) {
     return data.data;

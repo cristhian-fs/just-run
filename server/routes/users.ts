@@ -57,11 +57,15 @@ export const userRouter = new Hono<Context>()
     );
   })
   .post(
-    "/:id/update-profile",
+    "/update-profile",
     loggedIn,
     zValidator("form", userBasicSettingsSchema),
     async (c) => {
-      const { id } = c.req.param();
+      const userContext = c.get("user");
+
+      if (!userContext) {
+        throw new Error("User not found");
+      }
       const { age, email, gender, heightCm, name, weightKg, trainingLevel } =
         c.req.valid("form");
 
@@ -76,7 +80,7 @@ export const userRouter = new Hono<Context>()
           weightKg,
           trainingLevel,
         })
-        .where(eq(user.id, id));
+        .where(eq(user.id, userContext.id));
 
       return c.json<SuccessResponse>(
         {
@@ -88,11 +92,18 @@ export const userRouter = new Hono<Context>()
     },
   )
   .post(
-    "/:id/add-test",
-    // loggedIn,
+    "/add-test",
+    loggedIn,
     zValidator("form", TestFormSchema),
     async (c) => {
-      const { id } = c.req.param();
+      const userContext = c.get("user");
+
+      if (!userContext) {
+        throw new Error("User not found");
+      }
+
+      const { id } = userContext;
+
       const form = c.req.valid("form");
 
       const currentUserData = await db.query.user.findFirst({

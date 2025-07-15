@@ -7,11 +7,11 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 type ResponseType = InferResponseType<
-  (typeof client.trainings)[":userId"]["register-workout"][":workoutId"]["$post"],
+  (typeof client.trainings)["register-workout"][":workoutId"]["$post"],
   200
 >;
 type RequestType = InferRequestType<
-  (typeof client.trainings)[":userId"]["register-workout"][":workoutId"]["$post"]
+  (typeof client.trainings)["register-workout"][":workoutId"]["$post"]
 >;
 
 export const useRegisterWorkout = ({ workoutId }: { workoutId: string }) => {
@@ -19,11 +19,10 @@ export const useRegisterWorkout = ({ workoutId }: { workoutId: string }) => {
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async ({ param, form }) => {
-      const response = await client.trainings[":userId"]["register-workout"][
+      const response = await client.trainings["register-workout"][
         ":workoutId"
       ].$post({
         param: {
-          userId: param.userId,
           workoutId: param.workoutId,
         },
         form,

@@ -41,18 +41,18 @@ function RouteComponent() {
 
   const { data: nextWorkout, isLoading: isNextWorkoutLoading } = useQuery({
     queryKey: ["user", "next-workout"],
-    queryFn: () => getNextWorkout(user.id),
+    queryFn: () => getNextWorkout(),
   });
 
   const { data: weeklyVolume, isLoading: isWeeklyVolumeLoading } = useQuery({
     queryKey: ["weekly-volume"],
-    queryFn: () => getWeeklyVolume(user.id),
+    queryFn: () => getWeeklyVolume(),
   });
 
   const { data: monthlySummary, isLoading: isMonthlySummaryLoading } = useQuery(
     {
       queryKey: ["monthly-summary"],
-      queryFn: () => getMonthlySummary(user.id),
+      queryFn: () => getMonthlySummary(),
     },
   );
 
@@ -61,7 +61,6 @@ function RouteComponent() {
       queryKey: ["volume-progression", period],
       queryFn: () =>
         getVolumeProgression({
-          userId: user.id,
           period,
         }),
     });

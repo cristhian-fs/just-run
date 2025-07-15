@@ -8,21 +8,19 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 type ResponseType = InferResponseType<
-  (typeof client.trainings)[":userId"]["generate"]["$post"],
+  (typeof client.trainings)["generate"]["$post"],
   200
 >;
 type RequestType = InferRequestType<
-  (typeof client.trainings)[":userId"]["generate"]["$post"]
+  (typeof client.trainings)["generate"]["$post"]
 >;
 
 export const useGeneratePeriodization = () => {
   const navigate = useNavigate();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
-    mutationFn: async ({ param }) => {
-      const response = await client.trainings[":userId"]["generate"].$post({
-        param,
-      });
+    mutationFn: async () => {
+      const response = await client.trainings["generate"].$post();
 
       if (response.ok) {
         const data = await response.json();

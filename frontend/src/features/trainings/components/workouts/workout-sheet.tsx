@@ -46,8 +46,7 @@ export const WorkoutSheet = ({ isOpen }: WorkoutSheetProps) => {
 
   const { data: workout, isLoading: isLoadingWorkout } = useQuery({
     queryKey: ["workout", workoutId],
-    queryFn: () =>
-      getWorkout({ userId: user.id, workoutId: workoutId as string }),
+    queryFn: () => getWorkout({ workoutId: workoutId as string }),
     enabled: !!workoutId && isOpen,
   });
 
@@ -99,7 +98,7 @@ export const WorkoutSheet = ({ isOpen }: WorkoutSheetProps) => {
 
   const handleRegisterWorkout = (values: RegisterWorkoutFormData) => {
     registerWorkout({
-      param: { userId: user.id, workoutId: workout.id },
+      param: { workoutId: workout.id },
       form: {
         date: values.date.toISOString(),
         time: values.time,

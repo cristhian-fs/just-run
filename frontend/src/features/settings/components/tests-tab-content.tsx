@@ -1,5 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
@@ -8,7 +6,6 @@ import { useForm } from "react-hook-form";
 
 import { trainingGoals } from "@/shared/constants/training.constants";
 import { TestFormData, TestFormSchema } from "@/shared/schemas";
-import { userQueryOptions } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -52,7 +49,7 @@ const GOAL_MAPPING = {
 
 const RACE_OPTIONS = ["race5K", "race10K", "race21K", "race42K"];
 
-export const TestsTabContent = ({ userId }: { userId: string }) => {
+export const TestsTabContent = () => {
   const form = useForm<TestFormData>({
     resolver: zodResolver(TestFormSchema),
   });
@@ -63,9 +60,14 @@ export const TestsTabContent = ({ userId }: { userId: string }) => {
 
   const handleSubmit = (data: TestFormData) => {
     addTest({
-      form: data,
-      param: {
-        id: userId,
+      form: {
+        distanceM: data.distanceM.toString(),
+        time: data.time,
+        testType: data.testType,
+        goal: data.goal,
+        testDate: data.testDate.toISOString(),
+        weeklyFrequency: data.weeklyFrequency.toString(),
+        raceDate: data.raceDate?.toString(),
       },
     });
   };
@@ -194,10 +196,7 @@ export const TestsTabContent = ({ userId }: { userId: string }) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Quantos dias da semana treina?</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
+                <Select onValueChange={field.onChange}>
                   <FormControl>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Dias da semana" />

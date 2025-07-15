@@ -21,7 +21,7 @@ function RouteComponent() {
 
   const { data: trainingZones, isLoading: isLoadingTraningZones } = useQuery({
     queryKey: ["training-zones"],
-    queryFn: () => getTrainingZones(user.id),
+    queryFn: () => getTrainingZones(),
   });
 
   const formattedTrainingZones = trainingZones?.data.map((zone) => ({

@@ -43,8 +43,12 @@ const calculateProgressOverWeek = (
 };
 
 export const analyticsRouter = new Hono<Context>()
-  .get("/:userId/weekly-volume", async (c) => {
-    const { userId } = c.req.param();
+  .get("/weekly-volume", async (c) => {
+    const userContext = c.get("user");
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+    const { id: userId } = userContext;
 
     const today = new Date();
     const weekMondayStr = isMonday(today)
@@ -123,87 +127,82 @@ export const analyticsRouter = new Hono<Context>()
       200,
     );
   })
-  .get(
-    "/:userId/monthly-summary",
-    zValidator(
-      "param",
-      z.object({
-        userId: z.string(),
-      }),
-    ),
-    async (c) => {
-      const { userId } = c.req.param();
+  .get("/monthly-summary", async (c) => {
+    const userContext = c.get("user");
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+    const { id: userId } = userContext;
 
-      const startOfTheMonthStr = format(startOfMonth(new Date()), "yyyy-MM-dd");
-      const endOfMonthStr = format(endOfMonth(new Date()), "yyyy-MM-dd");
+    const startOfTheMonthStr = format(startOfMonth(new Date()), "yyyy-MM-dd");
+    const endOfMonthStr = format(endOfMonth(new Date()), "yyyy-MM-dd");
 
-      const trainingWeekIds = db
-        .select({ id: trainingWeeks.id })
-        .from(trainingWeeks)
-        .where(eq(trainingWeeks.userId, userId));
+    const trainingWeekIds = db
+      .select({ id: trainingWeeks.id })
+      .from(trainingWeeks)
+      .where(eq(trainingWeeks.userId, userId));
 
-      const monthWorkouts = await db
-        .select()
-        .from(workouts)
-        .where(
-          and(
-            inArray(workouts.trainingWeekId, trainingWeekIds),
-            gte(workouts.scheduledStart, startOfTheMonthStr),
-            lte(workouts.scheduledStart, endOfMonthStr),
-          ),
-        );
+    const monthWorkouts = await db
+      .select()
+      .from(workouts)
+      .where(
+        and(
+          inArray(workouts.trainingWeekId, trainingWeekIds),
+          gte(workouts.scheduledStart, startOfTheMonthStr),
+          lte(workouts.scheduledStart, endOfMonthStr),
+        ),
+      );
 
-      const monthSummary: MonthSummary = {
-        avgPaceS: 0,
-        goalDistance: 0,
-        totalDistance: 0,
-        totalRuns: 0,
-        totalTimeMinutes: 0,
-      };
+    const monthSummary: MonthSummary = {
+      avgPaceS: 0,
+      goalDistance: 0,
+      totalDistance: 0,
+      totalRuns: 0,
+      totalTimeMinutes: 0,
+    };
 
-      const totalSecondsTraining = monthWorkouts
-        .filter((workout) => workout.isCompleted)
-        .reduce((acc, workout) => acc + (workout.actualDurationS ?? 0), 0);
+    const totalSecondsTraining = monthWorkouts
+      .filter((workout) => workout.isCompleted)
+      .reduce((acc, workout) => acc + (workout.actualDurationS ?? 0), 0);
 
-      const totalDistanceTraining = monthWorkouts
-        .filter((workout) => workout.isCompleted)
-        .reduce((acc, workout) => acc + (workout.actualDistanceM ?? 0), 0);
+    const totalDistanceTraining = monthWorkouts
+      .filter((workout) => workout.isCompleted)
+      .reduce((acc, workout) => acc + (workout.actualDistanceM ?? 0), 0);
 
-      if (totalSecondsTraining > 0 && totalDistanceTraining > 0) {
-        monthSummary.avgPaceS = Math.floor(
-          (totalSecondsTraining / totalDistanceTraining) * 1_000,
-        );
-      }
+    if (totalSecondsTraining > 0 && totalDistanceTraining > 0) {
+      monthSummary.avgPaceS = Math.floor(
+        (totalSecondsTraining / totalDistanceTraining) * 1_000,
+      );
+    }
 
-      monthSummary.totalRuns = monthWorkouts.filter(
-        (workout) => workout.isCompleted,
-      ).length;
+    monthSummary.totalRuns = monthWorkouts.filter(
+      (workout) => workout.isCompleted,
+    ).length;
 
-      monthSummary.totalDistance = monthWorkouts
-        .filter((workout) => workout.isCompleted)
-        .reduce((acc, curr) => acc + (curr.actualDistanceM ?? 0), 0);
+    monthSummary.totalDistance = monthWorkouts
+      .filter((workout) => workout.isCompleted)
+      .reduce((acc, curr) => acc + (curr.actualDistanceM ?? 0), 0);
 
-      monthSummary.goalDistance = monthWorkouts.reduce(
-        (acc, curr) => acc + (curr.plannedDistanceM ?? 0),
+    monthSummary.goalDistance = monthWorkouts.reduce(
+      (acc, curr) => acc + (curr.plannedDistanceM ?? 0),
+      0,
+    );
+
+    monthSummary.totalTimeMinutes = monthWorkouts
+      .filter((workout) => workout.isCompleted)
+      .reduce(
+        (acc, curr) => acc + Math.floor((curr.actualDurationS ?? 0) / 60),
         0,
       );
 
-      monthSummary.totalTimeMinutes = monthWorkouts
-        .filter((workout) => workout.isCompleted)
-        .reduce(
-          (acc, curr) => acc + Math.floor((curr.actualDurationS ?? 0) / 60),
-          0,
-        );
-
-      return c.json<SuccessResponse<MonthSummary>>({
-        success: true,
-        message: "Resumo mensal obtido com sucesso",
-        data: monthSummary as MonthSummary,
-      });
-    },
-  )
+    return c.json<SuccessResponse<MonthSummary>>({
+      success: true,
+      message: "Resumo mensal obtido com sucesso",
+      data: monthSummary as MonthSummary,
+    });
+  })
   .get(
-    "/:userId/volume-progression",
+    "/volume-progression",
     zValidator(
       "query",
       z.object({
@@ -211,7 +210,11 @@ export const analyticsRouter = new Hono<Context>()
       }),
     ),
     async (c) => {
-      const { userId } = c.req.param();
+      const userContext = c.get("user");
+      if (!userContext) {
+        throw new Error("User not found");
+      }
+      const { id: userId } = userContext;
       const { period } = c.req.query();
 
       const getStartDate = (period: "7 days" | "14 days" | "30 days") => {

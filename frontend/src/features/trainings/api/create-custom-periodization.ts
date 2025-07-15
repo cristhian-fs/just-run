@@ -7,24 +7,19 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 type ResponseType = InferResponseType<
-  (typeof client.trainings)[":userId"]["new-periodization-plan"]["$post"],
+  (typeof client.trainings)["new-periodization-plan"]["$post"],
   200
 >;
 type RequestType = InferRequestType<
-  (typeof client.trainings)[":userId"]["new-periodization-plan"]["$post"]
+  (typeof client.trainings)["new-periodization-plan"]["$post"]
 >;
 
 export const createCustomPeriodization = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
-    mutationFn: async ({ param, form }) => {
-      const response = await client.trainings[":userId"][
-        "new-periodization-plan"
-      ].$post({
-        param: {
-          userId: param.userId,
-        },
+    mutationFn: async ({ form }) => {
+      const response = await client.trainings["new-periodization-plan"].$post({
         form,
       });
 

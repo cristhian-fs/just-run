@@ -1,5 +1,4 @@
 import { createFileRoute, Link, redirect } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
 
 import { ProfileTabContent } from "@/features/settings/components/profile-tab-content";
 import { TestsTabContent } from "@/features/settings/components/tests-tab-content";
@@ -22,9 +21,7 @@ export const Route = createFileRoute("/_index/settings/")({
 });
 
 function RouteComponent() {
-  const { data: user } = useQuery(userQueryOptions());
   const { from } = Route.useSearch();
-  if (!user) return null;
 
   return (
     <div className="py-4 md:py-8">
@@ -62,7 +59,7 @@ function RouteComponent() {
           </TabsTrigger>
         </TabsList>
         <ProfileTabContent />
-        <TestsTabContent userId={user.id} />
+        <TestsTabContent />
       </Tabs>
       <div className="px-4 md:px-8">
         {from === "onboarding" && (
