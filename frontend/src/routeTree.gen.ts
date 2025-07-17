@@ -20,6 +20,7 @@ import { Route as IndexUsersImport } from './routes/_index/users'
 import { Route as IndexTestesImport } from './routes/_index/testes'
 import { Route as IndexPlanejamentoImport } from './routes/_index/planejamento'
 import { Route as IndexOnboardingImport } from './routes/_index/onboarding'
+import { Route as IndexNovoTreinoImport } from './routes/_index/novo-treino'
 import { Route as IndexClientsImport } from './routes/_index/clients'
 import { Route as IndexCalculadoraImport } from './routes/_index/calculadora'
 import { Route as IndexAuthenticationImport } from './routes/_index/authentication'
@@ -79,6 +80,12 @@ const IndexPlanejamentoRoute = IndexPlanejamentoImport.update({
 const IndexOnboardingRoute = IndexOnboardingImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => IndexRoute,
+} as any)
+
+const IndexNovoTreinoRoute = IndexNovoTreinoImport.update({
+  id: '/novo-treino',
+  path: '/novo-treino',
   getParentRoute: () => IndexRoute,
 } as any)
 
@@ -178,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexClientsImport
       parentRoute: typeof IndexImport
     }
+    '/_index/novo-treino': {
+      id: '/_index/novo-treino'
+      path: '/novo-treino'
+      fullPath: '/novo-treino'
+      preLoaderRoute: typeof IndexNovoTreinoImport
+      parentRoute: typeof IndexImport
+    }
     '/_index/onboarding': {
       id: '/_index/onboarding'
       path: '/onboarding'
@@ -238,6 +252,7 @@ interface IndexRouteChildren {
   IndexAuthenticationRoute: typeof IndexAuthenticationRoute
   IndexCalculadoraRoute: typeof IndexCalculadoraRoute
   IndexClientsRoute: typeof IndexClientsRoute
+  IndexNovoTreinoRoute: typeof IndexNovoTreinoRoute
   IndexOnboardingRoute: typeof IndexOnboardingRoute
   IndexPlanejamentoRoute: typeof IndexPlanejamentoRoute
   IndexTestesRoute: typeof IndexTestesRoute
@@ -253,6 +268,7 @@ const IndexRouteChildren: IndexRouteChildren = {
   IndexAuthenticationRoute: IndexAuthenticationRoute,
   IndexCalculadoraRoute: IndexCalculadoraRoute,
   IndexClientsRoute: IndexClientsRoute,
+  IndexNovoTreinoRoute: IndexNovoTreinoRoute,
   IndexOnboardingRoute: IndexOnboardingRoute,
   IndexPlanejamentoRoute: IndexPlanejamentoRoute,
   IndexTestesRoute: IndexTestesRoute,
@@ -273,6 +289,7 @@ export interface FileRoutesByFullPath {
   '/authentication': typeof IndexAuthenticationRoute
   '/calculadora': typeof IndexCalculadoraRoute
   '/clients': typeof IndexClientsRoute
+  '/novo-treino': typeof IndexNovoTreinoRoute
   '/onboarding': typeof IndexOnboardingRoute
   '/planejamento': typeof IndexPlanejamentoRoute
   '/testes': typeof IndexTestesRoute
@@ -290,6 +307,7 @@ export interface FileRoutesByTo {
   '/authentication': typeof IndexAuthenticationRoute
   '/calculadora': typeof IndexCalculadoraRoute
   '/clients': typeof IndexClientsRoute
+  '/novo-treino': typeof IndexNovoTreinoRoute
   '/onboarding': typeof IndexOnboardingRoute
   '/planejamento': typeof IndexPlanejamentoRoute
   '/testes': typeof IndexTestesRoute
@@ -309,6 +327,7 @@ export interface FileRoutesById {
   '/_index/authentication': typeof IndexAuthenticationRoute
   '/_index/calculadora': typeof IndexCalculadoraRoute
   '/_index/clients': typeof IndexClientsRoute
+  '/_index/novo-treino': typeof IndexNovoTreinoRoute
   '/_index/onboarding': typeof IndexOnboardingRoute
   '/_index/planejamento': typeof IndexPlanejamentoRoute
   '/_index/testes': typeof IndexTestesRoute
@@ -329,6 +348,7 @@ export interface FileRouteTypes {
     | '/authentication'
     | '/calculadora'
     | '/clients'
+    | '/novo-treino'
     | '/onboarding'
     | '/planejamento'
     | '/testes'
@@ -345,6 +365,7 @@ export interface FileRouteTypes {
     | '/authentication'
     | '/calculadora'
     | '/clients'
+    | '/novo-treino'
     | '/onboarding'
     | '/planejamento'
     | '/testes'
@@ -362,6 +383,7 @@ export interface FileRouteTypes {
     | '/_index/authentication'
     | '/_index/calculadora'
     | '/_index/clients'
+    | '/_index/novo-treino'
     | '/_index/onboarding'
     | '/_index/planejamento'
     | '/_index/testes'
@@ -407,6 +429,7 @@ export const routeTree = rootRoute
         "/_index/authentication",
         "/_index/calculadora",
         "/_index/clients",
+        "/_index/novo-treino",
         "/_index/onboarding",
         "/_index/planejamento",
         "/_index/testes",
@@ -440,6 +463,10 @@ export const routeTree = rootRoute
     },
     "/_index/clients": {
       "filePath": "_index/clients.tsx",
+      "parent": "/_index"
+    },
+    "/_index/novo-treino": {
+      "filePath": "_index/novo-treino.tsx",
       "parent": "/_index"
     },
     "/_index/onboarding": {

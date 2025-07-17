@@ -11,6 +11,7 @@ import {
   Goal,
   HouseIcon,
   LifeBuoy,
+  Plus,
   SettingsIcon,
   Sheet,
   UserIcon,
@@ -64,6 +65,11 @@ const data = {
       title: "Testes",
       url: "/testes",
       icon: Goal,
+    },
+    {
+      title: "Novo treino",
+      url: "/novo-treino",
+      icon: Plus,
     },
   ],
   navSecondary: [
