@@ -14,7 +14,7 @@ import {
 } from "@/db/schemas";
 import { workouts } from "@/db/schemas/workouts";
 import { loggedIn } from "@/middlewares/logged-in";
-import { saveTrainingsWeekWithWorkouts } from "@/services/trainings/save-training-weeks";
+import { TrainingWeekOrchestratorService } from "@/services";
 import { zValidator } from "@hono/zod-validator";
 import { format } from "date-fns";
 import { isMonday } from "date-fns/fp";
@@ -96,7 +96,10 @@ export const trainingRouter = new Hono<Context>()
         vam: lastUserTest.vam!,
         testData: lastUserTest,
       });
-      await saveTrainingsWeekWithWorkouts({ userId: id, trainings });
+      await TrainingWeekOrchestratorService.saveTrainingWeekWithWorkouts({
+        userId: id,
+        trainings,
+      });
 
       return c.json(
         {
@@ -421,7 +424,10 @@ export const trainingRouter = new Hono<Context>()
         weeklyFrequency,
       });
 
-      await saveTrainingsWeekWithWorkouts({ userId, trainings });
+      await TrainingWeekOrchestratorService.saveTrainingWeekWithWorkouts({
+        userId,
+        trainings,
+      });
 
       return c.json<SuccessResponse>(
         {
