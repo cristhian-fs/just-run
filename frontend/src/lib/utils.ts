@@ -30,10 +30,15 @@ export function formatToHHMMSS(input: string): string {
     .replace(/(:\d{2})\d+?$/, "$1"); // Limita ao formato hh:mm:ss
 }
 
-export function timeStringToSeconds(time: string): number {
-  const [hh, mm, ss] = time.split(":").map(Number);
-  if ([hh, mm, ss].some(isNaN)) return 0;
-  return hh * 3600 + mm * 60 + ss;
+export function timeStringToSeconds(timeString: string): number {
+  if (!timeString) return 0;
+
+  const parts = timeString.split(":");
+  const hours = Number.parseInt(parts[0] || "0", 10);
+  const minutes = Number.parseInt(parts[1] || "0", 10);
+  const seconds = Number.parseInt(parts[2] || "0", 10);
+
+  return hours * 3600 + minutes * 60 + seconds;
 }
 
 export const percent = new Intl.NumberFormat("en-US", {
