@@ -128,7 +128,7 @@ MyWeek.navigate = (
 };
 
 MyWeek.title = (date: Date) => {
-  return `My awesome week: ${date.toLocaleDateString()}`;
+  return `Semana de treinamento: ${date.toLocaleDateString()}`;
 };
 
 interface CustomToolBarProps {
@@ -137,6 +137,8 @@ interface CustomToolBarProps {
   onView: (view: View) => void;
   workoutsLength: number;
   view: View;
+  min: Date;
+  max: Date;
 }
 
 const CustomToolBar = ({
@@ -145,6 +147,8 @@ const CustomToolBar = ({
   onView,
   workoutsLength,
   view,
+  min,
+  max,
 }: CustomToolBarProps) => {
   return (
     <div className="flex w-full flex-col items-start justify-between gap-4 gap-x-2 rounded-t-lg border border-b-0 p-4 lg:w-auto lg:flex-row lg:items-center lg:justify-between">
@@ -169,6 +173,7 @@ const CustomToolBar = ({
               variant="outline"
               size="icon"
               onClick={() => onNavigate("PREV")}
+              disabled={date <= min}
             >
               <ChevronLeft />
             </Button>
@@ -179,6 +184,7 @@ const CustomToolBar = ({
               variant="outline"
               size="icon"
               onClick={() => onNavigate("NEXT")}
+              disabled={date >= max}
             >
               <ChevronRight />
             </Button>
@@ -231,7 +237,7 @@ export const DataCalendar = ({ data }: DataCalendarProps) => {
   const [value, setValue] = useState(
     data.length > 0 ? new Date(data[0].scheduledStart) : new Date(),
   );
-  const [view, setView] = useState<View>(Views.WEEK);
+  const [view, setView] = useState<View>(Views.AGENDA);
   const { defaultDate, views } = useMemo(
     () => ({
       defaultDate: new Date(),
@@ -348,6 +354,8 @@ export const DataCalendar = ({ data }: DataCalendarProps) => {
             onView={setView}
             workoutsLength={data.length}
             view={view}
+            min={min}
+            max={max}
           />
         ),
         agenda: {
