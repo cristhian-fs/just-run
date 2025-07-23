@@ -128,7 +128,7 @@ export const workoutSchema = z
     title: z.string().min(1, "O título é obrigatório").max(100),
     notes: z.string().optional(),
     // Planning
-    plannedDistanceM: z.number().positive().optional(),
+    plannedDistanceM: z.coerce.number().positive().optional(),
     duration: z
       .string()
       .regex(
