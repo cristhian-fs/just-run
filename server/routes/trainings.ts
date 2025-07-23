@@ -25,6 +25,7 @@ import { z } from "zod";
 import {
   newPeriodizationPlanSchema,
   registerWorkoutSchema,
+  workoutSchema,
 } from "@/shared/schemas";
 import {
   type PlanningSelect,
@@ -43,6 +44,7 @@ import {
 import type { Context } from "@/lib/context";
 import { getStartDate } from "@/lib/core/calculations/time";
 import { distributeWeeklyVolumesWithDays } from "@/lib/core/generators/dayly-distribution";
+import { parseWorkoutDto } from "@/lib/utils";
 
 export const trainingRouter = new Hono<Context>()
   .post("/generate", loggedIn, async (c) => {
@@ -462,4 +464,64 @@ export const trainingRouter = new Hono<Context>()
       },
       200,
     );
-  });
+  })
+  .post(
+    "/add-custom-workout",
+    loggedIn,
+    zValidator("json", workoutSchema),
+    async (c) => {
+      const userContext = c.get("user");
+      if (!userContext) {
+        throw new Error("User not found");
+      }
+      const { id: userId } = userContext;
+
+      const workout = c.req.valid("json");
+      const parsedWorkout = parseWorkoutDto(workout);
+
+      const today = new Date();
+      const weekMondayStr = isMonday(today)
+        ? format(today, "yyyy-MM-dd")
+        : format(previousMonday(today), "yyyy-MM-dd");
+
+      const currentWeek = await db.query.trainingWeeks.findFirst({
+        columns: { id: true },
+        where: and(
+          eq(trainingWeeks.userId, userId),
+          gte(trainingWeeks.weekStart, weekMondayStr),
+        ),
+      });
+
+      if (!currentWeek) {
+        throw new HTTPException(500, {
+          message: "Nenhuma semana encontrada",
+        });
+      }
+
+      const verifyDuplicateWorkout = await db.query.workouts.findFirst({
+        where: eq(
+          workouts.scheduledStart,
+          format(parsedWorkout.scheduledStart, "yyyy-MM-dd"),
+        ),
+      });
+
+      if (verifyDuplicateWorkout) {
+        await db
+          .delete(workouts)
+          .where(eq(workouts.id, verifyDuplicateWorkout.id));
+      }
+
+      await TrainingWeekOrchestratorService.saveWorkout({
+        trainingWeekId: currentWeek.id,
+        workout: parsedWorkout,
+      });
+
+      return c.json<SuccessResponse>(
+        {
+          success: true,
+          message: "Treino registrado com sucesso",
+        },
+        200,
+      );
+    },
+  );
