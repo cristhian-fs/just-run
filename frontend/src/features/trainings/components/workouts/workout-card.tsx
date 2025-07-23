@@ -80,21 +80,20 @@ export const WorkoutCard = ({
               {RUN_TYPE_MAPPING[workout.runType]}
             </RunTypeBadge>
           </div>
-          <Checkbox checked={workout.isCompleted} />
+          {workout.isCompleted && <Checkbox checked={workout.isCompleted} />}
         </div>
         <CardTitle className="truncate text-base">{workout.title}</CardTitle>
-        {workout.plannedDurationS && (
+        <div className="flex items-center gap-x-2">
           <p className="text-muted-foreground text-sm">
             {RUN_TYPE_MAPPING[workout.runType]} •{" "}
-            {Math.round(workout.plannedDurationS / 60)} min
+            {workout.plannedDurationS && (
+              <span>{Math.round(workout.plannedDurationS / 60)} min •</span>
+            )}
+            {workout.plannedDistanceM && (
+              <span>{Math.round(workout.plannedDistanceM / 1000)} km</span>
+            )}
           </p>
-        )}
-        {workout.plannedDistanceM && (
-          <p className="text-muted-foreground text-sm">
-            {RUN_TYPE_MAPPING[workout.runType]} •{" "}
-            {Math.round(workout.plannedDistanceM / 1000)}km
-          </p>
-        )}
+        </div>
       </CardHeader>
     </Card>
   );
