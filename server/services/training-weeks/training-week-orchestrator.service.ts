@@ -58,16 +58,16 @@ export class TrainingWeekOrchestratorService {
   }
 
   static async saveWorkout({
-    userId,
+    trainingWeekId,
     workout,
   }: {
     workout: Workout;
-    userId: string;
+    trainingWeekId: string;
   }) {
     await db.transaction(async (tx) => {
       const insertedWorkout = await WorkoutService.createWorkout(
         workout,
-        userId,
+        trainingWeekId,
         tx,
       );
       await this.processWorkoutBlocksAndSegments(
