@@ -4,7 +4,7 @@ import { motion, type Variants } from "motion/react";
 import {
   BlockWithSegments,
   SegmentSelect,
-  WorkoutWithBlocks,
+  WorkoutWithBlocksAndSegments,
 } from "@/shared/types";
 import {
   formatDistance,
@@ -157,7 +157,11 @@ WorkoutBlock.Loading = function WorkoutBlockSkeleton() {
   );
 };
 
-export const WorkoutData = ({ workout }: { workout: WorkoutWithBlocks }) => {
+export const WorkoutData = ({
+  workout,
+}: {
+  workout: WorkoutWithBlocksAndSegments;
+}) => {
   return (
     <>
       <div className="space-y-4 p-4">
@@ -236,8 +240,11 @@ export const WorkoutData = ({ workout }: { workout: WorkoutWithBlocks }) => {
         animate="show"
       >
         <h3 className="text-lg font-semibold">Estrutura do Treino</h3>
-        {workout.blocks.map((block) => (
+        {workout.blocks?.map((block) => (
           <WorkoutBlock block={block} key={block.id} />
+        ))}
+        {workout.segments?.map((segment) => (
+          <WorkoutSegment segment={segment} key={segment.id} />
         ))}
       </motion.div>
     </>
