@@ -40,6 +40,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./data-calendar.css";
 
 import { useMemo, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 import { WorkoutSelect } from "@/shared/types";
 import { cn } from "@/lib/utils";
@@ -211,9 +212,11 @@ const CustomToolBar = ({
             <CalendarRange className="size-4" />
           </Button>
         </div>
-        <Button>
-          <PlusIcon />
-          Novo Treino
+        <Button asChild>
+          <Link to="/novo-treino">
+            <PlusIcon />
+            Novo Treino
+          </Link>
         </Button>
       </div>
     </div>
