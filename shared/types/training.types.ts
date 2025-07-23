@@ -160,8 +160,9 @@ export type BlockWithSegments = BlockSelect & {
 };
 
 /** WorkoutSelect enriquecido com seus blocos */
-export type WorkoutWithBlocks = WorkoutSelect & {
-  blocks: BlockWithSegments[];
+export type WorkoutWithBlocksAndSegments = WorkoutSelect & {
+  blocks?: BlockWithSegments[];
+  segments?: SegmentSelect[];
 };
 
 /**

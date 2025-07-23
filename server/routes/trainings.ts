@@ -35,7 +35,7 @@ import {
   type TraningZoneSelect,
   type WeekAmount,
   type WorkoutSelect,
-  type WorkoutWithBlocks,
+  type WorkoutWithBlocksAndSegments,
 } from "@/shared/types";
 import {
   defaultWeeklyMinutesByGoal,
@@ -282,6 +282,7 @@ export const trainingRouter = new Hono<Context>()
               segments: true,
             },
           },
+          segments: true,
         },
       });
 
@@ -289,11 +290,11 @@ export const trainingRouter = new Hono<Context>()
         throw new HTTPException(404, { message: "Nenhum treino encontrado" });
       }
 
-      return c.json<SuccessResponse<WorkoutWithBlocks>>(
+      return c.json<SuccessResponse<WorkoutWithBlocksAndSegments>>(
         {
           success: true,
           message: "Treino encontrado",
-          data: workout as WorkoutWithBlocks,
+          data: workout as WorkoutWithBlocksAndSegments,
         },
         200,
       );
