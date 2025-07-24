@@ -68,6 +68,11 @@ export function calculatePace(vam: number, intensity: number): number {
   return 60 / speedKmh; // minutos por km
 }
 
+export function paceStringToSeconds(paceStr: string): number {
+  const [m, s] = paceStr.split(":").map(Number);
+  return (m || 0) * 60 + (s || 0);
+}
+
 /**
  * Se hoje for sábado (6) ou domingo (0) começa na próxima segunda.
  * Caso contrário, começa hoje mesmo.
