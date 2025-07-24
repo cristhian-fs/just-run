@@ -112,7 +112,7 @@ function RouteComponent() {
             <CardAction className="self-auto">
               <Hint description="Ver todos os treinos" side="top">
                 <Button size="icon" variant="outline" asChild>
-                  <Link to="/">
+                  <Link to="/planejamento">
                     <ChevronRight />
                   </Link>
                 </Button>
