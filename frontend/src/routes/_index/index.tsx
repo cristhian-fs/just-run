@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getMonthlySummary } from "@/features/home/api/get-monthly-summary";
 import { getVolumeProgression } from "@/features/home/api/get-volume-progression";
+import { getWeeklyIntensity } from "@/features/home/api/get-weekly-intensity";
 import { getWeeklyVolume } from "@/features/home/api/get-weekly-volume";
 import { MonthlySummaryCard } from "@/features/home/components/monthly-summary-card";
 import { RunningProgressionCard } from "@/features/home/components/running-progression-card";
@@ -63,6 +64,12 @@ function RouteComponent() {
         getVolumeProgression({
           period,
         }),
+    });
+
+  const { data: weeklyIntensitym, isLoading: isWeeklyIntensityLoading } =
+    useQuery({
+      queryKey: ["weekly-intensity-volume"],
+      queryFn: () => getWeeklyIntensity(),
     });
 
   const nextWorkoutToday =
@@ -154,7 +161,13 @@ function RouteComponent() {
             />
           )
         )}
-        <WeeklyIntensityCard />
+        {isWeeklyIntensityLoading ? (
+          <WeeklyIntensityCard.Loading />
+        ) : (
+          weeklyIntensitym && (
+            <WeeklyIntensityCard weeklyIntensityData={weeklyIntensitym} />
+          )
+        )}
       </div>
     </main>
   );
