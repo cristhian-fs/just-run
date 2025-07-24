@@ -47,3 +47,5 @@ export const segmentKinds = [
   "WARMUP",
   "COOLDOWN",
 ] as const;
+
+export const intensityZones = ["Z1", "Z2", "Z3", "Z4", "Z5"] as const;

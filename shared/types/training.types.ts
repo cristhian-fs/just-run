@@ -1,4 +1,5 @@
 import type {
+  intensityZones,
   raceOptions,
   segmentKinds,
   testTypes,
@@ -10,6 +11,7 @@ import type {
 
 export type TrainingGoal = (typeof trainingGoals)[number];
 export type RaceOption = (typeof raceOptions)[number];
+export type TIntensityZone = (typeof intensityZones)[number];
 export type TTrainingType = (typeof trainingTypes)[number];
 export type SessionVolumeDistribution = Record<
   number, // número de treinos por semana (3, 4, 5, 6)
@@ -232,4 +234,21 @@ export type TrainingWeekSelect = {
 
 export type PlanningSelect = TrainingWeekSelect & {
   workouts: WorkoutSelect[];
+};
+
+/**
+ * Training zones
+ */
+
+export type TrainingZonesSelect = {
+  workouts: string[] | null;
+  id: string;
+  name: string;
+  createdAt: Date;
+  userId: string;
+  vo2Percentage: number | null;
+  pace: string | null;
+  velocity: number | null;
+  cardioFrequency: number | null;
+  vo2Max: number | null;
 };

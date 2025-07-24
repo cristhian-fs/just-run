@@ -1,4 +1,5 @@
 import type { ApiRoutes } from "../../server";
+import type { TIntensityZone } from "./training.types";
 
 export { type ApiRoutes };
 
@@ -34,4 +35,9 @@ export interface VolumeProgression {
   date: string;
   volume: number | null;
   minutes: number | null;
+}
+
+export interface WeeklyIntensityZoneVolume {
+  zone: TIntensityZone;
+  volume: number;
 }
