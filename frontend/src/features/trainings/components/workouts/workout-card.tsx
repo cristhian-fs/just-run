@@ -85,12 +85,12 @@ export const WorkoutCard = ({
         <CardTitle className="truncate text-base">{workout.title}</CardTitle>
         <div className="flex items-center gap-x-2">
           <p className="text-muted-foreground text-sm">
-            {RUN_TYPE_MAPPING[workout.runType]} •{" "}
+            {RUN_TYPE_MAPPING[workout.runType]}{" "}
             {workout.plannedDurationS && (
-              <span>{Math.round(workout.plannedDurationS / 60)} min •</span>
+              <span>• {Math.round(workout.plannedDurationS / 60)} min</span>
             )}
             {workout.plannedDistanceM && (
-              <span>{Math.round(workout.plannedDistanceM / 1000)} km</span>
+              <span>• {Math.round(workout.plannedDistanceM / 1000)} km</span>
             )}
           </p>
         </div>

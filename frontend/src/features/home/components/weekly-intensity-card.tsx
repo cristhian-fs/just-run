@@ -84,7 +84,6 @@ export function WeeklyIntensityCard({ weeklyIntensityData, className }: Props) {
                   />
                 }
                 cursor={false}
-                defaultIndex={1}
               />
               <Bar
                 dataKey="volume"
