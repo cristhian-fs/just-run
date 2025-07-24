@@ -1,11 +1,18 @@
 import { Hono } from "hono";
+import { HTTPException } from "hono/http-exception";
 import { and, asc, eq, gte, inArray, lt, lte } from "drizzle-orm";
 
 import { db } from "@/db";
-import { trainingWeeks, workouts } from "@/db/schemas";
+import { trainingWeeks, trainingZones, workouts } from "@/db/schemas";
+import { loggedIn } from "@/middlewares/logged-in";
 import { zValidator } from "@hono/zod-validator";
-import { format, previousMonday, subDays } from "date-fns";
-import { endOfMonth, startOfMonth } from "date-fns/fp";
+import {
+  endOfMonth,
+  format,
+  previousMonday,
+  startOfMonth,
+  subDays,
+} from "date-fns";
 import { isMonday } from "date-fns/isMonday";
 import { z } from "zod";
 
@@ -18,6 +25,7 @@ import type {
   WorkoutSelect,
 } from "@/shared/types";
 import { type Context } from "@/lib/context";
+import { calculateUserWeeklyIntensity } from "@/lib/core/calculations/weekly-intensity";
 
 const calculateCompletedVolume = (workouts: WorkoutSelect[]): number => {
   return workouts
@@ -43,7 +51,7 @@ const calculateProgressOverWeek = (
 };
 
 export const analyticsRouter = new Hono<Context>()
-  .get("/weekly-volume", async (c) => {
+  .get("/weekly-volume", loggedIn, async (c) => {
     const userContext = c.get("user");
     if (!userContext) {
       throw new Error("User not found");
@@ -127,7 +135,7 @@ export const analyticsRouter = new Hono<Context>()
       200,
     );
   })
-  .get("/monthly-summary", async (c) => {
+  .get("/monthly-summary", loggedIn, async (c) => {
     const userContext = c.get("user");
     if (!userContext) {
       throw new Error("User not found");
@@ -203,6 +211,7 @@ export const analyticsRouter = new Hono<Context>()
   })
   .get(
     "/volume-progression",
+    loggedIn,
     zValidator(
       "query",
       z.object({
@@ -262,4 +271,65 @@ export const analyticsRouter = new Hono<Context>()
         data: periodWorkouts,
       });
     },
-  );
+  )
+  .get("/weekly-intensity-volume", loggedIn, async (c) => {
+    const userContext = c.get("user");
+
+    if (!userContext) {
+      throw new Error("User not found");
+    }
+
+    const { id: userId } = userContext;
+
+    const today = new Date();
+    const weekMondayStr = isMonday(today)
+      ? format(today, "yyyy-MM-dd")
+      : format(previousMonday(today), "yyyy-MM-dd");
+
+    const currentWeek = await db.query.trainingWeeks.findFirst({
+      columns: { id: true },
+      where: and(
+        eq(trainingWeeks.userId, userId),
+        gte(trainingWeeks.weekStart, weekMondayStr),
+      ),
+    });
+
+    if (!currentWeek) {
+      throw new HTTPException(500, {
+        message: "Nenhuma semana de treinamento encontrada",
+      });
+    }
+
+    const currentWeekWorkouts = await db.query.workouts.findMany({
+      where: eq(workouts.trainingWeekId, currentWeek.id),
+      with: {
+        blocks: {
+          with: {
+            segments: true,
+          },
+        },
+        segments: true,
+      },
+    });
+
+    const currentUserTrainingZones = await db.query.trainingZones.findMany({
+      where: eq(trainingZones.userId, userId),
+    });
+
+    if (!currentUserTrainingZones) {
+      throw new HTTPException(500, {
+        message: "Nenhuma zona de treinamento encontrada",
+      });
+    }
+
+    const calculatedWeeklyIntensity = calculateUserWeeklyIntensity({
+      trainingZones: currentUserTrainingZones,
+      workouts: currentWeekWorkouts,
+    });
+
+    return c.json({
+      data: calculatedWeeklyIntensity,
+      success: true,
+      message: "Intensidade semanal obtida com sucesso",
+    });
+  });
