@@ -25,6 +25,7 @@ import {
   SidebarHeader,
   SidebarMenu,
   SidebarMenuItem,
+  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
@@ -124,24 +125,34 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <Button
               variant="ghost"
-              className="w-full justify-start font-normal"
+              className="text-foreground w-full justify-start font-normal"
               asChild
             >
               <Link to="/">
                 <AppLogo className="!size-5" />
-                <span className="text-base font-semibold">Just Run</span>
+                <span className="text-base font-semibold tracking-tighter">
+                  Just Run
+                </span>
               </Link>
             </Button>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="mt-4 gap-0">
+        <span className="text-muted-foreground ml-2 text-sm">
+          Menu principal
+        </span>
+        <SidebarSeparator className="bg-border mb-2 mt-1 data-[orientation=horizontal]:h-[2px] data-[orientation=horizontal]:w-auto" />
         <NavMain items={data.navMain} />
         {/* <NavDocuments items={data.documents} /> */}
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="p-2">
         <NavSecondary items={data.navSecondary} />
+        <SidebarSeparator className="bg-border mb-2 mt-1 data-[orientation=horizontal]:h-[2px] data-[orientation=horizontal]:w-auto" />
         <NavUser user={user} />
+        <span className="text-muted-foreground text-center text-sm">
+          ©{new Date().getFullYear()} Just Run
+        </span>
       </SidebarFooter>
     </Sidebar>
   );

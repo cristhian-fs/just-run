@@ -44,11 +44,11 @@ export function NavUser({
   };
 
   return (
-    <SidebarGroup className="hover:bg-transparent">
+    <SidebarGroup className="bg-background rounded-md border shadow-sm">
       <div className="flex items-center justify-start gap-x-2">
-        <Avatar className="size-10 rounded-md border border-transparent grayscale">
+        <Avatar className="bg-secondary size-10 rounded-md border border-transparent">
           <AvatarImage src={user.avatar} alt={user.name} />
-          <AvatarFallback className="rounded-md">
+          <AvatarFallback className="bg-secondary rounded-md">
             {user.name.split(" ")[0][0]}
           </AvatarFallback>
         </Avatar>
