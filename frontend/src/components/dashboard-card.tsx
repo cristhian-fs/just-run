@@ -59,7 +59,7 @@ export const DashboardCard = ({
       )}
     >
       <div className="bg-card relative z-[2] flex flex-1 flex-col rounded-xl border shadow-sm">
-        <CardHeader className="has-data-[slot=card-action]:grid-cols-1 @sm/card:has-data-[slot=card-action]:grid-cols-[1fr_auto] items-center gap-2 border-b px-4 py-4 pb-0">
+        <CardHeader className="has-data-[slot=card-action]:grid-cols-1 @sm/card:has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-action]:gap-2 items-center gap-0 border-b px-4 py-4 pb-0">
           <div className="flex items-center gap-x-2">
             <div className="bg-background shadow-xs rounded-md border p-3">
               <Icon className="text-muted-foreground size-4" />
