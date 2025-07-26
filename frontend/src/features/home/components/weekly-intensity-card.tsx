@@ -16,6 +16,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { DashboardCard } from "@/components/dashboard-card";
 
 const chartConfig = {
   volume: {
@@ -31,79 +32,69 @@ interface Props {
 
 export function WeeklyIntensityCard({ weeklyIntensityData, className }: Props) {
   return (
-    <Card className={cn("gap-0 overflow-hidden py-0", className)}>
-      <CardHeader className="items-center gap-0 border-b py-4 pb-0">
-        <div className="flex items-center gap-x-2">
-          <div className="bg-background shadow-xs rounded-md border p-3">
-            <ChartArea className="text-muted-foreground size-4" />
-          </div>
-          <div className="grid gap-1">
-            <CardTitle>Intensidade semanal</CardTitle>
-            <CardDescription>
-              Distribuição das intensidades dos treinos
-            </CardDescription>
-          </div>
+    <DashboardCard
+      title="Intensidade semanal"
+      description="Distribuição das intensidades dos treinos"
+      icon={ChartArea}
+      className={className}
+    >
+      {weeklyIntensityData.length > 0 && (
+        <ChartContainer
+          config={chartConfig}
+          className="[&_.recharts-cartesian-grid]:outline-border h-full w-full [&_.recharts-cartesian-grid]:rounded-t-sm [&_.recharts-cartesian-grid]:outline"
+        >
+          <BarChart accessibilityLayer data={weeklyIntensityData}>
+            <defs>
+              <linearGradient id="gradientBar" x1="0" y1="0" x2="0" y2="100%">
+                <stop offset="0" stopColor="var(--chart-2)" />
+                <stop offset="1" stopColor="var(--chart-3)" />
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="zone"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+            />
+            <YAxis
+              dataKey="volume"
+              tickLine={false}
+              axisLine={false}
+              orientation="right"
+              width={52}
+              domain={[0, (dataMax) => dataMax * 1.2]}
+              tickFormatter={(value) => `${(value / 1000).toFixed(2)}km`}
+            />
+            <ChartTooltip
+              content={
+                <ChartTooltipContent
+                  indicator="line"
+                  valueFormatter={(value) =>
+                    `${((value as number) / 1000).toFixed(2)}km`
+                  }
+                />
+              }
+              cursor={false}
+            />
+            <Bar
+              dataKey="volume"
+              fill="url(#gradientBar)"
+              stroke="var(--chart-2)"
+              radius={[4, 4, 0, 0]}
+              barSize={48}
+            />
+          </BarChart>
+        </ChartContainer>
+      )}
+      {weeklyIntensityData.length === 0 && (
+        <div className="flex h-full w-full items-center justify-center">
+          <span className="text-muted-foreground">
+            Sem dados suficientes para essa semana
+          </span>
         </div>
-      </CardHeader>
-      <CardContent className="flex-1 py-4">
-        {weeklyIntensityData.length > 0 && (
-          <ChartContainer
-            config={chartConfig}
-            className="[&_.recharts-cartesian-grid]:outline-border h-full w-full [&_.recharts-cartesian-grid]:rounded-t-sm [&_.recharts-cartesian-grid]:outline"
-          >
-            <BarChart accessibilityLayer data={weeklyIntensityData}>
-              <defs>
-                <linearGradient id="gradientBar" x1="0" y1="0" x2="0" y2="100%">
-                  <stop offset="0" stopColor="var(--chart-2)" />
-                  <stop offset="1" stopColor="var(--chart-3)" />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="zone"
-                tickLine={false}
-                tickMargin={10}
-                axisLine={false}
-              />
-              <YAxis
-                dataKey="volume"
-                tickLine={false}
-                axisLine={false}
-                orientation="right"
-                width={52}
-                domain={[0, (dataMax) => dataMax * 1.2]}
-                tickFormatter={(value) => `${(value / 1000).toFixed(2)}km`}
-              />
-              <ChartTooltip
-                content={
-                  <ChartTooltipContent
-                    indicator="line"
-                    valueFormatter={(value) =>
-                      `${((value as number) / 1000).toFixed(2)}km`
-                    }
-                  />
-                }
-                cursor={false}
-              />
-              <Bar
-                dataKey="volume"
-                fill="url(#gradientBar)"
-                stroke="var(--chart-2)"
-                radius={[4, 4, 0, 0]}
-                barSize={48}
-              />
-            </BarChart>
-          </ChartContainer>
-        )}
-        {weeklyIntensityData.length === 0 && (
-          <div className="flex h-full w-full items-center justify-center">
-            <span className="text-muted-foreground">
-              Sem dados suficientes para essa semana
-            </span>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      )}
+    </DashboardCard>
   );
 }
 

@@ -18,14 +18,7 @@ import { ChevronRight, Zap } from "lucide-react";
 
 import { userQueryOptions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Hint } from "@/components/hint";
+import { DashboardCard } from "@/components/dashboard-card";
 
 export const Route = createFileRoute("/_index/")({
   component: RouteComponent,
@@ -80,7 +73,7 @@ function RouteComponent() {
     <main className="px-2 py-4 md:py-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col">
-          <h3 className="text-xl md:text-2xl">
+          <h3 className="text-xl font-semibold md:text-2xl">
             Bem vindo de volta, {user.name}!
           </h3>
           {nextWorkoutToday ? (
@@ -101,39 +94,36 @@ function RouteComponent() {
         </div>
       </div>
       <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
-        <Card className="gap-0 overflow-hidden py-0">
-          <CardHeader className="items-center gap-0 border-b py-4 pb-0">
-            <div className="flex items-center gap-x-2">
-              <div className="bg-background shadow-xs rounded-md border p-3">
-                <Zap className="text-muted-foreground h-4 w-4" />
-              </div>
-              <CardTitle>Proximo treino</CardTitle>
-            </div>
-            <CardAction className="self-auto">
-              <Hint description="Ver todos os treinos" side="top">
-                <Button size="icon" variant="outline" asChild>
-                  <Link to="/planejamento">
-                    <ChevronRight />
-                  </Link>
-                </Button>
-              </Hint>
-            </CardAction>
-          </CardHeader>
-          <CardContent className="py-4">
-            {isNextWorkoutLoading ? (
-              <WorkoutCard.Loading />
-            ) : nextWorkout?.data ? (
-              <WorkoutCard
-                inCalendar={false}
-                workout={{
-                  ...nextWorkout.data,
-                  createdAt: parseISO(nextWorkout.data.createdAt),
-                  updatedAt: parseISO(nextWorkout.data.updatedAt),
-                }}
-              />
-            ) : null}
-          </CardContent>
-        </Card>
+        <DashboardCard
+          title="Proximo treino"
+          icon={Zap}
+          footerContent={
+            <Button
+              size="sm"
+              variant="link"
+              className="h-auto w-full justify-between gap-2 py-2 text-current"
+              asChild
+            >
+              <Link to="/planejamento">
+                Ver todos os treinos
+                <ChevronRight />
+              </Link>
+            </Button>
+          }
+        >
+          {isNextWorkoutLoading ? (
+            <WorkoutCard.Loading />
+          ) : nextWorkout?.data ? (
+            <WorkoutCard
+              inCalendar={false}
+              workout={{
+                ...nextWorkout.data,
+                createdAt: parseISO(nextWorkout.data.createdAt),
+                updatedAt: parseISO(nextWorkout.data.updatedAt),
+              }}
+            />
+          ) : null}
+        </DashboardCard>
         {isWeeklyVolumeLoading ? (
           <WeeklyVolumeCard.Loading />
         ) : (

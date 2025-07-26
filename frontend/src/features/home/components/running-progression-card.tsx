@@ -26,6 +26,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
+import { DashboardCard } from "@/components/dashboard-card";
 
 const chartConfig = {
   desktop: {
@@ -54,20 +55,13 @@ export function RunningProgressionCard({
   period,
 }: Props) {
   return (
-    <Card className={cn("gap-0 overflow-hidden py-0", className)}>
-      <CardHeader className="flex flex-col items-start gap-4 border-b py-4 pb-0 sm:grid sm:items-center">
-        <div className="flex items-center gap-x-2">
-          <div className="bg-background shadow-xs rounded-md border p-3">
-            <ChartArea className="text-muted-foreground size-4" />
-          </div>
-          <div className="grid gap-1">
-            <CardTitle>Progressão de volume</CardTitle>
-            <CardDescription>
-              Volume de treinos nos ultimos 30 dias
-            </CardDescription>
-          </div>
-        </div>
-        <CardAction className="self-auto">
+    <DashboardCard
+      title="Progressão de volume"
+      description={`Volume de treinos nos ultimos ${period} dias`}
+      icon={ChartArea}
+      className={className}
+      action={
+        <>
           <Select defaultValue={period} onValueChange={onPeriodChange}>
             <SelectTrigger className="w-36">
               <SelectValue placeholder="Theme" />
@@ -78,81 +72,80 @@ export function RunningProgressionCard({
               <SelectItem value="30 days">30 dias</SelectItem>
             </SelectContent>
           </Select>
-        </CardAction>
-      </CardHeader>
-      <CardContent className="py-4">
-        {data.length > 1 ? (
-          <ChartContainer config={chartConfig} className="h-80 w-full">
-            <AreaChart
-              accessibilityLayer
-              data={data}
-              margin={{
-                left: 12,
-                right: 12,
-              }}
-            >
-              <CartesianGrid vertical={false} />
-              <XAxis
-                dataKey="date"
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                tickFormatter={(value) => format(formatISO(value), "dd/MM")}
-              />
-              <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-              <defs>
-                <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                  <stop
-                    offset="5%"
-                    stopColor="var(--color-desktop)"
-                    stopOpacity={0.8}
-                  />
-                  <stop
-                    offset="95%"
-                    stopColor="var(--color-desktop)"
-                    stopOpacity={0.1}
-                  />
-                </linearGradient>
-                <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                  <stop
-                    offset="5%"
-                    stopColor="var(--color-mobile)"
-                    stopOpacity={0.8}
-                  />
-                  <stop
-                    offset="95%"
-                    stopColor="var(--color-mobile)"
-                    stopOpacity={0.1}
-                  />
-                </linearGradient>
-              </defs>
-              <Area
-                dataKey="volume"
-                type="natural"
-                fill="url(#fillMobile)"
-                fillOpacity={0.4}
-                stroke="var(--color-mobile)"
-                stackId="a"
-              />
-              <Area
-                dataKey="minutes"
-                type="natural"
-                fill="url(#fillDesktop)"
-                fillOpacity={0.4}
-                stroke="var(--color-desktop)"
-                stackId="a"
-              />
-            </AreaChart>
-          </ChartContainer>
-        ) : (
-          <div className="flex h-80 w-full items-center justify-center">
-            <p className="text-muted-foreground">
-              Sem dados de treinamento suficientes para exibir
-            </p>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+        </>
+      }
+    >
+      {data.length > 1 ? (
+        <ChartContainer config={chartConfig} className="h-80 w-full">
+          <AreaChart
+            accessibilityLayer
+            data={data}
+            margin={{
+              left: 12,
+              right: 12,
+            }}
+          >
+            <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey="date"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              tickFormatter={(value) => format(formatISO(value), "dd/MM")}
+            />
+            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+            <defs>
+              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="5%"
+                  stopColor="var(--color-desktop)"
+                  stopOpacity={0.8}
+                />
+                <stop
+                  offset="95%"
+                  stopColor="var(--color-desktop)"
+                  stopOpacity={0.1}
+                />
+              </linearGradient>
+              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="5%"
+                  stopColor="var(--color-mobile)"
+                  stopOpacity={0.8}
+                />
+                <stop
+                  offset="95%"
+                  stopColor="var(--color-mobile)"
+                  stopOpacity={0.1}
+                />
+              </linearGradient>
+            </defs>
+            <Area
+              dataKey="volume"
+              type="natural"
+              fill="url(#fillMobile)"
+              fillOpacity={0.4}
+              stroke="var(--color-mobile)"
+              stackId="a"
+            />
+            <Area
+              dataKey="minutes"
+              type="natural"
+              fill="url(#fillDesktop)"
+              fillOpacity={0.4}
+              stroke="var(--color-desktop)"
+              stackId="a"
+            />
+          </AreaChart>
+        </ChartContainer>
+      ) : (
+        <div className="flex h-80 w-full items-center justify-center">
+          <p className="text-muted-foreground">
+            Sem dados de treinamento suficientes para exibir
+          </p>
+        </div>
+      )}
+    </DashboardCard>
   );
 }
 
