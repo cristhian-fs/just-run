@@ -64,7 +64,7 @@ export function SegmentForm({ blockIndex, nestIndex }: SegmentFormProps) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h4 className="text-sm font-medium">Segmentos</h4>
+        <h3 className="text-lg font-medium">Segmentos de treinamento</h3>
         <Button type="button" variant="outline" size="sm" onClick={addSegment}>
           <Plus className="mr-2 size-4" />
           Adicionar segmento
