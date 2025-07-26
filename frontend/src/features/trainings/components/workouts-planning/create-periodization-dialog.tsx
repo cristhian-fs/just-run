@@ -38,9 +38,6 @@ export const CreatePeriodizationDialog = () => {
         weeklyFrequency: data.weeklyFrequency.toString(),
         weeks: data.weeks.toString(),
       },
-      param: {
-        userId: user.id,
-      },
     });
   };
 
@@ -66,7 +63,7 @@ export const CreatePeriodizationDialog = () => {
         </>
       }
     >
-      <Button>Criar nova programação</Button>
+      <Button variant="gradient">Criar nova programação</Button>
     </ResponsiveDialog>
   );
 };

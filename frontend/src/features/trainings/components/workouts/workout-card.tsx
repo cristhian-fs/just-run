@@ -42,7 +42,7 @@ export const WorkoutCard = ({
 
   return (
     <Card
-      className="bg-muted hover:bg-muted/70 relative cursor-pointer overflow-hidden py-4 transition-all duration-200"
+      className="bg-card-outter hover:bg-muted/70 relative cursor-pointer overflow-hidden py-4 transition-all duration-200"
       onClick={() => {
         state.setWorkoutId(workout.id);
         state.setIsOpen(true);
