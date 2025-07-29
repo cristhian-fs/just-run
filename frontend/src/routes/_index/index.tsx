@@ -70,7 +70,7 @@ function RouteComponent() {
     new Date().toISOString().split("T")[0];
 
   return (
-    <main className="px-2 py-4 md:py-6">
+    <main className="px-4 py-4 md:py-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold md:text-2xl">

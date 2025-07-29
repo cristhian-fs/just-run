@@ -25,14 +25,14 @@ function RouteComponent() {
 
   return (
     <div className="py-4 md:py-8">
-      <div className="px-4 md:px-8">
+      <div className="px-4">
         <h3 className="text-xl md:text-2xl">Configurações pessoais</h3>
       </div>
       <Tabs defaultValue="profile" className="mt-4">
-        <TabsList className="h-auto w-full justify-start rounded-none border-0 border-b bg-transparent px-4 py-0 md:px-8">
+        <TabsList className="h-auto w-full justify-start rounded-none border-0 border-b bg-transparent px-4 py-0">
           <TabsTrigger
             value="profile"
-            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent"
+            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:ring-0 dark:data-[state=active]:bg-transparent"
           >
             <span className="group-data-[state=active]:bg-muted group-data-[state=active]:dark:bg-muted/50 flex items-center gap-x-2 rounded-lg px-2 py-1 group-data-[state=active]:border">
               <UserIcon className="size-4" />
@@ -41,7 +41,7 @@ function RouteComponent() {
           </TabsTrigger>
           <TabsTrigger
             value="tests"
-            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent"
+            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:ring-0 dark:data-[state=active]:bg-transparent"
           >
             <span className="group-data-[state=active]:bg-muted group-data-[state=active]:dark:bg-muted/50 flex items-center gap-x-2 rounded-lg px-2 py-1 group-data-[state=active]:border">
               <FileChartColumn className="size-4" />
@@ -50,7 +50,7 @@ function RouteComponent() {
           </TabsTrigger>
           <TabsTrigger
             value="privary"
-            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent"
+            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:ring-0 dark:data-[state=active]:bg-transparent"
           >
             <span className="group-data-[state=active]:bg-muted group-data-[state=active]:dark:bg-muted/50 flex items-center gap-x-2 rounded-lg px-2 py-1 group-data-[state=active]:border">
               <LockIcon className="size-4" />
@@ -61,7 +61,7 @@ function RouteComponent() {
         <ProfileTabContent />
         <TestsTabContent />
       </Tabs>
-      <div className="px-4 md:px-8">
+      <div className="px-4">
         {from === "onboarding" && (
           <Button asChild variant="secondary" className="mt-4">
             <Link to="/onboarding">

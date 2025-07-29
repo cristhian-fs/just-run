@@ -45,7 +45,7 @@ function AppLayoutComponent() {
     >
       <AppSidebar variant="inset" />
       <SidebarInset>
-        <div className="flex flex-1 flex-col p-4">
+        <div className="flex flex-1 flex-col py-4">
           <SiteHeader />
           <div className="@container/main flex flex-1 flex-col gap-2">
             <Outlet />
