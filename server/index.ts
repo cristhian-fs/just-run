@@ -2,6 +2,7 @@ import { serveStatic } from "hono/bun";
 
 import createApp from "./lib/create-app";
 import { analyticsRouter } from "./routes/analytics";
+import { runningTestsRouter } from "./routes/running-tests";
 import { trainingRouter } from "./routes/trainings";
 import { userRouter } from "./routes/users";
 
@@ -12,7 +13,8 @@ const routes = app
   .basePath("/api")
   .route("/users", userRouter)
   .route("/trainings", trainingRouter)
-  .route("/analytics", analyticsRouter);
+  .route("/analytics", analyticsRouter)
+  .route("/running-tests", runningTestsRouter);
 
 app.get("*", serveStatic({ root: "./frontend/dist/" }));
 app.get("*", serveStatic({ path: "./frontend/dist/index.html" }));
