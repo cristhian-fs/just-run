@@ -30,7 +30,7 @@ function RouteComponent() {
   }));
 
   return (
-    <main className="h-full flex-1 px-2 py-4 md:py-6">
+    <main className="h-full flex-1 px-4 py-4 md:py-6">
       <div className="h-full">
         <DataCalendar data={formattedWorkouts || []} />
       </div>

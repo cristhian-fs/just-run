@@ -6,6 +6,7 @@ import { ChevronLeft, FileChartColumn, LockIcon, UserIcon } from "lucide-react";
 import { z } from "zod";
 
 import { userQueryOptions } from "@/lib/api";
+import { CUSTOM_TABS_CLASSNAMES } from "@/lib/consts";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -25,34 +26,31 @@ function RouteComponent() {
 
   return (
     <div className="py-4 md:py-8">
-      <div className="px-4 md:px-8">
+      <div className="px-4">
         <h3 className="text-xl md:text-2xl">Configurações pessoais</h3>
       </div>
       <Tabs defaultValue="profile" className="mt-4">
-        <TabsList className="h-auto w-full justify-start rounded-none border-0 border-b bg-transparent px-4 py-0 md:px-8">
+        <TabsList className={CUSTOM_TABS_CLASSNAMES.list}>
           <TabsTrigger
             value="profile"
-            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent"
+            className={CUSTOM_TABS_CLASSNAMES.trigger}
           >
-            <span className="group-data-[state=active]:bg-muted group-data-[state=active]:dark:bg-muted/50 flex items-center gap-x-2 rounded-lg px-2 py-1 group-data-[state=active]:border">
+            <span className={CUSTOM_TABS_CLASSNAMES.innerSpan}>
               <UserIcon className="size-4" />
               Meu perfil
             </span>
           </TabsTrigger>
-          <TabsTrigger
-            value="tests"
-            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent"
-          >
-            <span className="group-data-[state=active]:bg-muted group-data-[state=active]:dark:bg-muted/50 flex items-center gap-x-2 rounded-lg px-2 py-1 group-data-[state=active]:border">
+          <TabsTrigger value="tests" className={CUSTOM_TABS_CLASSNAMES.trigger}>
+            <span className={CUSTOM_TABS_CLASSNAMES.innerSpan}>
               <FileChartColumn className="size-4" />
               Meus testes
             </span>
           </TabsTrigger>
           <TabsTrigger
             value="privary"
-            className="data-[state=active]:border-primary dark:data-[state=active]:border-primary flex-0 group h-auto w-auto rounded-none border-0 border-b border-transparent py-2 font-normal data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent"
+            className={CUSTOM_TABS_CLASSNAMES.trigger}
           >
-            <span className="group-data-[state=active]:bg-muted group-data-[state=active]:dark:bg-muted/50 flex items-center gap-x-2 rounded-lg px-2 py-1 group-data-[state=active]:border">
+            <span className={CUSTOM_TABS_CLASSNAMES.innerSpan}>
               <LockIcon className="size-4" />
               Privacidade e segurança
             </span>
