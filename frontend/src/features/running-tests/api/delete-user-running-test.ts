@@ -7,19 +7,22 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 type ResponseType = InferResponseType<
-  (typeof client.users)["add-test"]["$post"],
+  (typeof client)["running-tests"][":id"]["$delete"],
   200
 >;
-type RequestType = InferRequestType<(typeof client.users)["add-test"]["$post"]>;
+type RequestType = InferRequestType<
+  (typeof client)["running-tests"][":id"]["$delete"]
+>;
 
-export const useAddTest = () => {
+export const deleteUserRunningTest = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
-    mutationFn: async ({ form }) => {
-      const response = await client.users["add-test"].$post({
-        form,
+    mutationFn: async ({ param }) => {
+      const response = await client["running-tests"][":id"].$delete({
+        param,
       });
+
       if (response.ok) {
         const data = await response.json();
         return data;
@@ -29,11 +32,11 @@ export const useAddTest = () => {
       }
     },
     onSuccess: () => {
-      toast.success("Teste adicionado com sucesso!");
+      toast.success("Teste excluido com sucesso!");
       queryClient.invalidateQueries({ queryKey: ["tests"] });
     },
     onError: () => {
-      toast.error("Erro ao adicionar teste!");
+      toast.error("Erro ao excluir teste!");
     },
   });
 
