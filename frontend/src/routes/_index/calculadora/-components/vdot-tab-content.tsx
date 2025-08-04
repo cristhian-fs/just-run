@@ -1,22 +1,22 @@
 import { useMemo } from "react";
 
+import { PhysiologyCalculator } from "@/features/vdot/physiology-calculator";
+import {
+  MAPPED_RACE_METERS_DISTANCE,
+  MAPPED_RACE_MILES_DISTANCE,
+  RACE_DISTANCE_KEYS,
+  RaceDistanceKey,
+  raceTimesFallback,
+  TEST_DISTANCE_MAPPING,
+  zonesFallback,
+} from "@/features/vdot/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Calculator, Heart } from "lucide-react";
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 
-import {
-  calculateRacePaces,
-  calculateVDOT,
-  getPacesPerSegment,
-} from "@/lib/calculations";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { CUSTOM_TABS_CLASSNAMES } from "@/lib/consts";
+import { cn } from "@/lib/utils";
 import {
   Form,
   FormControl,
@@ -33,38 +33,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { VDOTProgress } from "@/components/custom-vdot-progress";
 import { DashboardCard } from "@/components/dashboard-card";
 
-import { SegmentPace, zonesFallback } from "./types";
-
-// Test distances in meters
-const testDistances = {
-  "1500m": 1500,
-  mile: 1609.344,
-  "3k": 3000,
-  "5k": 5000,
-  "10k": 10000,
-  "15k": 15000,
-  "10mile": 16093.44,
-  half: 21097.5,
-  marathon: 42195,
-};
-
-const testDistancesList = Object.keys(testDistances);
-type TTestDistance = keyof typeof testDistances;
-
-const TEST_DISTANCE_MAPPING = {
-  "1500m": "1500m",
-  mile: "1 milha",
-  "3k": "3km",
-  "5k": "5km",
-  "10k": "10km",
-  "15k": "15km",
-  "10mile": "10 milhas",
-  half: "Meia maratona",
-  marathon: "Maratona",
-};
+import { RaceEquivalentsTab } from "./race-equivalents-tab";
+import { TrainingsTab } from "./trainings-tab";
 
 const vdotSchema = z.object({
   duration: z
@@ -92,8 +66,9 @@ export function VDOTTabContent() {
   const calculatedPace = useMemo(() => {
     if (!duration || !distance) return "00:00";
 
-    const distanceNum = testDistances[distance as TTestDistance];
-    if (isNaN(distanceNum) || distanceNum <= 0) return "00:00";
+    const distanceNum =
+      MAPPED_RACE_METERS_DISTANCE[distance as RaceDistanceKey];
+    if (!distanceNum || isNaN(distanceNum) || distanceNum <= 0) return 0;
 
     const durationParts = duration.split(":");
     if (durationParts.length !== 3) return "00:00";
@@ -122,8 +97,9 @@ export function VDOTTabContent() {
   const vo2MaxCalculated: number = useMemo(() => {
     if (!duration || !distance) return 0;
 
-    const distanceNum = testDistances[distance as TTestDistance];
-    if (isNaN(distanceNum) || distanceNum <= 0) return 0;
+    const distanceNum =
+      MAPPED_RACE_METERS_DISTANCE[distance as RaceDistanceKey];
+    if (!distanceNum || isNaN(distanceNum) || distanceNum <= 0) return 0;
 
     const durationParts = duration.split(":");
     if (durationParts.length !== 3) return 0;
@@ -135,29 +111,54 @@ export function VDOTTabContent() {
 
     const totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
-    const vo2Max = calculateVDOT({
+    const vo2Percentage = PhysiologyCalculator.calculateVDOTPercentage({
+      timeInSeconds: totalSeconds,
+    });
+    const vo2Max = PhysiologyCalculator.calculateVDOT({
       distanceM: distanceNum,
       durationS: totalSeconds,
+      VDOTPercentage: vo2Percentage,
     });
 
     return vo2Max;
   }, [duration, distance]);
 
-  const raceTimes = useMemo(
-    () => calculateRacePaces(vo2MaxCalculated),
-    [vo2MaxCalculated],
-  );
+  const raceTimes = useMemo(() => {
+    if (!duration || !distance) return raceTimesFallback;
+
+    const distanceNum = MAPPED_RACE_MILES_DISTANCE[distance as RaceDistanceKey];
+    if (!distanceNum || isNaN(distanceNum) || distanceNum <= 0)
+      return raceTimesFallback;
+
+    const durationParts = duration.split(":");
+    if (durationParts.length !== 3) return raceTimesFallback;
+    const hours = parseInt(durationParts[0]);
+    const minutes = parseInt(durationParts[1]);
+    const seconds = parseInt(durationParts[2]);
+
+    if (isNaN(hours) || isNaN(minutes) || isNaN(seconds))
+      return raceTimesFallback;
+
+    const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+    return PhysiologyCalculator.getRacePaceProjections({
+      durationS: totalSeconds,
+      distanceMiles: distanceNum,
+    });
+  }, [vo2MaxCalculated]);
 
   const minVO2 = 30;
   const maxVO2 = 85;
 
   const progress = ((vo2MaxCalculated - minVO2) / (maxVO2 - minVO2)) * 100;
 
-  const paceSegments: SegmentPace[] = useMemo(() => {
+  const paceSegments = useMemo(() => {
     if (!duration || !distance) return zonesFallback;
 
-    const distanceNum = testDistances[distance as TTestDistance];
-    if (isNaN(distanceNum) || distanceNum <= 0) return zonesFallback;
+    const distanceNum =
+      MAPPED_RACE_METERS_DISTANCE[distance as RaceDistanceKey];
+    if (!distanceNum || isNaN(distanceNum) || distanceNum <= 0)
+      return zonesFallback;
 
     const durationParts = duration.split(":");
     if (durationParts.length !== 3) return zonesFallback;
@@ -169,13 +170,14 @@ export function VDOTTabContent() {
 
     const totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
-    return getPacesPerSegment(
-      calculateVDOT({ distanceM: distanceNum, durationS: totalSeconds }),
-    );
+    return PhysiologyCalculator.getTrainingsPace({
+      durationS: totalSeconds,
+      distanceM: distanceNum,
+    });
   }, [duration, distance]);
 
   return (
-    <div className="divide-border flex flex-col gap-4 md:flex-row md:items-start">
+    <div className="divide-border flex flex-col gap-4 lg:flex-row lg:items-start">
       <DashboardCard
         className="flex-1/2 w-full max-w-2xl md:sticky md:top-6 lg:shrink-0"
         title="Calculadora VDOT"
@@ -207,9 +209,9 @@ export function VDOTTabContent() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {testDistancesList.map((distance) => (
+                        {RACE_DISTANCE_KEYS.toReversed().map((distance) => (
                           <SelectItem key={distance} value={distance}>
-                            {TEST_DISTANCE_MAPPING[distance as TTestDistance]}
+                            {TEST_DISTANCE_MAPPING[distance]}
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -258,43 +260,32 @@ export function VDOTTabContent() {
           </div>
         </div>
         <Separator className="my-8" />
-        <div className="flex flex-col gap-4">
-          <span className="text-foreground text-base">
-            Seus ritmos de treinamento estimados:
-          </span>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {paceSegments.map((segment) => (
-              <Card key={segment.name} className="gap-2">
-                <CardHeader>
-                  <CardTitle>{segment.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    {segment.paceInterval} min/km
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-        <Separator className="my-8" />
-        <div className="flex flex-col gap-4">
-          <span className="text-foreground text-base">
-            Ritmos de prova estimados:
-          </span>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {raceTimes.map((race) => (
-              <Card key={race.name} className="gap-2">
-                <CardHeader>
-                  <CardTitle>{race.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{race.pace} min/km</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Tabs defaultValue="equivalents">
+          <TabsList className={cn(CUSTOM_TABS_CLASSNAMES.list, "px-0")}>
+            <TabsTrigger
+              value="equivalents"
+              className={CUSTOM_TABS_CLASSNAMES.trigger}
+            >
+              <span className={CUSTOM_TABS_CLASSNAMES.innerSpan}>
+                Equivalentes
+              </span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="training"
+              className={CUSTOM_TABS_CLASSNAMES.trigger}
+            >
+              <span className={CUSTOM_TABS_CLASSNAMES.innerSpan}>
+                Treinamento
+              </span>
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="training" className="pt-3">
+            <TrainingsTab trainings={paceSegments} />
+          </TabsContent>
+          <TabsContent value="equivalents" className="pt-3">
+            <RaceEquivalentsTab raceTimes={raceTimes} />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
