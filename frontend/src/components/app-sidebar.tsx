@@ -27,7 +27,7 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { NavDocuments } from "@/components/nav-documents";
+// import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
@@ -44,32 +44,32 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/",
+      url: "/app",
       icon: HouseIcon,
     },
     {
       title: "Planejamento de treinos",
-      url: "/planejamento",
+      url: "/app/planejamento",
       icon: Sheet,
     },
     {
       title: "Zonas de treino",
-      url: "/zonas-de-treino",
+      url: "/app/zonas-de-treino",
       icon: ChartColumn,
     },
     {
       title: "Calculadora",
-      url: "/calculadora",
+      url: "/app/calculadora",
       icon: Calculator,
     },
     {
       title: "Testes",
-      url: "/testes",
+      url: "/app/testes",
       icon: Goal,
     },
     {
       title: "Novo treino",
-      url: "/novo-treino",
+      url: "/app/novo-treino",
       icon: Plus,
     },
   ],
@@ -81,7 +81,7 @@ const data = {
     },
     {
       title: "Configurações",
-      url: "/settings",
+      url: "/app/settings",
       icon: SettingsIcon,
     },
     {
@@ -128,7 +128,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="text-foreground w-full justify-start font-normal"
               asChild
             >
-              <Link to="/">
+              <Link to="/app">
                 <AppLogo className="!size-5" />
                 <span className="text-base font-semibold tracking-tighter">
                   Just Run

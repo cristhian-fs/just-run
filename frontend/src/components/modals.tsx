@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { WorkoutSheet } from "@/features/trainings/components/workouts/workout-sheet";
 import { useWorkoutSheetStore } from "@/features/trainings/store/workout-sheet-store";
-import { TrainingsDialog } from "@/routes/_index/calculadora/-components/trainings-dialog";
+import { TrainingsDialog } from "@/routes/app/calculadora/-components/trainings-dialog";
 
 export const Modals = () => {
   // Prevent hydration erros
