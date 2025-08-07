@@ -1,24 +1,13 @@
-import { InferRequestType, InferResponseType } from "hono";
-import { useNavigate } from "@tanstack/react-router";
-import { useMutation } from "@tanstack/react-query";
-
-import { toast } from "sonner";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
-type ResponseType = InferResponseType<
-  (typeof client.trainings)["generate"]["$post"],
-  200
->;
-type RequestType = InferRequestType<
-  (typeof client.trainings)["generate"]["$post"]
->;
-
 export const useGeneratePeriodization = () => {
-  const navigate = useNavigate();
 
-  const mutation = useMutation<ResponseType, Error, RequestType>({
+  const query = useQueryClient();
+
+  const mutation = useMutation({
     mutationFn: async () => {
       const response = await client.trainings["generate"].$post();
 
@@ -31,8 +20,7 @@ export const useGeneratePeriodization = () => {
       }
     },
     onSuccess: () => {
-      toast.success("Periodização gerada com sucesso!");
-      navigate({ to: "/" });
+      query.invalidateQueries({ queryKey: ["workouts"] });
     },
   });
 

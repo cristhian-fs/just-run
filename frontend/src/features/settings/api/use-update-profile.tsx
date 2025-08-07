@@ -1,8 +1,6 @@
 import { InferRequestType, InferResponseType } from "hono";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { toast } from "sonner";
-
 import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
@@ -32,11 +30,7 @@ export const useUpdateProfile = () => {
       }
     },
     onSuccess: () => {
-      toast.success("Usuário atualizado com sucesso!");
       queryClient.invalidateQueries({ queryKey: ["user", "test"] });
-    },
-    onError: () => {
-      toast.error("Erro ao atualizar usuário!");
     },
   });
 

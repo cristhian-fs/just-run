@@ -29,8 +29,8 @@ export const useAddTest = () => {
       }
     },
     onSuccess: () => {
-      toast.success("Teste adicionado com sucesso!");
       queryClient.invalidateQueries({ queryKey: ["tests"] });
+      queryClient.invalidateQueries({ queryKey: ["user"] });
     },
     onError: () => {
       toast.error("Erro ao adicionar teste!");
