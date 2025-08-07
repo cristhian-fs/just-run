@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import * as z from "zod";
 
 import { registerSchema } from "@/shared/schemas";
@@ -23,6 +22,7 @@ import { FormError } from "@/components/form-error";
 import { FormSucess } from "@/components/form-sucess";
 
 import { CardWrapper } from "./card-wrapper";
+import { getErrorMessage } from "../auth-utils";
 
 type RegisterFormData = z.infer<typeof registerSchema>;
 
@@ -39,12 +39,13 @@ export const RegisterForm = () => {
     },
   });
 
+  const navigate = useNavigate();
   const { isPending } = authClient.useSession();
 
   const onSubmit = async (values: RegisterFormData) => {
     setError("");
     setSuccess("");
-    await authClient.signUp.email(
+    const { error} = await authClient.signUp.email(
       {
         email: values.email,
         password: values.password,
@@ -53,17 +54,18 @@ export const RegisterForm = () => {
         hasCompleteOnboarding: false,
         heightCm: 0,
         weightKg: 0,
+        age: 18,
       },
       {
         onSuccess: () => {
-          setSuccess("Registration successful!");
-          toast.success("Registration successful!");
-        },
-        onError: (error) => {
-          setError(error.error.message);
+          setSuccess("Registro concluido com sucesso!");
+          navigate({ to: "/onboarding" });
         },
       },
     );
+    if(error?.code){
+      setError(getErrorMessage(error.code));
+    }
   };
 
   return (
@@ -138,11 +140,11 @@ export const RegisterForm = () => {
           </Button>
           <span className="mt-4 text-sm">
             By continuing, you agree to our{" "}
-            <Link className="underline" to="/">
+            <Link className="underline" to="/app">
               Terms of Service
             </Link>{" "}
             &{" "}
-            <Link className="underline" to="/">
+            <Link className="underline" to="/app">
               Privacy Policy
             </Link>
             .

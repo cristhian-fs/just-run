@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { useQueryClient } from "@tanstack/react-query";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import { z } from "zod";
 
 import { loginSchema } from "@/shared/schemas";
-import { userQueryOptions } from "@/lib/api";
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
 // schemas
@@ -25,6 +22,7 @@ import { FormError } from "@/components/form-error";
 import { FormSucess } from "@/components/form-sucess";
 
 import { CardWrapper } from "./card-wrapper";
+import { getErrorMessage } from "../auth-utils";
 
 type LoginFormData = z.infer<typeof loginSchema>;
 
@@ -39,29 +37,26 @@ export const LoginForm = () => {
       password: "",
     },
   });
-  const queryClient = useQueryClient();
 
   const onSubmit = async (values: LoginFormData) => {
     setError("");
     setSuccess("");
-    await authClient.signIn.email(
+    const { error } = await authClient.signIn.email(
       {
         email: values.email,
         password: values.password,
-        callbackURL: "/",
+        callbackURL: "/app",
       },
       {
         onSuccess: async () => {
-          toast.success("Login successful!");
           setSuccess("Login successful!");
-          await queryClient.invalidateQueries(userQueryOptions());
-        },
-        onError: (error) => {
-          toast.error(error.error.message);
-          setError(error.error.message);
         },
       },
     );
+
+    if(error?.code){
+      setError(getErrorMessage(error.code));
+    }
   };
 
   return (
