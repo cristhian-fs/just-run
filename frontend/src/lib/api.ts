@@ -70,7 +70,7 @@ export const updateProfile = async (
   userId: string,
   data: UserBasicSettingsData,
 ) => {
-  const res = await client.users[":id"]["update-profile"].$post({
+  const res = await client.users["update-profile"].$post({
     param: {
       id: userId,
     },
