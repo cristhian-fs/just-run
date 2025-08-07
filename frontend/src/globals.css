@@ -37,7 +37,8 @@
   --sidebar-accent-foreground: oklch(0.3474 0.0313 282.1464);
   --sidebar-border: oklch(0.8914 0 0);
   --sidebar-ring: oklch(0.709 0 0);
-  --font-sans: Inter, sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-headings: "Inter Display", "Inter", sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.75rem;
@@ -157,6 +158,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   --font-sans: var(--font-sans);
+  --font-headings: var(--font-headings);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 
@@ -181,6 +183,10 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    @apply font-headings;
   }
 
   .custom-scrollbar {
