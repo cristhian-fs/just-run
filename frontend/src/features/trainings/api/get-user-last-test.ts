@@ -2,7 +2,7 @@ import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
 
 export const getUserLastTest = async ({ userId }: { userId: string }) => {
-  const res = await client.trainings[":userId"]["last-running-test"].$get({
+  const res = await client.trainings["last-running-test"].$get({
     param: {
       userId,
     },
