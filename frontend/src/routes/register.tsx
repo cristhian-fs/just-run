@@ -11,21 +11,21 @@ export const Route = createFileRoute("/register")({
 
 function SignUpPage() {
   return (
-    <main className="mx-auto max-w-7xl md:px-6 lg:px-8 py-8 lg:py-16 min-h-screen flex items-center">
+    <main className="mx-auto flex min-h-screen max-w-7xl items-center py-8 md:px-6 lg:px-8 lg:py-16">
       <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-[450px_1fr] lg:items-start">
-        <div className="px-6 lg:px-0 lg:pr-4 lg:pt-4 flex flex-col items-start justify-center h-full">
+        <div className="flex h-full flex-col items-start justify-center px-6 lg:px-0 lg:pr-4 lg:pt-4">
           <AppLogo className="text-foreground" />
           <RegisterForm />
         </div>
-        <div className="sm:px-6 lg:px-0 md:h-[calc(100vh-8rem)]">
-          <div className="h-full relative isolate overflow-hidden bg-indigo-500 px-6 pt-8 sm:mx-auto sm:max-w-3xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none">
+        <div className="sm:px-6 md:h-[calc(100vh-8rem)] lg:px-0">
+          <div className="bg-primary relative isolate h-full overflow-hidden px-6 pt-8 sm:mx-auto sm:max-w-3xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none">
             <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-3xl">
               <img
                 src={LoginScreenImage}
                 alt="Product screenshot"
                 width={2432}
                 height={1442}
-                className="-mb-12 w-[57rem] sm:w-auto max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10"
+                className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10 sm:w-auto"
               />
             </div>
             <div
