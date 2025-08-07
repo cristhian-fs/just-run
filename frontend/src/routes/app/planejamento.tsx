@@ -7,7 +7,7 @@ import { parseISO } from "date-fns";
 
 import { userQueryOptions } from "@/lib/api";
 
-export const Route = createFileRoute("/_index/planejamento")({
+export const Route = createFileRoute("/app/planejamento")({
   component: RouteComponent,
 });
 

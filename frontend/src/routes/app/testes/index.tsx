@@ -19,7 +19,7 @@ import { TestsCharts } from "./-components/tests-chart";
 import { TestsOverview } from "./-components/tests-overview";
 import { TestsTable } from "./-components/tests-table";
 
-export const Route = createFileRoute("/_index/testes/")({
+export const Route = createFileRoute("/app/testes/")({
   component: RouteComponent,
 });
 

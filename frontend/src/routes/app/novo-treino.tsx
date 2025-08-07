@@ -51,7 +51,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { DashboardCard } from "@/components/dashboard-card";
 
-export const Route = createFileRoute("/_index/novo-treino")({
+export const Route = createFileRoute("/app/novo-treino")({
   component: RouteComponent,
 });
 

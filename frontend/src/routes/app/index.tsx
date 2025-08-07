@@ -20,7 +20,7 @@ import { userQueryOptions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { DashboardCard } from "@/components/dashboard-card";
 
-export const Route = createFileRoute("/_index/")({
+export const Route = createFileRoute("/app/")({
   component: RouteComponent,
 });
 
@@ -104,7 +104,7 @@ function RouteComponent() {
               className="h-auto w-full justify-between gap-2 py-2 text-current"
               asChild
             >
-              <Link to="/planejamento">
+              <Link to="/app/planejamento">
                 Ver todos os treinos
                 <ChevronRight />
               </Link>

@@ -10,7 +10,7 @@ import { CUSTOM_TABS_CLASSNAMES } from "@/lib/consts";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export const Route = createFileRoute("/_index/settings/")({
+export const Route = createFileRoute("/app/configuracoes/")({
   component: RouteComponent,
   validateSearch: z.object({ from: z.string().optional() }),
   beforeLoad: ({ context, location }) => {

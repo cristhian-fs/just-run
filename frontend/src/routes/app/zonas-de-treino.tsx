@@ -9,7 +9,7 @@ import { parseISO } from "date-fns";
 import { userQueryOptions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/_index/zonas-de-treino")({
+export const Route = createFileRoute("/app/zonas-de-treino")({
   component: RouteComponent,
 });
 
