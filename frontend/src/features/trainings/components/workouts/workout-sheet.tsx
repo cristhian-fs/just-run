@@ -7,7 +7,6 @@ import { ptBR } from "date-fns/locale";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 
 import { RegisterWorkoutFormData } from "@/shared/schemas";
-import { userQueryOptions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SheetHeader, SheetTitle } from "@/components/ui/sheet";
@@ -36,10 +35,6 @@ const containerVariant = {
 
 export const WorkoutSheet = ({ isOpen }: WorkoutSheetProps) => {
   const [isRegistering, setIsRegistering] = useState(false);
-  const { data: user } = useQuery(userQueryOptions());
-  if (!user) {
-    return null;
-  }
 
   const state = useWorkoutSheetStore();
   const { workoutId } = state;
