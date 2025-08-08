@@ -1,19 +1,19 @@
 import { relations, sql } from "drizzle-orm";
 import {
-  boolean,
-  date,
-  integer,
-  numeric,
-  pgEnum,
-  pgTable,
-  text,
-  timestamp,
-  uuid,
+	boolean,
+	date,
+	integer,
+	numeric,
+	pgEnum,
+	pgTable,
+	text,
+	timestamp,
+	uuid,
 } from "drizzle-orm/pg-core";
 
 import {
-  segmentKinds,
-  trainingTypes,
+	segmentKinds,
+	trainingTypes,
 } from "@/shared/constants/training.constants";
 
 import { trainingWeeks } from "./training-weeks";
@@ -23,111 +23,111 @@ export const trainingType = pgEnum("traning_type", trainingTypes);
 export const segmentKind = pgEnum("segment_kind", segmentKinds);
 
 export const workouts = pgTable("workouts", {
-  id: uuid("id").defaultRandom().primaryKey(),
-  trainingWeekId: uuid("training_week_id")
-    .notNull()
-    .references(() => trainingWeeks.id, { onDelete: "cascade" }),
-  scheduledStart: date("scheduled_start").notNull(),
-  runType: trainingType("run_type").notNull(),
-  title: text("title"),
-  notes: text("notes"),
+	id: uuid("id").defaultRandom().primaryKey(),
+	trainingWeekId: uuid("training_week_id")
+		.notNull()
+		.references(() => trainingWeeks.id, { onDelete: "cascade" }),
+	scheduledStart: date("scheduled_start").notNull(),
+	runType: trainingType("run_type").notNull(),
+	title: text("title"),
+	notes: text("notes"),
 
-  // Planejado
-  plannedDistanceM: integer("planned_distance_m"),
-  plannedDurationS: integer("planned_duration_s"),
+	// Planejado
+	plannedDistanceM: integer("planned_distance_m"),
+	plannedDurationS: integer("planned_duration_s"),
 
-  // Executado
-  actualDistanceM: integer("actual_distance_m"),
-  actualDurationS: integer("actual_duration_s"),
-  avgPaceSPerKm: integer("avg_pace_s_per_km"),
-  avgHr: integer("avg_hr"),
-  elevationGainM: numeric("elevation_gain_m", { mode: "number" }),
-  isCompleted: boolean("is_completed").notNull().default(false),
+	// Executado
+	actualDistanceM: integer("actual_distance_m"),
+	actualDurationS: integer("actual_duration_s"),
+	avgPaceSPerKm: integer("avg_pace_s_per_km"),
+	avgHr: integer("avg_hr"),
+	elevationGainM: numeric("elevation_gain_m", { mode: "number" }),
+	isCompleted: boolean("is_completed").notNull().default(false),
 
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+	createdAt: timestamp("created_at").defaultNow().notNull(),
+	updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
 export const blocks = pgTable("blocks", {
-  id: uuid("id").defaultRandom().primaryKey(),
-  workoutId: uuid("workout_id")
-    .notNull()
-    .references(() => workouts.id, { onDelete: "cascade" }),
-  blockKind: segmentKind("block_kind").notNull(),
-  repeatCount: integer("repeat_count").notNull().default(1),
-  orderIndex: integer("order_index").notNull(),
-  description: text("description"),
+	id: uuid("id").defaultRandom().primaryKey(),
+	workoutId: uuid("workout_id")
+		.notNull()
+		.references(() => workouts.id, { onDelete: "cascade" }),
+	blockKind: segmentKind("block_kind").notNull(),
+	repeatCount: integer("repeat_count").notNull().default(1),
+	orderIndex: integer("order_index").notNull(),
+	description: text("description"),
 });
 
 export const segmentsTable = pgTable(
-  "segments",
-  {
-    id: uuid("id").defaultRandom().primaryKey(),
-    workoutId: uuid("workout_id").references(() => workouts.id, {
-      onDelete: "cascade",
-    }),
+	"segments",
+	{
+		id: uuid("id").defaultRandom().primaryKey(),
+		workoutId: uuid("workout_id").references(() => workouts.id, {
+			onDelete: "cascade",
+		}),
 
-    blockId: uuid("block_id").references(() => blocks.id, {
-      onDelete: "cascade",
-    }),
-    orderInBlock: integer("order_in_block").notNull(),
-    segmentKind: segmentKind("segment_kind").notNull(),
+		blockId: uuid("block_id").references(() => blocks.id, {
+			onDelete: "cascade",
+		}),
+		orderInBlock: integer("order_in_block").notNull(),
+		segmentKind: segmentKind("segment_kind").notNull(),
 
-    // Alvo/Planejamento
-    plannedDistanceM: integer("planned_distance_m"),
-    plannedDurationS: integer("planned_duration_s"),
-    targetPaceSPerKm: integer("target_pace_s_per_km"),
-    targetHr: integer("target_hr"),
+		// Alvo/Planejamento
+		plannedDistanceM: integer("planned_distance_m"),
+		plannedDurationS: integer("planned_duration_s"),
+		targetPaceSPerKm: integer("target_pace_s_per_km"),
+		targetHr: integer("target_hr"),
 
-    // Se o segmento for "descanso ativo" ou intervalo parado
-    restDistanceM: integer("rest_distance_m"),
-    restDurationS: integer("rest_duration_s"),
+		// Se o segmento for "descanso ativo" ou intervalo parado
+		restDistanceM: integer("rest_distance_m"),
+		restDurationS: integer("rest_duration_s"),
 
-    // Realizado
-    actualDistanceM: integer("actual_distance_m"),
-    actualDurationS: integer("actual_duration_s"),
-    avgPaceSPerKm: integer("avg_pace_s_per_km"),
-    avgHr: integer("avg_hr"),
+		// Realizado
+		actualDistanceM: integer("actual_distance_m"),
+		actualDurationS: integer("actual_duration_s"),
+		avgPaceSPerKm: integer("avg_pace_s_per_km"),
+		avgHr: integer("avg_hr"),
 
-    notes: text("notes").array(),
-  },
-  (table) => ({
-    ownerChk: sql`
+		notes: text("notes").array(),
+	},
+	(table) => ({
+		ownerChk: sql`
     CHECK (
       ( ${table.blockId} IS NOT NULL AND ${table.workoutId} IS NULL )
       OR 
       ( ${table.blockId} IS NULL AND ${table.workoutId} IS NOT NULL )
     )
   `,
-  }),
+	}),
 );
 
 // relations
 export const workoutRelations = relations(workouts, ({ many, one }) => ({
-  workoutLogs: many(workoutLogs),
-  trainingWeek: one(trainingWeeks, {
-    fields: [workouts.trainingWeekId],
-    references: [trainingWeeks.id],
-  }),
-  blocks: many(blocks),
-  segments: many(segmentsTable),
+	workoutLogs: many(workoutLogs),
+	trainingWeek: one(trainingWeeks, {
+		fields: [workouts.trainingWeekId],
+		references: [trainingWeeks.id],
+	}),
+	blocks: many(blocks),
+	segments: many(segmentsTable),
 }));
 
 export const workoutBlocksRelations = relations(blocks, ({ one, many }) => ({
-  workout: one(workouts, {
-    fields: [blocks.workoutId],
-    references: [workouts.id],
-  }),
-  segments: many(segmentsTable),
+	workout: one(workouts, {
+		fields: [blocks.workoutId],
+		references: [workouts.id],
+	}),
+	segments: many(segmentsTable),
 }));
 
 export const workoutSegmentRelations = relations(segmentsTable, ({ one }) => ({
-  workout: one(workouts, {
-    fields: [segmentsTable.workoutId],
-    references: [workouts.id],
-  }),
-  block: one(blocks, {
-    fields: [segmentsTable.blockId],
-    references: [blocks.id],
-  }),
+	workout: one(workouts, {
+		fields: [segmentsTable.workoutId],
+		references: [workouts.id],
+	}),
+	block: one(blocks, {
+		fields: [segmentsTable.blockId],
+		references: [blocks.id],
+	}),
 }));

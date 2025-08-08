@@ -1,148 +1,148 @@
 @reference "../../../../globals.css";
 
 .rbc-header {
-  @apply text-muted-foreground border-b-0 pb-4 text-sm font-normal;
+	@apply text-muted-foreground border-b-0 pb-4 text-sm font-normal;
 }
 
 .rbc-header + .rbc-header {
-  @apply border-border border-l;
+	@apply border-border border-l;
 }
 .rbc-button-link {
-  @apply text-muted-foreground text-xs font-normal;
+	@apply text-muted-foreground text-xs font-normal;
 }
 
 .rbc-month-row {
-  @apply border-border min-h-[180px] border-x border-t;
+	@apply border-border min-h-[180px] border-x border-t;
 }
 
 :not(.rbc-month-row ~ .rbc-month-row).rbc-month-row {
-  @apply rounded-t-md;
+	@apply rounded-t-md;
 }
 .rbc-month-row + .rbc-month-row {
-  @apply border-border;
+	@apply border-border;
 }
 
 .rbc-day-bg + .rbc-day-bg {
-  @apply border-border;
+	@apply border-border;
 }
 
 .rbc-time-view {
-  @apply border-border flex-none rounded-b-lg;
+	@apply border-border flex-none rounded-b-lg;
 }
 .rbc-time-header-content {
-  @apply border-border;
+	@apply border-border;
 }
 
 .rbc-month-row:last-of-type {
-  @apply rounded-b-md border-b;
+	@apply rounded-b-md border-b;
 }
 
 .rbc-month-view {
-  @apply border-none;
+	@apply border-none;
 }
 
 .rbc-date-cell {
-  @apply p-2;
+	@apply p-2;
 }
 
 .rbc-time-content {
-  @apply border-border hidden;
+	@apply border-border hidden;
 }
 
 .rbc-timeslot-group {
-  @apply border-border;
+	@apply border-border;
 }
 .rbc-day-slot .rbc-events-container {
-  @apply mr-0 p-2;
+	@apply mr-0 p-2;
 }
 
 .rbc-time-content > * + * > * {
-  @apply border-border;
+	@apply border-border;
 }
 
 .rbc-time-view .rbc-row {
-  @apply min-h-auto;
+	@apply min-h-auto;
 }
 
 .rbc-header {
-  @apply border-border h-8 items-center border-b;
+	@apply border-border h-8 items-center border-b;
 }
 
 .rbc-day-slot .rbc-time-slot {
-  @apply border-none;
+	@apply border-none;
 }
 
 .rbc-row-segment {
-  @apply p-2;
+	@apply p-2;
 }
 
 .rbc-label {
-  @apply px-0;
+	@apply px-0;
 }
 
 .rbc-row.rbc-month-header {
-  @apply border-x border-t;
+	@apply border-x border-t;
 }
 
 .rbc-row.rbc-month-header > .rbc-header {
-  @apply border-b-0;
+	@apply border-b-0;
 }
 
 .rbc-month-view > :not(.rbc-month-row ~ .rbc-month-row).rbc-month-row {
-  @apply rounded-none;
+	@apply rounded-none;
 }
 
 /* agenda */
 table.rbc-agenda-table > thead {
-  @apply hidden;
+	@apply hidden;
 }
 
 .rbc-agenda-view {
-  &::-webkit-scrollbar {
-    @apply w-1 bg-transparent;
-  }
-  &::-webkit-scrollbar-track {
-    @apply bg-transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    @apply bg-muted;
-  }
+	&::-webkit-scrollbar {
+		@apply w-1 bg-transparent;
+	}
+	&::-webkit-scrollbar-track {
+		@apply bg-transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		@apply bg-muted;
+	}
 }
 
 .rbc-agenda-view table.rbc-agenda-table {
 }
 
 .rbc-agenda-view table.rbc-agenda-table {
-  @apply border-border;
+	@apply border-border;
 }
 
 .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
-  @apply border-border border-l-0;
+	@apply border-border border-l-0;
 }
 .rbc-agenda-view table.rbc-agenda-table tbody > tr + tr {
-  @apply border-border;
+	@apply border-border;
 }
 
 .rbc-agenda-view table.rbc-agenda-table tbody > tr {
-  @apply flex flex-col;
+	@apply flex flex-col;
 }
 
 .rbc-agenda-time-cell {
-  @apply hidden;
+	@apply hidden;
 }
 
 .rbc-agenda-date-cell {
-  @apply pt-1;
+	@apply pt-1;
 }
 
 .rbc-agenda-view table.rbc-agenda-table tbody > tr > td.rbc-agenda-event-cell {
-  @apply p-3 pt-0;
+	@apply p-3 pt-0;
 }
 
 .rbc-today {
-  background-color: inherit;
+	background-color: inherit;
 }
 
 .rbc-off-range-bg {
-  background: inherit;
+	background: inherit;
 }

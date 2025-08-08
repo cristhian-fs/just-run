@@ -1,51 +1,49 @@
-import { InferRequestType, InferResponseType } from "hono";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-
+import type { InferRequestType, InferResponseType } from "hono";
 import { toast } from "sonner";
-
-import { ErrorResponse } from "@/shared/types";
 import { client } from "@/lib/api";
+import type { ErrorResponse } from "@/shared/types";
 
 type ResponseType = InferResponseType<
-  (typeof client.trainings)["register-workout"][":workoutId"]["$post"],
-  200
+	(typeof client.trainings)["register-workout"][":workoutId"]["$post"],
+	200
 >;
 type RequestType = InferRequestType<
-  (typeof client.trainings)["register-workout"][":workoutId"]["$post"]
+	(typeof client.trainings)["register-workout"][":workoutId"]["$post"]
 >;
 
 export const useRegisterWorkout = ({ workoutId }: { workoutId: string }) => {
-  const queryClient = useQueryClient();
+	const queryClient = useQueryClient();
 
-  const mutation = useMutation<ResponseType, Error, RequestType>({
-    mutationFn: async ({ param, form }) => {
-      const response = await client.trainings["register-workout"][
-        ":workoutId"
-      ].$post({
-        param: {
-          workoutId: param.workoutId,
-        },
-        form,
-      });
+	const mutation = useMutation<ResponseType, Error, RequestType>({
+		mutationFn: async ({ param, form }) => {
+			const response = await client.trainings["register-workout"][
+				":workoutId"
+			].$post({
+				param: {
+					workoutId: param.workoutId,
+				},
+				form,
+			});
 
-      if (response.ok) {
-        const data = await response.json();
-        return data;
-      } else {
-        const data = (await response.json()) as unknown as ErrorResponse;
-        throw new Error(data.error);
-      }
-    },
-    onSuccess: () => {
-      toast.success("Treino registrado com successo!");
-      queryClient.invalidateQueries({
-        queryKey: ["workout", workoutId],
-      });
-    },
-    onError: () => {
-      toast.error("Erro ao registrar treino!");
-    },
-  });
+			if (response.ok) {
+				const data = await response.json();
+				return data;
+			} else {
+				const data = (await response.json()) as unknown as ErrorResponse;
+				throw new Error(data.error);
+			}
+		},
+		onSuccess: () => {
+			toast.success("Treino registrado com successo!");
+			queryClient.invalidateQueries({
+				queryKey: ["workout", workoutId],
+			});
+		},
+		onError: () => {
+			toast.error("Erro ao registrar treino!");
+		},
+	});
 
-  return mutation;
+	return mutation;
 };
