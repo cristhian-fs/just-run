@@ -277,8 +277,11 @@ export const trainingRouter = new Hono<Context>()
 				with: {
 					blocks: {
 						with: {
-							segments: true,
+							segments: {
+								orderBy: (segments, { asc }) => asc(segments.orderInBlock),
+							},
 						},
+						orderBy: (blocks, { asc }) => asc(blocks.orderIndex),
 					},
 					segments: true,
 				},
