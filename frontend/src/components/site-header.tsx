@@ -4,7 +4,7 @@ import { ModeToggle } from "./mode-toggle";
 export function SiteHeader() {
 	const location = useLocation();
 	const locationName =
-		location.pathname.split("/")[1].split("-").join(" ") || "Home";
+		location.pathname.split("/")[2]?.split("-").join(" ") || "Home";
 	const locationCamelCased =
 		locationName.charAt(0).toUpperCase() + locationName.slice(1);
 

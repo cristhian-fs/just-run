@@ -1,0 +1,1 @@
+ALTER TABLE "active_plans" ADD COLUMN "id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL;

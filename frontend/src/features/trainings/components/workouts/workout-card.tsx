@@ -19,6 +19,7 @@ export const RUN_TYPE_MAPPING: Record<TTrainingType, string> = {
 	RECOVERY_RUN: "Recuperação",
 	REPETITION: "Repetição",
 	THRESHOLD_RUN: "Corrida de limiar/ritmado",
+	REST: "Descanso",
 };
 
 export const WorkoutCard = ({
@@ -87,9 +88,10 @@ export const WorkoutCard = ({
 						{workout.plannedDurationS && (
 							<span>• {Math.round(workout.plannedDurationS / 60)} min</span>
 						)}
-						{workout.plannedDistanceM && (
-							<span>• {Math.round(workout.plannedDistanceM / 1000)} km</span>
-						)}
+						{workout.plannedDistanceM !== null &&
+							Number(workout.plannedDistanceM) > 0 && (
+								<span>• {Math.round(workout.plannedDistanceM / 1000)} km</span>
+							)}
 					</p>
 				</div>
 			</CardHeader>

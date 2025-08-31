@@ -216,7 +216,7 @@ const CustomToolBar = ({
 					</Button>
 				</div>
 				<Button asChild>
-					<Link to='/novo-treino'>
+					<Link to='/app/novo-treino'>
 						<PlusIcon />
 						Novo Treino
 					</Link>

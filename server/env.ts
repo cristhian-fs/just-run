@@ -1,5 +1,12 @@
 import { z } from "zod";
 
+const stringBoolean = z.coerce
+	.string()
+	.transform((val) => {
+		return val === "true";
+	})
+	.default("false");
+
 const EnvSchema = z.object({
 	NODE_ENV: z.string().default("development"),
 	DATABASE_URL: z.string().url(),
@@ -10,6 +17,8 @@ const EnvSchema = z.object({
 	DB_NAME: z.string(),
 	DB_USER: z.string(),
 	DB_PASSWORD: z.string(),
+	DB_MIGRATING: stringBoolean,
+	DB_SEEDING: stringBoolean,
 	GOOGLE_CLIENT_ID: z.string().optional(),
 	GOOGLE_CLIENT_SECRET: z.string().optional(),
 	GITHUB_CLIENT_ID: z.string().optional(),

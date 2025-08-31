@@ -3,6 +3,7 @@ import {
 	boolean,
 	date,
 	integer,
+	jsonb,
 	numeric,
 	pgEnum,
 	pgTable,
@@ -10,17 +11,28 @@ import {
 	timestamp,
 	uuid,
 } from "drizzle-orm/pg-core";
-
 import {
 	segmentKinds,
 	trainingTypes,
 } from "@/shared/constants/training.constants";
-
+import { user } from "./auth";
+import { plans } from "./plans";
 import { trainingWeeks } from "./training-weeks";
 import { workoutLogs } from "./workout-logs";
 
 export const trainingType = pgEnum("traning_type", trainingTypes);
 export const segmentKind = pgEnum("segment_kind", segmentKinds);
+
+export const workoutAnalytics = pgTable("workout_analytics", {
+	id: uuid("id").defaultRandom().primaryKey(),
+	planId: uuid("plan_id"),
+	userId: text("user_id")
+		.notNull()
+		.references(() => user.id, { onDelete: "cascade" }),
+	completedAt: date("completed_at").notNull(),
+	analyticsData: jsonb("analytics_data").notNull(),
+	createdAt: timestamp("created_at").defaultNow().notNull(),
+});
 
 export const workouts = pgTable("workouts", {
 	id: uuid("id").defaultRandom().primaryKey(),
@@ -112,6 +124,20 @@ export const workoutRelations = relations(workouts, ({ many, one }) => ({
 	blocks: many(blocks),
 	segments: many(segmentsTable),
 }));
+
+export const workoutAnalyticsRelations = relations(
+	workoutAnalytics,
+	({ one }) => ({
+		user: one(user, {
+			fields: [workoutAnalytics.userId],
+			references: [user.id],
+		}),
+		plan: one(plans, {
+			fields: [workoutAnalytics.planId],
+			references: [plans.id],
+		}),
+	}),
+);
 
 export const workoutBlocksRelations = relations(blocks, ({ one, many }) => ({
 	workout: one(workouts, {

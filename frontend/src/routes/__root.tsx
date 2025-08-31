@@ -16,14 +16,12 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 
 function RootComponent() {
 	return (
-		<>
-			<ThemeProvider defaultTheme='dark' storageKey='hono-fas'>
-				<Toaster richColors />
-				<Modals />
-				<Outlet />
-				<ReactQueryDevtools />
-				<TanStackRouterDevtools position='bottom-left' />
-			</ThemeProvider>
-		</>
+		<ThemeProvider defaultTheme='dark' storageKey='hono-fas'>
+			<Toaster richColors />
+			<Modals />
+			<Outlet />
+			<ReactQueryDevtools />
+			<TanStackRouterDevtools position='bottom-left' />
+		</ThemeProvider>
 	);
 }

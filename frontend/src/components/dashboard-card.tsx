@@ -57,13 +57,17 @@ export const DashboardCard = ({
 		>
 			<div className='bg-card relative z-[2] flex flex-1 flex-col rounded-xl border shadow-sm'>
 				<CardHeader className='has-data-[slot=card-action]:grid-cols-1 @sm/card:has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-action]:gap-2 items-center gap-0 border-b px-4 py-4 pb-0'>
-					<div className='flex items-center gap-x-2'>
+					<div className='flex items-center justify-start gap-x-2 max-w-full min-w-0 w-full'>
 						<div className='bg-background shadow-xs rounded-md border p-3'>
 							<Icon className='text-muted-foreground size-4' />
 						</div>
-						<div className='flex flex-col justify-center gap-y-0.5'>
+						<div className='flex flex-col justify-center items-start gap-y-0.5 max-w-full min-w-0 w-full'>
 							<CardTitle>{title}</CardTitle>
-							{description && <CardDescription>{description}</CardDescription>}
+							{description && (
+								<CardDescription className='truncate max-w-full min-w-0 w-full block'>
+									{description}
+								</CardDescription>
+							)}
 						</div>
 					</div>
 					{action && (

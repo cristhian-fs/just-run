@@ -10,6 +10,7 @@ import {
 	HouseIcon,
 	LifeBuoy,
 	Plus,
+	Route,
 	SettingsIcon,
 	Sheet,
 	UserIcon,
@@ -43,6 +44,11 @@ const data = {
 			title: "Dashboard",
 			url: "/app",
 			icon: HouseIcon,
+		},
+		{
+			title: "Planos de treinamento",
+			url: "/app/planos",
+			icon: Route,
 		},
 		{
 			title: "Planejamento de treinos",

@@ -1,0 +1,1453 @@
+{
+  "coach": "Hal Higdon",
+  "name": "15k - Iniciante",
+  "description": "Este programa de treinamento de 10 semanas foi desenvolvido para corredores iniciantes que estão se preparando para uma corrida de 10 milhas ou 15 km. Ele deve ser mais útil para iniciantes, aqueles que correram pouco ou nunca correram antes. Se você é muito experiente — um corredor acostumado a fazer pelo menos algum treinamento de velocidade —, talvez se sinta mais satisfeito com um dos outros programas de treinamento (Intermediário ou Avançado) para a corrida de 10 milhas.",
+  "weekly_volume": 0,
+  "totalWeeks": 10,
+  "level": "beginner",
+  "distances": [
+    "15km"
+  ],
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 3.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 30 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 30 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 3.2km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 3.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 30 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 30 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 2,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 30 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 30 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 3.2km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 30 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 30 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 3,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 35 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2100,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 35 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 3.2km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 30 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 30 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 4,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 3.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 35 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2100,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 35 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 3.2km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 3.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 40 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 40 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 5,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 40 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 40 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 4.8km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 40 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 40 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 6,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 40 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 40 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 4.8km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 9.7km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 9700,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 9.7km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 50 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 3000,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 50 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 7,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 45 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2700,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 45 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 4.8km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 50 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 3000,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 50 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 8,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 45 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2700,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 45 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 4.8km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 11.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 11300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 11.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 60 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 3600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 60 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 9,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 45 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 2700,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 45 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 4.8km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 12.9km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 12900,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 12.9km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training 60 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 3600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 60 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Alongamento e fortalecimento",
+          "runType": "REST",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Cross training 30 min",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Cross training 30 minutos",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida 3.2km + força",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km + fortalecimento",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Treino",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 15000,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 15km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    }
+  ]
+}

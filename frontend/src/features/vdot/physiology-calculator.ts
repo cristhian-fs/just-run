@@ -24,6 +24,7 @@ import {
 	type TrainingSegmentPaces,
 } from "./types";
 
+// biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 export class PhysiologyCalculator {
 	// VDOT Calcs
 	static calculateVDOT = calculateVDOT;

@@ -1,0 +1,2575 @@
+{
+  "coach": "Hal Higdon",
+  "name": "Maratona - Iniciante 1",
+  "description": "Este é o programa mais popular do Hal: o Programa de Treinamento para Maratona Novato 1. Se você está treinando para sua primeira maratona, este é o programa de treinamento ideal para você! Mesmo se você for um maratonista experiente, pode escolher este programa como uma abordagem suave e de baixa quilometragem para seu esporte favorito. Mais de um milhão de corredores já utilizaram os programas do Hal com sucesso. O Novato 1 levará você até a linha de partida — e até a linha de chegada.",
+  "weekly_volume": 0,
+  "totalWeeks": 18,
+  "level": "beginner",
+  "distances": [
+    "42km"
+  ],
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 9.7km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 9700,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 9.7km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 2,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 11.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 11300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 11.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 3,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 4,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 14.5km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 14500,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 14.5km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 5,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 16.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 16100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 16.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 6,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 11.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 11300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 11.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 7,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 9.7km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 9700,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 9.7km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 19.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 19300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 19.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 8,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 9.7km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 9700,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 9.7km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida - Meia maratona",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 21097,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida na distância de meia maratona",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 9,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 11.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 11300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 11.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 16.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 16100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 16.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 11.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 11300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 11.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 24.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 24100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 24.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 11,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 12.9km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 12900,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 12.9km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 25.7km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 25700,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 25.7km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 12,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 12.9km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 12900,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 12.9km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 19.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 19300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 19.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 13,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 14.5km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 14500,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 14.5km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 29.0km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 29000,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 29km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 14,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 14.5km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 14500,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 14.5km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 22.5km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 22500,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 22.5km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 15,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 16.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 16100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 16.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 32.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 32200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 32.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 1,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 8.1km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 12.9km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 12900,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 12.9km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 19.3km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 19300,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 19.3km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 17,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 9.7km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 9700,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 9.7km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 12.9km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 12900,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 12.9km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Cross training",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "REST",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "REST",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou cross training, qualquer duração",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 18,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 6.4km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Corrida de 3.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida - Maratona",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 42195,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida na distância de maratona",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    }
+  ]
+}
