@@ -21,6 +21,7 @@ const trainingVariantMap = {
 		"border-violet-600 bg-violet-500/5 dark:bg-violet-500/10 text-violet-700 dark:text-violet-400 [a&]:hover:bg-violet-600/90",
 	REPETITION:
 		"border-teal-600 bg-teal-500/5 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400 [a&]:hover:bg-teal-600/90",
+	REST: "border-slate-600 bg-slate-500/5 dark:bg-slate-500/10 text-slate-700 dark:text-slate-400 [a&]:hover:bg-slate-600/90",
 } as const satisfies Record<TTrainingType, string>;
 
 const runTypeBadgeVariants = cva(

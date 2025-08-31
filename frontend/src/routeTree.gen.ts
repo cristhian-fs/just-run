@@ -8,196 +8,86 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-// Import Routes
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as AppIndexRouteImport } from './routes/app/index'
+import { Route as AppZonasDeTreinoRouteImport } from './routes/app/zonas-de-treino'
+import { Route as AppPlanejamentoRouteImport } from './routes/app/planejamento'
+import { Route as AppNovoTreinoRouteImport } from './routes/app/novo-treino'
+import { Route as AppTestesIndexRouteImport } from './routes/app/testes/index'
+import { Route as AppPlanosIndexRouteImport } from './routes/app/planos/index'
+import { Route as AppConfiguracoesIndexRouteImport } from './routes/app/configuracoes/index'
+import { Route as AppCalculadoraIndexRouteImport } from './routes/app/calculadora/index'
+import { Route as AppPlanosPlanIdRouteImport } from './routes/app/planos/$planId'
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as RegisterImport } from './routes/register'
-import { Route as OnboardingImport } from './routes/onboarding'
-import { Route as LoginImport } from './routes/login'
-import { Route as AppImport } from './routes/app'
-import { Route as AppIndexImport } from './routes/app/index'
-import { Route as AppZonasDeTreinoImport } from './routes/app/zonas-de-treino'
-import { Route as AppPlanejamentoImport } from './routes/app/planejamento'
-import { Route as AppNovoTreinoImport } from './routes/app/novo-treino'
-import { Route as AppTestesIndexImport } from './routes/app/testes/index'
-import { Route as AppConfiguracoesIndexImport } from './routes/app/configuracoes/index'
-import { Route as AppCalculadoraIndexImport } from './routes/app/calculadora/index'
-
-// Create/Update Routes
-
-const RegisterRoute = RegisterImport.update({
+const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const OnboardingRoute = OnboardingImport.update({
+const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const LoginRoute = LoginImport.update({
+const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const AppRoute = AppImport.update({
+const AppRoute = AppRouteImport.update({
   id: '/app',
   path: '/app',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const AppIndexRoute = AppIndexImport.update({
+const AppIndexRoute = AppIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
-
-const AppZonasDeTreinoRoute = AppZonasDeTreinoImport.update({
+const AppZonasDeTreinoRoute = AppZonasDeTreinoRouteImport.update({
   id: '/zonas-de-treino',
   path: '/zonas-de-treino',
   getParentRoute: () => AppRoute,
 } as any)
-
-const AppPlanejamentoRoute = AppPlanejamentoImport.update({
+const AppPlanejamentoRoute = AppPlanejamentoRouteImport.update({
   id: '/planejamento',
   path: '/planejamento',
   getParentRoute: () => AppRoute,
 } as any)
-
-const AppNovoTreinoRoute = AppNovoTreinoImport.update({
+const AppNovoTreinoRoute = AppNovoTreinoRouteImport.update({
   id: '/novo-treino',
   path: '/novo-treino',
   getParentRoute: () => AppRoute,
 } as any)
-
-const AppTestesIndexRoute = AppTestesIndexImport.update({
+const AppTestesIndexRoute = AppTestesIndexRouteImport.update({
   id: '/testes/',
   path: '/testes/',
   getParentRoute: () => AppRoute,
 } as any)
-
-const AppConfiguracoesIndexRoute = AppConfiguracoesIndexImport.update({
+const AppPlanosIndexRoute = AppPlanosIndexRouteImport.update({
+  id: '/planos/',
+  path: '/planos/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppConfiguracoesIndexRoute = AppConfiguracoesIndexRouteImport.update({
   id: '/configuracoes/',
   path: '/configuracoes/',
   getParentRoute: () => AppRoute,
 } as any)
-
-const AppCalculadoraIndexRoute = AppCalculadoraIndexImport.update({
+const AppCalculadoraIndexRoute = AppCalculadoraIndexRouteImport.update({
   id: '/calculadora/',
   path: '/calculadora/',
   getParentRoute: () => AppRoute,
 } as any)
-
-// Populate the FileRoutesByPath interface
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/app': {
-      id: '/app'
-      path: '/app'
-      fullPath: '/app'
-      preLoaderRoute: typeof AppImport
-      parentRoute: typeof rootRoute
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginImport
-      parentRoute: typeof rootRoute
-    }
-    '/onboarding': {
-      id: '/onboarding'
-      path: '/onboarding'
-      fullPath: '/onboarding'
-      preLoaderRoute: typeof OnboardingImport
-      parentRoute: typeof rootRoute
-    }
-    '/register': {
-      id: '/register'
-      path: '/register'
-      fullPath: '/register'
-      preLoaderRoute: typeof RegisterImport
-      parentRoute: typeof rootRoute
-    }
-    '/app/novo-treino': {
-      id: '/app/novo-treino'
-      path: '/novo-treino'
-      fullPath: '/app/novo-treino'
-      preLoaderRoute: typeof AppNovoTreinoImport
-      parentRoute: typeof AppImport
-    }
-    '/app/planejamento': {
-      id: '/app/planejamento'
-      path: '/planejamento'
-      fullPath: '/app/planejamento'
-      preLoaderRoute: typeof AppPlanejamentoImport
-      parentRoute: typeof AppImport
-    }
-    '/app/zonas-de-treino': {
-      id: '/app/zonas-de-treino'
-      path: '/zonas-de-treino'
-      fullPath: '/app/zonas-de-treino'
-      preLoaderRoute: typeof AppZonasDeTreinoImport
-      parentRoute: typeof AppImport
-    }
-    '/app/': {
-      id: '/app/'
-      path: '/'
-      fullPath: '/app/'
-      preLoaderRoute: typeof AppIndexImport
-      parentRoute: typeof AppImport
-    }
-    '/app/calculadora/': {
-      id: '/app/calculadora/'
-      path: '/calculadora'
-      fullPath: '/app/calculadora'
-      preLoaderRoute: typeof AppCalculadoraIndexImport
-      parentRoute: typeof AppImport
-    }
-    '/app/configuracoes/': {
-      id: '/app/configuracoes/'
-      path: '/configuracoes'
-      fullPath: '/app/configuracoes'
-      preLoaderRoute: typeof AppConfiguracoesIndexImport
-      parentRoute: typeof AppImport
-    }
-    '/app/testes/': {
-      id: '/app/testes/'
-      path: '/testes'
-      fullPath: '/app/testes'
-      preLoaderRoute: typeof AppTestesIndexImport
-      parentRoute: typeof AppImport
-    }
-  }
-}
-
-// Create and export the route tree
-
-interface AppRouteChildren {
-  AppNovoTreinoRoute: typeof AppNovoTreinoRoute
-  AppPlanejamentoRoute: typeof AppPlanejamentoRoute
-  AppZonasDeTreinoRoute: typeof AppZonasDeTreinoRoute
-  AppIndexRoute: typeof AppIndexRoute
-  AppCalculadoraIndexRoute: typeof AppCalculadoraIndexRoute
-  AppConfiguracoesIndexRoute: typeof AppConfiguracoesIndexRoute
-  AppTestesIndexRoute: typeof AppTestesIndexRoute
-}
-
-const AppRouteChildren: AppRouteChildren = {
-  AppNovoTreinoRoute: AppNovoTreinoRoute,
-  AppPlanejamentoRoute: AppPlanejamentoRoute,
-  AppZonasDeTreinoRoute: AppZonasDeTreinoRoute,
-  AppIndexRoute: AppIndexRoute,
-  AppCalculadoraIndexRoute: AppCalculadoraIndexRoute,
-  AppConfiguracoesIndexRoute: AppConfiguracoesIndexRoute,
-  AppTestesIndexRoute: AppTestesIndexRoute,
-}
-
-const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+const AppPlanosPlanIdRoute = AppPlanosPlanIdRouteImport.update({
+  id: '/planos/$planId',
+  path: '/planos/$planId',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/app': typeof AppRouteWithChildren
@@ -208,11 +98,12 @@ export interface FileRoutesByFullPath {
   '/app/planejamento': typeof AppPlanejamentoRoute
   '/app/zonas-de-treino': typeof AppZonasDeTreinoRoute
   '/app/': typeof AppIndexRoute
+  '/app/planos/$planId': typeof AppPlanosPlanIdRoute
   '/app/calculadora': typeof AppCalculadoraIndexRoute
   '/app/configuracoes': typeof AppConfiguracoesIndexRoute
+  '/app/planos': typeof AppPlanosIndexRoute
   '/app/testes': typeof AppTestesIndexRoute
 }
-
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -221,13 +112,14 @@ export interface FileRoutesByTo {
   '/app/planejamento': typeof AppPlanejamentoRoute
   '/app/zonas-de-treino': typeof AppZonasDeTreinoRoute
   '/app': typeof AppIndexRoute
+  '/app/planos/$planId': typeof AppPlanosPlanIdRoute
   '/app/calculadora': typeof AppCalculadoraIndexRoute
   '/app/configuracoes': typeof AppConfiguracoesIndexRoute
+  '/app/planos': typeof AppPlanosIndexRoute
   '/app/testes': typeof AppTestesIndexRoute
 }
-
 export interface FileRoutesById {
-  __root__: typeof rootRoute
+  __root__: typeof rootRouteImport
   '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -236,11 +128,12 @@ export interface FileRoutesById {
   '/app/planejamento': typeof AppPlanejamentoRoute
   '/app/zonas-de-treino': typeof AppZonasDeTreinoRoute
   '/app/': typeof AppIndexRoute
+  '/app/planos/$planId': typeof AppPlanosPlanIdRoute
   '/app/calculadora/': typeof AppCalculadoraIndexRoute
   '/app/configuracoes/': typeof AppConfiguracoesIndexRoute
+  '/app/planos/': typeof AppPlanosIndexRoute
   '/app/testes/': typeof AppTestesIndexRoute
 }
-
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
@@ -252,8 +145,10 @@ export interface FileRouteTypes {
     | '/app/planejamento'
     | '/app/zonas-de-treino'
     | '/app/'
+    | '/app/planos/$planId'
     | '/app/calculadora'
     | '/app/configuracoes'
+    | '/app/planos'
     | '/app/testes'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -264,8 +159,10 @@ export interface FileRouteTypes {
     | '/app/planejamento'
     | '/app/zonas-de-treino'
     | '/app'
+    | '/app/planos/$planId'
     | '/app/calculadora'
     | '/app/configuracoes'
+    | '/app/planos'
     | '/app/testes'
   id:
     | '__root__'
@@ -277,12 +174,13 @@ export interface FileRouteTypes {
     | '/app/planejamento'
     | '/app/zonas-de-treino'
     | '/app/'
+    | '/app/planos/$planId'
     | '/app/calculadora/'
     | '/app/configuracoes/'
+    | '/app/planos/'
     | '/app/testes/'
   fileRoutesById: FileRoutesById
 }
-
 export interface RootRouteChildren {
   AppRoute: typeof AppRouteWithChildren
   LoginRoute: typeof LoginRoute
@@ -290,78 +188,134 @@ export interface RootRouteChildren {
   RegisterRoute: typeof RegisterRoute
 }
 
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/zonas-de-treino': {
+      id: '/app/zonas-de-treino'
+      path: '/zonas-de-treino'
+      fullPath: '/app/zonas-de-treino'
+      preLoaderRoute: typeof AppZonasDeTreinoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/planejamento': {
+      id: '/app/planejamento'
+      path: '/planejamento'
+      fullPath: '/app/planejamento'
+      preLoaderRoute: typeof AppPlanejamentoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/novo-treino': {
+      id: '/app/novo-treino'
+      path: '/novo-treino'
+      fullPath: '/app/novo-treino'
+      preLoaderRoute: typeof AppNovoTreinoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/testes/': {
+      id: '/app/testes/'
+      path: '/testes'
+      fullPath: '/app/testes'
+      preLoaderRoute: typeof AppTestesIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/planos/': {
+      id: '/app/planos/'
+      path: '/planos'
+      fullPath: '/app/planos'
+      preLoaderRoute: typeof AppPlanosIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/configuracoes/': {
+      id: '/app/configuracoes/'
+      path: '/configuracoes'
+      fullPath: '/app/configuracoes'
+      preLoaderRoute: typeof AppConfiguracoesIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/calculadora/': {
+      id: '/app/calculadora/'
+      path: '/calculadora'
+      fullPath: '/app/calculadora'
+      preLoaderRoute: typeof AppCalculadoraIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/planos/$planId': {
+      id: '/app/planos/$planId'
+      path: '/planos/$planId'
+      fullPath: '/app/planos/$planId'
+      preLoaderRoute: typeof AppPlanosPlanIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+  }
+}
+
+interface AppRouteChildren {
+  AppNovoTreinoRoute: typeof AppNovoTreinoRoute
+  AppPlanejamentoRoute: typeof AppPlanejamentoRoute
+  AppZonasDeTreinoRoute: typeof AppZonasDeTreinoRoute
+  AppIndexRoute: typeof AppIndexRoute
+  AppPlanosPlanIdRoute: typeof AppPlanosPlanIdRoute
+  AppCalculadoraIndexRoute: typeof AppCalculadoraIndexRoute
+  AppConfiguracoesIndexRoute: typeof AppConfiguracoesIndexRoute
+  AppPlanosIndexRoute: typeof AppPlanosIndexRoute
+  AppTestesIndexRoute: typeof AppTestesIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppNovoTreinoRoute: AppNovoTreinoRoute,
+  AppPlanejamentoRoute: AppPlanejamentoRoute,
+  AppZonasDeTreinoRoute: AppZonasDeTreinoRoute,
+  AppIndexRoute: AppIndexRoute,
+  AppPlanosPlanIdRoute: AppPlanosPlanIdRoute,
+  AppCalculadoraIndexRoute: AppCalculadoraIndexRoute,
+  AppConfiguracoesIndexRoute: AppConfiguracoesIndexRoute,
+  AppPlanosIndexRoute: AppPlanosIndexRoute,
+  AppTestesIndexRoute: AppTestesIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   AppRoute: AppRouteWithChildren,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   RegisterRoute: RegisterRoute,
 }
-
-export const routeTree = rootRoute
+export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-/* ROUTE_MANIFEST_START
-{
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/app",
-        "/login",
-        "/onboarding",
-        "/register"
-      ]
-    },
-    "/app": {
-      "filePath": "app.tsx",
-      "children": [
-        "/app/novo-treino",
-        "/app/planejamento",
-        "/app/zonas-de-treino",
-        "/app/",
-        "/app/calculadora/",
-        "/app/configuracoes/",
-        "/app/testes/"
-      ]
-    },
-    "/login": {
-      "filePath": "login.tsx"
-    },
-    "/onboarding": {
-      "filePath": "onboarding.tsx"
-    },
-    "/register": {
-      "filePath": "register.tsx"
-    },
-    "/app/novo-treino": {
-      "filePath": "app/novo-treino.tsx",
-      "parent": "/app"
-    },
-    "/app/planejamento": {
-      "filePath": "app/planejamento.tsx",
-      "parent": "/app"
-    },
-    "/app/zonas-de-treino": {
-      "filePath": "app/zonas-de-treino.tsx",
-      "parent": "/app"
-    },
-    "/app/": {
-      "filePath": "app/index.tsx",
-      "parent": "/app"
-    },
-    "/app/calculadora/": {
-      "filePath": "app/calculadora/index.tsx",
-      "parent": "/app"
-    },
-    "/app/configuracoes/": {
-      "filePath": "app/configuracoes/index.tsx",
-      "parent": "/app"
-    },
-    "/app/testes/": {
-      "filePath": "app/testes/index.tsx",
-      "parent": "/app"
-    }
-  }
-}
-ROUTE_MANIFEST_END */

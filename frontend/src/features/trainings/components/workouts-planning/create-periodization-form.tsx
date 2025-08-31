@@ -315,7 +315,7 @@ export function CreatePeriodizationForm({
 						<span className='text-muted-foreground text-sm'>
 							O plano de treinamento será criado com base no seu{" "}
 							<Link
-								to='/testes'
+								to='/app/testes'
 								className='hover:text-primary inline-block hover:underline'
 							>
 								<b>último teste adicionado</b>
