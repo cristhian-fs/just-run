@@ -2,7 +2,7 @@ import type { TSegmentKind } from "@/shared/types";
 
 // Exibir pace como string
 export function secondsToPace(totalSeconds: number): string {
-	if (!isFinite(totalSeconds) || totalSeconds <= 0) return "00:00";
+	if (!Number.isFinite(totalSeconds) || totalSeconds <= 0) return "00:00";
 	const minutes = Math.floor(totalSeconds / 60);
 	const seconds = Math.floor(totalSeconds % 60);
 	return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
@@ -20,12 +20,12 @@ export function formatSecondsToHHMMSS(totalSeconds: number): string {
 
 export const formatDistance = (meters: number | null) => {
 	if (!meters) return "N/A";
-	return (meters / 1000).toFixed(2) + " km";
+	return `${(meters / 1000).toFixed(2)}km`;
 };
 
 export const formatDuration = (seconds: number | null) => {
 	if (!seconds) return "N/A";
-	return Math.round(seconds / 60) + " min";
+	return `${Math.round(seconds / 60)}min`;
 };
 
 export const getSegmentKindLabel = (kind: TSegmentKind) => {
@@ -37,16 +37,27 @@ export const getSegmentKindLabel = (kind: TSegmentKind) => {
 		FLOAT: "Trote leve",
 		PROGRESSIVE: "Progressivo",
 		THRESHOLD: "Em ritmo de limiar",
+		INTERVAL: "Em ritmo de intervalo",
+		MARATHON: "Maratonismo",
+		RECOVERY: "Recuperação",
+		REPETITION: "Repetição",
 	};
 	return kinds[kind] || kind;
 };
 
-export const getSegmentKindColor = (kind: string) => {
-	const colors: Record<string, string> = {
+export const getSegmentKindColor = (kind: TSegmentKind) => {
+	const colors: Record<TSegmentKind, string> = {
 		WARMUP: "bg-blue-100 text-blue-800",
 		WORK: "bg-red-100 text-red-800",
 		REST: "bg-green-100 text-green-800",
 		COOLDOWN: "bg-purple-100 text-purple-800",
+		FLOAT: "bg-yellow-100 text-yellow-800",
+		PROGRESSIVE: "bg-purple-100 text-purple-800",
+		THRESHOLD: "bg-orange-100 text-orange-800",
+		INTERVAL: "bg-red-100 text-red-800",
+		MARATHON: "bg-rose-100 text-rose-800",
+		RECOVERY: "bg-lime-100 text-lime-800",
+		REPETITION: "bg-red-100 text-red-800",
 	};
 	return colors[kind] || "bg-gray-100 text-gray-800";
 };

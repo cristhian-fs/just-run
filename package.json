@@ -1,31 +1,36 @@
 {
-  "name": "tanstack-router-template",
-  "scripts": {
-    "dev": "bun run --hot server/index.ts",
-    "format:write": "prettier . --write",
-    "format:check": "prettier . --check",
-    "start": "bun server/index.ts"
-  },
-  "dependencies": {
-    "@hono/zod-validator": "^0.7.0",
-    "better-auth": "^1.2.8",
-    "date-fns": "^4.1.0",
-    "dotenv": "^16.5.0",
-    "dotenv-expand": "^12.0.2",
-    "drizzle-orm": "^0.44.1",
-    "hono": "^4.7.11",
-    "postgres": "^3.4.7",
-    "prettier-plugin-tailwindcss": "^0.6.12",
-    "zod": "^3.25.48"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.1.4",
-    "@eslint/compat": "^1.2.9",
-    "@eslint/js": "^9.28.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
-    "@types/bun": "latest",
-    "drizzle-kit": "^0.31.1",
-    "globals": "^16.2.0",
-    "typescript-eslint": "^8.33.1"
-  }
+	"name": "tanstack-router-template",
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --hot server/index.ts",
+		"format:write": "prettier . --write",
+		"format:check": "prettier . --check",
+		"start": "bun server/index.ts",
+		"db:seed": "cross-env DB_SEEDING=true tsx server/db/seed.ts"
+	},
+	"dependencies": {
+		"@hono/zod-validator": "^0.7.0",
+		"better-auth": "^1.2.8",
+		"date-fns": "^4.1.0",
+		"dotenv": "^17.2.1",
+		"dotenv-expand": "^12.0.2",
+		"drizzle-orm": "^0.44.1",
+		"hono": "^4.7.11",
+		"postgres": "^3.4.7",
+		"prettier-plugin-tailwindcss": "^0.6.12",
+		"zod": "^3.25.48"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.4",
+		"@eslint/compat": "^1.2.9",
+		"@eslint/js": "^9.28.0",
+		"@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+		"@types/bun": "latest",
+		"cross-env": "^10.0.0",
+		"drizzle-kit": "^0.31.1",
+		"globals": "^16.2.0",
+		"tsc": "^2.0.4",
+		"tsc-alias": "^1.8.16",
+		"typescript-eslint": "^8.33.1"
+	}
 }
