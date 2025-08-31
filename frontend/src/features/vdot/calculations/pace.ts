@@ -2,10 +2,12 @@ export function calculatePace({
 	calcVDOT,
 	vdotPercentage,
 	correctionFactor,
+	type = "minutes",
 }: {
 	calcVDOT: number;
 	vdotPercentage: number;
 	correctionFactor: number;
+	type?: "seconds" | "minutes";
 }): string {
 	const distanceM = 1_000;
 	const intensity = calcVDOT * vdotPercentage;
@@ -19,6 +21,8 @@ export function calculatePace({
 
 	const paceMinutes = Math.floor(correctedTime / 60);
 	const paceSeconds = Math.round(correctedTime % 60);
+
+	if (type === "seconds") return correctedTime.toString();
 
 	return `${paceMinutes.toString().padStart(2, "0")}:${paceSeconds.toString().padStart(2, "0")}`;
 }
