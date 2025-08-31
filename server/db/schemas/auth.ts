@@ -7,11 +7,12 @@ import {
 	text,
 	timestamp,
 } from "drizzle-orm/pg-core";
-
 import { goal } from "./goals";
+import { activePlans } from "./plans";
 import { tests } from "./tests";
 import { trainingWeeks } from "./training-weeks";
 import { trainingZones } from "./training-zones";
+import { workoutAnalytics } from "./workouts";
 
 export const genderEnum = pgEnum("gender", ["male", "female", "other"]);
 export const trainingLevelEnum = pgEnum("training_level", [
@@ -79,9 +80,14 @@ export const verification = pgTable("verification", {
 });
 
 // relations
-export const userRelations = relations(user, ({ many }) => ({
+export const userRelations = relations(user, ({ many, one }) => ({
 	trainingZones: many(trainingZones),
 	goals: many(goal),
 	trainingWeeks: many(trainingWeeks),
 	tests: many(tests),
+	activePlans: one(activePlans, {
+		fields: [user.id],
+		references: [activePlans.userId],
+	}),
+	workoutAnalytics: many(workoutAnalytics),
 }));

@@ -1,0 +1,1 @@
+ALTER TABLE "plan_workouts" ADD COLUMN "day_index" integer DEFAULT 1 NOT NULL;

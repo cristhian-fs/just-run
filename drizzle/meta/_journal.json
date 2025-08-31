@@ -43,6 +43,48 @@
       "when": 1751500186986,
       "tag": "0005_nervous_the_anarchist",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1756391814759,
+      "tag": "0006_tough_morgan_stark",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1756398435875,
+      "tag": "0007_common_taskmaster",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1756398688491,
+      "tag": "0008_luxuriant_joystick",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1756417178625,
+      "tag": "0009_rapid_boomerang",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1756417774621,
+      "tag": "0010_ordinary_microbe",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1756666597087,
+      "tag": "0011_flawless_red_wolf",
+      "breakpoints": true
     }
   ]
 }
