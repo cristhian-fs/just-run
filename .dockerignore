@@ -3,3 +3,8 @@ Dockerfile
 .dockerignore
 node_modules
 .git
+db-data
+*.log
+.env*
+coverage
+tmp
