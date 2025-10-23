@@ -1,0 +1,4627 @@
+{
+	"coach": "Jack Danniels",
+	"name": "Red Plan",
+	"description": "Plano intermediário para corredores que concluiram o White Plan.",
+	"weekly_volume": 0,
+	"totalWeeks": 16,
+	"level": "intermediate",
+	"distances": ["5km", "10km"],
+	"weeks": [
+		{
+			"weekNumber": 1,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 3,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1600,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "3 x (1.6km corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1000,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "6 x (1km de corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 9650,
+									"plannedDuraiton": 2400,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+							"description": "",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 2,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 3,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1600,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "3 x (1.6km corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1000,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "6 x (1km de corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 9650,
+									"plannedDuraiton": 2400,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+							"description": "",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 3,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 3,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1600,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "3 x (1.6km corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1000,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "6 x (1km de corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 9650,
+									"plannedDuraiton": 2400,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+							"description": "",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 4,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 3,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1600,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "3 x (1.6km corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WARMUP",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDistanceM": 1000,
+									"targetPaceSPerKm": 0,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 60,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"orderIndex": 2,
+							"description": "6 x (1km de corrida no pace de Limiar + 1min de descanso)"
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "COOLDOWN",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+					"runType": "INTERVAL",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"orderIndex": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 9650,
+									"plannedDuraiton": 2400,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida fácil por 40min ou 9.65km, o que vier primeiro",
+							"description": ""
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 5,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + Acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2520,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 3200,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 120,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 3.2km + 2min de descanso",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 1.6km",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"planneDurationS": 600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2700,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "2 x (Corrida em ritmo de limiar - 1.6km + 1min de descanso)",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "1 x (Corrida em ritmo de limiar - 1km + 1min de descanso)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa de 40-50min",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"orderIndex": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"plannedDuraiton": 3000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida longa de 40-50min, ritmo leve",
+							"description": ""
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 6,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + Acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2520,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 3200,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 120,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 3.2km + 2min de descanso",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 1.6km",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"planneDurationS": 600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2700,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "2 x (Corrida em ritmo de limiar - 1.6km + 1min de descanso)",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "1 x (Corrida em ritmo de limiar - 1km + 1min de descanso)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa de 40-50min",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"orderIndex": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"plannedDuraiton": 3000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida longa de 40-50min, ritmo leve",
+							"description": ""
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 7,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + Acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2520,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 3200,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 120,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 3.2km + 2min de descanso",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 1.6km",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"planneDurationS": 600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2700,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "2 x (Corrida em ritmo de limiar - 1.6km + 1min de descanso)",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "1 x (Corrida em ritmo de limiar - 1km + 1min de descanso)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa de 40-50min",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"orderIndex": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"plannedDuraiton": 3000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida longa de 40-50min, ritmo leve",
+							"description": ""
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 8,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + Acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 30min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s de corrida moderada + 45s de descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2520,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 3200,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 120,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 3.2km + 2min de descanso",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida em ritmo de limiar - 1.6km",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"planneDurationS": 600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Corrida intervalada",
+					"runType": "INTERVAL",
+					"plannedDistanceM": 0,
+					"plannedDurationS": 2700,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1600,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "2 x (Corrida em ritmo de limiar - 1.6km + 1min de descanso)",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 1000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDistanceM": 0,
+									"plannedDurationS": 60,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "1 x (Corrida em ritmo de limiar - 1km + 1min de descanso)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "Corrida leve 10min",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa de 40-50min",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"orderIndex": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDistanceM": 0,
+									"plannedDuraiton": 3000,
+									"plannedDurationS": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"notes": "Corrida longa de 40-50min, ritmo leve",
+							"description": ""
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 9,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos hard",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 5,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "5x 3min dificeis com 2min recuperação",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo threshold",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "20 minutos ou 3 milhas (4.8km) de ritmo de limiar, o que vier primeiro",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 1200,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "20 min ritmo threshold",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Long run",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "40-50 minutos de corrida longa em ritmo fácil",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 10,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos hard",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 5,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "5x 3min dificeis com 2min recuperação",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo threshold",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "20 minutos ou 3 milhas (4.8km) de ritmo de limiar, o que vier primeiro",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 1200,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "20 min ritmo threshold",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Long run",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "40-50 minutos de corrida longa em ritmo fácil",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 11,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos hard",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 5,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "5x 3min dificeis com 2min recuperação",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo threshold",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "20 minutos ou 3 milhas (4.8km) de ritmo de limiar, o que vier primeiro",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 1200,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "20 min ritmo threshold",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Long run",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "40-50 minutos de corrida longa em ritmo fácil",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 12,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - Corrida leve + acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Se for correr hoje, repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos hard",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3000,
+					"plannedDistanceM": 0,
+					"notes": "",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 5,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "5x 3min dificeis com 2min recuperação",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo threshold",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 2400,
+					"plannedDistanceM": 0,
+					"notes": "20 minutos ou 3 milhas (4.8km) de ritmo de limiar, o que vier primeiro",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 1200,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "20 min ritmo threshold",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 3
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2280,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Long run",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "40-50 minutos de corrida longa em ritmo fácil",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 13,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - 30min fácil + 8 acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "30min E + 8 ST",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 8,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "8x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos I (intensidade)",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3180,
+					"plannedDistanceM": 0,
+					"notes": "Intervalos de intensidade com recuperação",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 300,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 240,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								},
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 3
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 4
+								}
+							],
+							"description": "2x (5min I + 4min recuperação + 3min I + 2min recuperação)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo de limiar (T)",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 3300,
+					"plannedDistanceM": 0,
+					"notes": "2 milhas T + 2min descanso + 2 milhas T (≈ 3.2km + 3.2km)",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "REST",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 min descanso",
+							"orderIndex": 4
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 5
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 6
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa + acelerações",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "45min corrida longa + 4 ST (40-50min L run + 4 ST)",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 14,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - 30min fácil + 8 acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "30min E + 8 ST",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 8,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "8x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos I (intensidade)",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3180,
+					"plannedDistanceM": 0,
+					"notes": "Intervalos de intensidade com recuperação",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 300,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 240,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								},
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 3
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 4
+								}
+							],
+							"description": "2x (5min I + 4min recuperação + 3min I + 2min recuperação)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo de limiar (T)",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 3300,
+					"plannedDistanceM": 0,
+					"notes": "2 milhas T + 2min descanso + 2 milhas T (≈ 3.2km + 3.2km)",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "REST",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 min descanso",
+							"orderIndex": 4
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 5
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 6
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa + acelerações",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "45min corrida longa + 4 ST (40-50min L run + 4 ST)",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 15,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - 30min fácil + 8 acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "30min E + 8 ST",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 8,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "8x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos I (intensidade)",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3180,
+					"plannedDistanceM": 0,
+					"notes": "Intervalos de intensidade com recuperação",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 300,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 240,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								},
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 3
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 4
+								}
+							],
+							"description": "2x (5min I + 4min recuperação + 3min I + 2min recuperação)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo de limiar (T)",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 3300,
+					"plannedDistanceM": 0,
+					"notes": "2 milhas T + 2min descanso + 2 milhas T (≈ 3.2km + 3.2km)",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "REST",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 min descanso",
+							"orderIndex": 4
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 5
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 6
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa + acelerações",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "45min corrida longa + 4 ST (40-50min L run + 4 ST)",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		},
+		{
+			"weekNumber": 16,
+			"totalVolumeMin": 0,
+			"workouts": [
+				{
+					"title": "Dia 1 - 30min fácil + 8 acelerações",
+					"runType": "EASY_RUN",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "30min E + 8 ST",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 1800,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "30 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 8,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "8x aceleração curta (15s corrida moderada + 45s descanso)",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 1
+				},
+				{
+					"title": "Dia 2 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 2
+				},
+				{
+					"title": "Dia 3 - Intervalos I (intensidade)",
+					"runType": "INTERVAL",
+					"plannedDurationS": 3180,
+					"plannedDistanceM": 0,
+					"notes": "Intervalos de intensidade com recuperação",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "INTERVAL",
+							"repeatCount": 2,
+							"segments": [
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 300,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 240,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								},
+								{
+									"segmentKind": "INTERVAL",
+									"plannedDurationS": 180,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 3
+								},
+								{
+									"segmentKind": "RECOVERY",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 4
+								}
+							],
+							"description": "2x (5min I + 4min recuperação + 3min I + 2min recuperação)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 4
+						}
+					],
+					"dayIndex": 3
+				},
+				{
+					"title": "Dia 4 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 4
+				},
+				{
+					"title": "Dia 5 - Ritmo de limiar (T)",
+					"runType": "THRESHOLD_RUN",
+					"plannedDurationS": 3300,
+					"plannedDistanceM": 0,
+					"notes": "2 milhas T + 2min descanso + 2 milhas T (≈ 3.2km + 3.2km)",
+					"blocks": [
+						{
+							"blockKind": "WARMUP",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 6,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "6x aceleração curta",
+							"orderIndex": 2
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 3
+						},
+						{
+							"blockKind": "REST",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 120,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 min descanso",
+							"orderIndex": 4
+						},
+						{
+							"blockKind": "THRESHOLD",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "THRESHOLD",
+									"plannedDurationS": 720,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "2 milhas em ritmo de limiar (≈ 12min para 6:00min/milha)",
+							"orderIndex": 5
+						},
+						{
+							"blockKind": "COOLDOWN",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 600,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "10 min corrida fácil",
+							"orderIndex": 6
+						}
+					],
+					"dayIndex": 5
+				},
+				{
+					"title": "Dia 6 - Repetir dia 1",
+					"runType": "REST",
+					"plannedDurationS": 2460,
+					"plannedDistanceM": 0,
+					"notes": "Repetir treino do dia 1 - 30min E + 8 ST",
+					"blocks": [],
+					"dayIndex": 6
+				},
+				{
+					"title": "Dia 7 - Corrida longa + acelerações",
+					"runType": "LONG_RUN",
+					"plannedDurationS": 2700,
+					"plannedDistanceM": 0,
+					"notes": "45min corrida longa + 4 ST (40-50min L run + 4 ST)",
+					"blocks": [
+						{
+							"blockKind": "WORK",
+							"repeatCount": 1,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 2700,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								}
+							],
+							"description": "45 min corrida longa em ritmo fácil",
+							"orderIndex": 1
+						},
+						{
+							"blockKind": "WORK",
+							"repeatCount": 4,
+							"segments": [
+								{
+									"segmentKind": "WORK",
+									"plannedDurationS": 15,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 1
+								},
+								{
+									"segmentKind": "REST",
+									"plannedDurationS": 45,
+									"plannedDistanceM": 0,
+									"plannedPaceSPerKm": 0,
+									"orderInBlock": 2
+								}
+							],
+							"description": "4x aceleração curta",
+							"orderIndex": 2
+						}
+					],
+					"dayIndex": 7
+				}
+			]
+		}
+	]
+}

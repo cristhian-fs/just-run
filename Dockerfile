@@ -2,8 +2,6 @@
 ARG BUN_VERSION=1.1.30
 FROM oven/bun:${BUN_VERSION}-slim as base
 
-LABEL fly_launch_runtime="Bun"
-
 WORKDIR /usr/src/app
 
 FROM base AS install
@@ -19,9 +17,7 @@ FROM base as build
 COPY . .
 COPY --from=install /temp/prod/server/node_modules node_modules
 COPY --from=install /temp/prod/frontend/node_modules frontend/node_modules
-ENV NODE_ENV=production \
-    VITE_APP_URL=https://tanstack-router-template.fly.dev \
-    VITE_SERVER_URL=https://tanstack-router-template.fly.dev
+ENV NODE_ENV=production
 RUN cd frontend && bun run build -d
 
 FROM base as release

@@ -1,27 +1,27 @@
 export {
-  user,
-  userRelations,
-  account,
-  genderEnum,
-  session,
-  verification,
+	account,
+	genderEnum,
+	session,
+	user,
+	userRelations,
+	verification,
 } from "./auth";
 export { goal, goalType } from "./goals";
-export { testType, tests } from "./tests";
+export { tests, testType } from "./tests";
 export {
-  trainingWeeks,
-  traningWeekRelations,
-  weekType,
+	trainingWeeks,
+	traningWeekRelations,
+	weekType,
 } from "./training-weeks";
 export { trainingZones } from "./training-zones";
 export { workoutLogs } from "./workout-logs";
 export {
-  trainingType,
-  workoutRelations,
-  workouts,
-  blocks,
-  segmentKind,
-  segmentsTable,
-  workoutBlocksRelations,
-  workoutSegmentRelations,
+	blocks,
+	segmentKind,
+	segmentsTable,
+	trainingType,
+	workoutBlocksRelations,
+	workoutRelations,
+	workoutSegmentRelations,
+	workouts,
 } from "./workouts";

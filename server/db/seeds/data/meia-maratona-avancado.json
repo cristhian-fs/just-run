@@ -1,0 +1,2886 @@
+{
+  "coach": "Hal Higdon",
+  "name": "Meia maratona - Avançado",
+  "description": "Este Programa Avançado de Treinamento para Meia Maratona é destinado a corredores experientes: indivíduos que competem regularmente em provas de 5 km, 10 km, meia maratona e até maratona e que desejam melhorar seu desempenho.",
+  "weekly_volume": 0,
+  "totalWeeks": 12,
+  "level": "advanced",
+  "distances": [
+    "21km"
+  ],
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - 6 x subida",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 6,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "6 repetições em subida, procure uma subida de 200m até 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 40 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 40 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida 90 min",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 5400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 90 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 2,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 7 x 400m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 7,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "7 x 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 45 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 2100,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 45 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida 90 min",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 5400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 90 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 3,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - 7 x subida",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 7,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "7 repetições em subida, procure uma subida de 200m até 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 30 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 1200,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 30 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso ou corrida leve",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou corrida leve",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Prova de 5km",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 5000,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 5km",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 4,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 8 x 400m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 8,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "8 x 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 40 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 1800,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 40 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida 90 min",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 5400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 90 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 5,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - 8 x subida",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 8,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "8 repetições em subida, procure uma subida de 200m até 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 45 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 2100,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 45 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida 90 min",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 5400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 90 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 6,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 8 x 400m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 8,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "8 x 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 30 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 1200,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 30 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso ou corrida leve",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou corrida leve",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Prova de 10km",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 10000,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 10km",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 7,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 4 x 800m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 4,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "4 x 800m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 45 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 2100,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 45 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 6400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 6.4km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Correr por 1 hora e 45 minutos",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 3660,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Correr por 1 hora e 1 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 8,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 3 x 1600m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 3,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 1600,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "3 x 1600m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 50 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 2400,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 50 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Correr por 1 hora e 45 minutos",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 3660,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Correr por 1 hora e 1 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 9,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 5 x 800m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 5,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "5 x 800m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 30 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 1200,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 30 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso ou corrida leve",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Descanso ou corrida leve",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Prova de 15km",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 15000,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 15km",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 4 x 1600m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 4,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 1600,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "4 x 1600m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 55 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 2700,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 55 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 8100,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 8.1km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Correr por 2 horas",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 7320,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Correr por 2 horas e 2 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 11,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 6 x 800m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 6,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "6 x 800m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 60 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 3000,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 60 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Treino",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Correr por 2 horas",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 7320,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Correr por 2 horas e 2 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    },
+    {
+      "weekNumber": 12,
+      "totalVolumeMin": 0,
+      "workouts": [
+        {
+          "title": "Dia 1 - Corrida de 4.8km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 4800,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 4.8km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 1
+        },
+        {
+          "title": "Dia 2 - Tiro 6 x 400m",
+          "runType": "INTERVAL",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "WORK",
+              "repeatCount": 6,
+              "segments": [
+                {
+                  "segmentKind": "INTERVAL",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 400,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "6 x 400m",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 2
+        },
+        {
+          "title": "Dia 3 - Corrida de 3.2km",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 3200,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida de 3.2km",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 3
+        },
+        {
+          "title": "Dia 4 - Tempo run 30 min",
+          "runType": "PROGRESSIVE_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WARMUP",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WARMUP",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Aquecimento de pelo menos 10 minutos",
+              "orderIndex": 1
+            },
+            {
+              "blockKind": "THRESHOLD",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "THRESHOLD",
+                  "plannedDurationS": 1200,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 2
+                }
+              ],
+              "description": "Tempo run 30 minutos",
+              "orderIndex": 2
+            },
+            {
+              "blockKind": "COOLDOWN",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "COOLDOWN",
+                  "plannedDurationS": 600,
+                  "plannedDistanceM": 0,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Desaquecimento",
+              "orderIndex": 3
+            }
+          ],
+          "dayIndex": 4
+        },
+        {
+          "title": "Dia 5 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 5
+        },
+        {
+          "title": "Dia 6 - Descanso",
+          "runType": "EASY_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [],
+          "dayIndex": 6
+        },
+        {
+          "title": "Dia 7 - Corrida - Meia maratona",
+          "runType": "LONG_RUN",
+          "plannedDurationS": 0,
+          "plannedDistanceM": 0,
+          "notes": "",
+          "blocks": [
+            {
+              "blockKind": "WORK",
+              "repeatCount": 1,
+              "segments": [
+                {
+                  "segmentKind": "WORK",
+                  "plannedDurationS": 0,
+                  "plannedDistanceM": 21097,
+                  "orderInBlock": 1
+                }
+              ],
+              "description": "Corrida na distância de meia maratona",
+              "orderIndex": 1
+            }
+          ],
+          "dayIndex": 7
+        }
+      ]
+    }
+  ]
+}

@@ -1,414 +1,529 @@
-import { Hono } from "hono";
-import { HTTPException } from "hono/http-exception";
-import { and, eq, gte, inArray } from "drizzle-orm";
-
-import { db } from "@/db";
-import {
-  goal,
-  tests,
-  trainingWeeks,
-  trainingZones as trainingZonesTable,
-  user,
-  workoutLogs,
-  workouts as workoutsTable,
-} from "@/db/schemas";
-import {
-  blocks as blockTable,
-  segmentsTable,
-  workouts,
-} from "@/db/schemas/workouts";
-import { loggedIn } from "@/middlewares/logged-in";
 import { zValidator } from "@hono/zod-validator";
 import { format } from "date-fns";
 import { isMonday } from "date-fns/fp";
 import { previousMonday } from "date-fns/previousMonday";
 import { startOfToday } from "date-fns/startOfToday";
+import { and, eq, gte, inArray } from "drizzle-orm";
+import { Hono } from "hono";
+import { HTTPException } from "hono/http-exception";
 import { z } from "zod";
-
-import { registerWorkoutSchema } from "@/shared/schemas";
+import { db } from "@/db";
 import {
-  type PlanningSelect,
-  type SuccessResponse,
-  type TrainingGoal,
-  type TraningZoneSelect,
-  type WorkoutSelect,
-  type WorkoutWithBlocks,
-} from "@/shared/types";
+	goal,
+	tests,
+	trainingWeeks,
+	trainingZones as trainingZonesTable,
+	user,
+	workoutLogs,
+	workouts as workoutsTable,
+} from "@/db/schemas";
+import { workouts } from "@/db/schemas/workouts";
 import {
-  defaultWeeklyMinutesByGoal,
-  goalToRacePlan,
+	defaultWeeklyMinutesByGoal,
+	goalToRacePlan,
 } from "@/lib/config/training-goals";
 import type { Context } from "@/lib/context";
 import { getStartDate } from "@/lib/core/calculations/time";
 import { distributeWeeklyVolumesWithDays } from "@/lib/core/generators/dayly-distribution";
-import { formatDate } from "@/lib/utils";
+import { parseWorkoutDto } from "@/lib/utils";
+import { loggedIn } from "@/middlewares/logged-in";
+import { TrainingWeekOrchestratorService } from "@/services";
+import {
+	newPeriodizationPlanSchema,
+	registerWorkoutSchema,
+	workoutSchema,
+} from "@/shared/schemas";
+import type {
+	PlanningSelect,
+	SuccessResponse,
+	TestSelect,
+	TrainingGoal,
+	TraningZoneSelect,
+	WeekAmount,
+	WorkoutSelect,
+	WorkoutWithBlocksAndSegments,
+} from "@/shared/types";
 
 export const trainingRouter = new Hono<Context>()
-  .post(
-    "/:userId/generate",
-    // loggedIn,
-    async (c) => {
-      const { userId } = c.req.param();
-      const userData = await db.query.user.findFirst({
-        where: eq(user.id, userId),
-      });
+	.post("/generate", loggedIn, async (c) => {
+		const userContext = c.get("user");
 
-      if (!userData) {
-        return c.json({
-          success: false,
-          message: "Usuário não encontrado",
-        });
-      }
+		if (!userContext) {
+			throw new Error("User not found");
+		}
 
-      const lastUserTest = await db.query.tests.findFirst({
-        where: eq(tests.userId, userId),
-        orderBy: (tests, { desc }) => desc(tests.createdAt),
-      });
-      const lastUserGoal = await db.query.goal.findFirst({
-        where: eq(goal.userId, userId),
-        orderBy: (goal, { desc }) => desc(goal.createdAt),
-      });
+		const { id } = userContext;
+		const userData = await db.query.user.findFirst({
+			where: eq(user.id, id),
+		});
 
-      if (!lastUserTest || !lastUserGoal) {
-        return c.json({
-          success: false,
-          message: "Nenhum teste foi feito pelo usuário",
-        });
-      }
+		if (!userData) {
+			return c.json({
+				success: false,
+				message: "Usuário não encontrado",
+			});
+		}
 
-      const goalData = goalToRacePlan[lastUserGoal.goalType as TrainingGoal];
+		const lastUserTest = await db.query.tests.findFirst({
+			where: eq(tests.userId, id),
+			orderBy: (tests, { desc }) => desc(tests.createdAt),
+		});
+		const lastUserGoal = await db.query.goal.findFirst({
+			where: eq(goal.userId, id),
+			orderBy: (goal, { desc }) => desc(goal.createdAt),
+		});
 
-      if (goalData) {
-        const { race, weeklyKm } = goalData;
+		if (!lastUserTest || !lastUserGoal) {
+			return c.json({
+				success: false,
+				message: "Nenhum teste foi feito pelo usuário",
+			});
+		}
 
-        const trainings = distributeWeeklyVolumesWithDays(
-          8,
-          race,
-          weeklyKm,
-          lastUserGoal.weeklyFrequency,
-          userData.trainingLevel === "beginner" ? "KM" : "MINUTES",
-          getStartDate(),
-          userData.trainingLevel!,
-          lastUserTest.vam!,
-          lastUserTest,
-        );
-        await db.transaction(async (tx) => {
-          await tx
-            .delete(trainingWeeks)
-            .where(eq(trainingWeeks.userId, userId));
+		const goalData = goalToRacePlan[lastUserGoal.goalType as TrainingGoal];
 
-          for (const week of trainings) {
-            if (!week.workouts.length) continue;
+		if (goalData) {
+			const { race, weeklyKm } = goalData;
 
-            const { week: weekData } = week;
+			const trainings = distributeWeeklyVolumesWithDays({
+				weeks: 8,
+				race,
+				baseValuePerWeek: weeklyKm,
+				weeklyFrequency: lastUserGoal.weeklyFrequency,
+				unit: userData.trainingLevel === "beginner" ? "KM" : "MINUTES",
+				startDate: getStartDate(),
+				trainingLevel: userData.trainingLevel!,
+				vam: lastUserTest.vam!,
+				testData: lastUserTest,
+			});
+			await TrainingWeekOrchestratorService.saveTrainingWeekWithWorkouts({
+				userId: id,
+				trainings,
+			});
 
-            const [insertedWeek] = await tx
-              .insert(trainingWeeks)
-              .values({
-                totalVolumeMin: weekData.totalVolumeMin,
-                userId,
-                weekStart: formatDate(new Date(weekData.weekStart)),
-                weekType: weekData.weekType,
-                createdAt: new Date(),
-              })
-              .returning({ id: trainingWeeks.id });
+			return c.json(
+				{
+					success: true,
+					message: "Periodização gerada com sucesso!",
+					data: trainings,
+				},
+				200,
+			);
+		} else {
+			const goalMinutesData =
+				defaultWeeklyMinutesByGoal[lastUserGoal.goalType as TrainingGoal];
 
-            if (!insertedWeek) throw new Error("Falha ao criar week");
+			const trainings = distributeWeeklyVolumesWithDays({
+				weeks: 8,
+				race: "5K",
+				baseValuePerWeek: goalMinutesData,
+				weeklyFrequency: lastUserGoal.weeklyFrequency,
+				unit: userData.trainingLevel === "beginner" ? "KM" : "MINUTES",
+				startDate: getStartDate(),
+				trainingLevel: userData.trainingLevel!,
+				vam: lastUserTest.vam!,
+				testData: lastUserTest,
+			});
 
-            for (const workout of week.workouts) {
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              const { blocks, segments, ...restWorkout } = workout;
+			return c.json(
+				{
+					success: true,
+					message: "Periodização gerada com sucesso!",
+					data: trainings,
+				},
+				200,
+			);
+		}
+	})
+	.get("/next-workout", loggedIn, async (c) => {
+		const userContext = c.get("user");
 
-              const [insertedWorkout] = await tx
-                .insert(workoutsTable)
-                .values({
-                  ...restWorkout,
-                  trainingWeekId: insertedWeek.id,
-                  createdAt: new Date(),
-                  scheduledStart: formatDate(new Date(workout.scheduledStart)),
-                })
-                .returning({ id: workoutsTable.id });
+		if (!userContext) {
+			throw new Error("User not found");
+		}
 
-              if (!insertedWorkout) throw new Error("Falha ao criar workout");
+		const { id } = userContext;
 
-              // blocos
-              if (workout.blocks?.length) {
-                for (const block of workout.blocks) {
-                  const [insertedBlock] = await tx
-                    .insert(blockTable)
-                    .values({ ...block, workoutId: insertedWorkout.id })
-                    .returning({ id: blockTable.id });
+		const today = new Date();
+		const weekMondayStr = isMonday(today)
+			? format(today, "yyyy-MM-dd")
+			: format(previousMonday(today), "yyyy-MM-dd");
 
-                  if (!insertedBlock) throw new Error("Falha ao criar block");
+		const week = await db.query.trainingWeeks.findFirst({
+			where: and(
+				eq(trainingWeeks.userId, id),
+				gte(trainingWeeks.weekStart, weekMondayStr),
+			),
+			orderBy: (trainingWeeks, { asc }) => asc(trainingWeeks.weekStart),
+		});
 
-                  if (block.segments) {
-                    for (const segment of block.segments) {
-                      await tx.insert(segmentsTable).values({
-                        ...segment,
-                        blockId: insertedBlock.id,
-                      });
-                    }
-                  }
-                }
-              }
+		if (!week) {
+			throw new HTTPException(404, {
+				message: "Nenhuma semana de treino encontrada",
+			});
+		}
 
-              // segmentos diretos
-              if (workout.segments?.length) {
-                for (const segment of workout.segments) {
-                  await tx.insert(segmentsTable).values({
-                    ...segment,
-                    workoutId: insertedWorkout.id,
-                  });
-                }
-              }
-            }
-          }
-        });
+		const todayStr = format(startOfToday(), "yyyy-MM-dd");
 
-        return c.json(
-          {
-            success: true,
-            message: "Periodização gerada com sucesso!",
-            data: trainings,
-          },
-          200,
-        );
-      } else {
-        const goalMinutesData =
-          defaultWeeklyMinutesByGoal[lastUserGoal.goalType as TrainingGoal];
+		const nextWorkout = await db.query.workouts.findFirst({
+			where: and(
+				gte(workoutsTable.scheduledStart, todayStr),
+				eq(workoutsTable.trainingWeekId, week.id),
+			),
+			orderBy: (workoutsTable, { asc }) => asc(workoutsTable.scheduledStart),
+			with: {
+				blocks: {
+					with: {
+						segments: true,
+					},
+				},
+			},
+		});
 
-        const trainings = distributeWeeklyVolumesWithDays(
-          8,
-          "5K",
-          goalMinutesData,
-          lastUserGoal.weeklyFrequency,
-          "MINUTES",
-          getStartDate(),
-          userData.trainingLevel!,
-          lastUserTest.vam!,
-          lastUserTest,
-        );
+		if (!nextWorkout) {
+			throw new HTTPException(404, { message: "Nenhum treino encontrado" });
+		}
 
-        return c.json(
-          {
-            success: true,
-            message: "Periodização gerada com sucesso!",
-            data: trainings,
-          },
-          200,
-        );
-      }
-    },
-  )
-  .get(
-    "/:userId/next-workout",
-    // loggedIn,
-    async (c) => {
-      const { userId } = c.req.param();
+		return c.json<SuccessResponse<WorkoutSelect>>(
+			{
+				success: true,
+				message: "Proxima semana de treinamento",
+				data: nextWorkout as WorkoutSelect,
+			},
+			200,
+		);
+	})
+	.get("/training-zones", loggedIn, async (c) => {
+		const userContext = c.get("user");
 
-      const today = new Date();
-      const weekMondayStr = isMonday(today)
-        ? format(today, "yyyy-MM-dd")
-        : format(previousMonday(today), "yyyy-MM-dd");
+		if (!userContext) {
+			throw new Error("User not found");
+		}
 
-      const week = await db.query.trainingWeeks.findFirst({
-        where: and(
-          eq(trainingWeeks.userId, userId),
-          gte(trainingWeeks.weekStart, weekMondayStr),
-        ),
-        orderBy: (trainingWeeks, { asc }) => asc(trainingWeeks.weekStart),
-      });
+		const { id: userId } = userContext;
 
-      if (!week) {
-        throw new HTTPException(404, {
-          message: "Nenhuma semana de treino encontrada",
-        });
-      }
+		const trainingZones = await db.query.trainingZones.findMany({
+			where: eq(trainingZonesTable.userId, userId),
+			orderBy: (trainingZonesTable, { asc }) => asc(trainingZonesTable.name),
+		});
 
-      const todayStr = format(startOfToday(), "yyyy-MM-dd");
+		if (!trainingZones) {
+			throw new HTTPException(404, {
+				message: "Nenhuma zona de treino encontrada",
+			});
+		}
 
-      const nextWorkout = await db.query.workouts.findFirst({
-        where: and(
-          gte(workoutsTable.scheduledStart, todayStr),
-          eq(workoutsTable.trainingWeekId, week.id),
-        ),
-        orderBy: (workoutsTable, { asc }) => asc(workoutsTable.scheduledStart),
-        with: {
-          blocks: {
-            with: {
-              segments: true,
-            },
-          },
-        },
-      });
+		return c.json<SuccessResponse<TraningZoneSelect[]>>(
+			{
+				success: true,
+				message: "Zonas de treino encontradas",
+				data: trainingZones,
+			},
+			200,
+		);
+	})
+	.get("/planning", loggedIn, async (c) => {
+		const userContext = c.get("user");
 
-      if (!nextWorkout) {
-        throw new HTTPException(404, { message: "Nenhum treino encontrado" });
-      }
+		if (!userContext) {
+			throw new Error("User not found");
+		}
 
-      return c.json<SuccessResponse<WorkoutSelect>>(
-        {
-          success: true,
-          message: "Proxima semana de treinamento",
-          data: nextWorkout as WorkoutSelect,
-        },
-        200,
-      );
-    },
-  )
-  .get("/:userId/training-zones", loggedIn, async (c) => {
-    const { userId } = c.req.param();
+		const { id: userId } = userContext;
 
-    const trainingZones = await db.query.trainingZones.findMany({
-      where: eq(trainingZonesTable.userId, userId),
-      orderBy: (trainingZonesTable, { asc }) => asc(trainingZonesTable.name),
-    });
+		const planning = await db.query.trainingWeeks.findMany({
+			where: eq(trainingWeeks.userId, userId),
+			with: {
+				workouts: true,
+			},
+		});
 
-    if (!trainingZones) {
-      throw new HTTPException(404, {
-        message: "Nenhuma zona de treino encontrada",
-      });
-    }
+		return c.json<SuccessResponse<PlanningSelect[]>>(
+			{
+				success: true,
+				message: "Planilha de treino encontrada",
+				data: planning,
+			},
+			200,
+		);
+	})
+	.get(
+		"/workout/:workoutId",
+		loggedIn,
+		zValidator(
+			"param",
+			z.object({
+				workoutId: z.string(),
+			}),
+		),
+		async (c) => {
+			const userContext = c.get("user");
+			if (!userContext) {
+				throw new Error("User not found");
+			}
+			const { id: userId } = userContext;
+			const { workoutId } = c.req.param();
 
-    return c.json<SuccessResponse<TraningZoneSelect[]>>(
-      {
-        success: true,
-        message: "Zonas de treino encontradas",
-        data: trainingZones,
-      },
-      200,
-    );
-  })
-  .get(
-    "/:userId/planning",
-    // loggedIn,
-    async (c) => {
-      const { userId } = c.req.param();
+			const trainingWeekIds = db
+				.select({ id: trainingWeeks.id })
+				.from(trainingWeeks)
+				.where(eq(trainingWeeks.userId, userId));
 
-      const planning = await db.query.trainingWeeks.findMany({
-        where: eq(trainingWeeks.userId, userId),
-        with: {
-          workouts: true,
-        },
-      });
+			const workout = await db.query.workouts.findFirst({
+				where: and(
+					eq(workouts.id, workoutId),
+					inArray(workouts.trainingWeekId, trainingWeekIds),
+				),
+				with: {
+					blocks: {
+						with: {
+							segments: {
+								orderBy: (segments, { asc }) => asc(segments.orderInBlock),
+							},
+						},
+						orderBy: (blocks, { asc }) => asc(blocks.orderIndex),
+					},
+					segments: true,
+				},
+			});
 
-      return c.json<SuccessResponse<PlanningSelect[]>>(
-        {
-          success: true,
-          message: "Planilha de treino encontrada",
-          data: planning,
-        },
-        200,
-      );
-    },
-  )
-  .get(
-    "/:userId/workout/:workoutId",
-    zValidator(
-      "param",
-      z.object({
-        userId: z.string(),
-        workoutId: z.string(),
-      }),
-    ),
-    async (c) => {
-      const { userId, workoutId } = c.req.param();
+			if (!workout) {
+				throw new HTTPException(404, { message: "Nenhum treino encontrado" });
+			}
 
-      const trainingWeekIds = db
-        .select({ id: trainingWeeks.id })
-        .from(trainingWeeks)
-        .where(eq(trainingWeeks.userId, userId));
+			return c.json<SuccessResponse<WorkoutWithBlocksAndSegments>>(
+				{
+					success: true,
+					message: "Treino encontrado",
+					data: workout as WorkoutWithBlocksAndSegments,
+				},
+				200,
+			);
+		},
+	)
+	.post(
+		"/register-workout/:workoutId",
+		loggedIn,
+		zValidator("param", z.object({ workoutId: z.string() })),
+		zValidator("form", registerWorkoutSchema),
+		async (c) => {
+			const userContext = c.get("user");
+			if (!userContext) {
+				throw new Error("User not found");
+			}
+			const { id: userId } = userContext;
+			const { workoutId } = c.req.param();
+			const { duration, distance, perceivedEffort, observations } =
+				c.req.valid("form");
 
-      const workout = await db.query.workouts.findFirst({
-        where: and(
-          eq(workouts.id, workoutId),
-          inArray(workouts.trainingWeekId, trainingWeekIds),
-        ),
-        with: {
-          blocks: {
-            with: {
-              segments: true,
-            },
-          },
-        },
-      });
+			const distanceInMeters = Number.parseFloat(distance) * 1_000;
+			const [hh, mm, ss] = duration.split(":") as [string, string, string];
 
-      if (!workout) {
-        throw new HTTPException(404, { message: "Nenhum treino encontrado" });
-      }
+			const durationInS =
+				Number.parseInt(hh) * 3600 +
+				Number.parseInt(mm) * 60 +
+				Number.parseInt(ss);
 
-      return c.json<SuccessResponse<WorkoutWithBlocks>>(
-        {
-          success: true,
-          message: "Treino encontrado",
-          data: workout as WorkoutWithBlocks,
-        },
-        200,
-      );
-    },
-  )
-  .post(
-    "/:userId/register-workout/:workoutId",
-    zValidator(
-      "param",
-      z.object({ userId: z.string(), workoutId: z.string() }),
-    ),
-    zValidator("form", registerWorkoutSchema),
-    async (c) => {
-      const { userId, workoutId } = c.req.param();
-      const { duration, distance, perceivedEffort, observations } =
-        c.req.valid("form");
+			const avgPaceSPerKm = Math.floor(durationInS / (distanceInMeters / 1000));
 
-      const distanceInMeters = Number.parseFloat(distance) * 1_000;
-      const [hh, mm, ss] = duration.split(":") as [string, string, string];
+			const workoutLogId = await db.transaction(async (tx) => {
+				await tx
+					.update(workouts)
+					.set({
+						isCompleted: true,
+						actualDistanceM: distanceInMeters,
+						actualDurationS: durationInS,
+						avgPaceSPerKm,
+					})
+					.where(eq(workouts.id, workoutId));
 
-      const durationInS =
-        Number.parseInt(hh) * 3600 +
-        Number.parseInt(mm) * 60 +
-        Number.parseInt(ss);
+				const [logId] = await tx
+					.insert(workoutLogs)
+					.values({
+						notes: observations,
+						workoutId,
+						userId,
+						actualTimeS: durationInS,
+						actualDistanceM: distanceInMeters,
+						perceivedEffort: Number.parseInt(perceivedEffort),
+						createdAt: new Date(),
+					})
+					.returning({ id: workoutLogs.id });
 
-      const avgPaceSPerKm = Math.floor(durationInS / (distanceInMeters / 1000));
+				return logId;
+			});
 
-      const workoutLogId = await db.transaction(async (tx) => {
-        await tx
-          .update(workouts)
-          .set({
-            isCompleted: true,
-            actualDistanceM: distanceInMeters,
-            actualDurationS: durationInS,
-            avgPaceSPerKm,
-          })
-          .where(eq(workouts.id, workoutId));
+			if (!workoutLogId) {
+				throw new HTTPException(500, {
+					message: "Falha ao registrar treino",
+				});
+			}
 
-        const [logId] = await tx
-          .insert(workoutLogs)
-          .values({
-            notes: observations,
-            workoutId,
-            userId,
-            actualTimeS: durationInS,
-            actualDistanceM: distanceInMeters,
-            perceivedEffort: Number.parseInt(perceivedEffort),
-            createdAt: new Date(),
-          })
-          .returning({ id: workoutLogs.id });
+			return c.json<SuccessResponse<{ id: string }>>(
+				{
+					success: true,
+					message: "Treino registrado com sucesso",
+					data: workoutLogId,
+				},
+				200,
+			);
+		},
+	)
+	.post(
+		"/new-periodization-plan",
+		loggedIn,
+		zValidator("form", newPeriodizationPlanSchema),
+		async (c) => {
+			const userContext = c.get("user");
+			if (!userContext) {
+				throw new Error("User not found");
+			}
+			const { id: userId } = userContext;
 
-        return logId;
-      });
+			const userData = await db.query.user.findFirst({
+				where: eq(user.id, userId),
+			});
 
-      if (!workoutLogId) {
-        throw new HTTPException(500, {
-          message: "Falha ao registrar treino",
-        });
-      }
+			if (!userData) {
+				return c.json({
+					success: false,
+					message: "Usuário não encontrado",
+				});
+			}
 
-      return c.json<SuccessResponse<{ id: string }>>(
-        {
-          success: true,
-          message: "Treino registrado com sucesso",
-          data: workoutLogId,
-        },
-        200,
-      );
-    },
-  );
+			const lastUserTest = await db.query.tests.findFirst({
+				where: eq(tests.userId, userId),
+				orderBy: (tests, { desc }) => desc(tests.createdAt),
+			});
+			const lastUserGoal = await db.query.goal.findFirst({
+				where: eq(goal.userId, userId),
+				orderBy: (goal, { desc }) => desc(goal.createdAt),
+			});
+
+			if (!lastUserTest || !lastUserGoal) {
+				return c.json({
+					success: false,
+					message: "Nenhum teste foi feito pelo usuário",
+				});
+			}
+
+			const {
+				race,
+				baseValuePerWeek,
+				weeklyFrequency,
+				startDate,
+				weeks,
+				unit,
+			} = c.req.valid("form");
+
+			const trainings = distributeWeeklyVolumesWithDays({
+				weeks: weeks as WeekAmount,
+				baseValuePerWeek: baseValuePerWeek as number,
+				race,
+				startDate,
+				testData: lastUserTest,
+				trainingLevel: userData.trainingLevel!,
+				unit,
+				vam: lastUserTest.vam!,
+				weeklyFrequency,
+			});
+
+			await TrainingWeekOrchestratorService.saveTrainingWeekWithWorkouts({
+				userId,
+				trainings,
+			});
+
+			return c.json<SuccessResponse>(
+				{
+					success: true,
+					message: "Periodização gerada com sucesso!",
+				},
+				200,
+			);
+		},
+	)
+	.get("/last-running-test", loggedIn, async (c) => {
+		const userContext = c.get("user");
+		if (!userContext) {
+			throw new Error("User not found");
+		}
+		const { id: userId } = userContext;
+
+		const lastUserTest = await db.query.tests.findFirst({
+			where: eq(tests.userId, userId),
+			orderBy: (tests, { desc }) => desc(tests.createdAt),
+		});
+
+		if (!lastUserTest) {
+			throw new HTTPException(404, { message: "Nenhum teste encontrado" });
+		}
+
+		return c.json<SuccessResponse<TestSelect>>(
+			{
+				success: true,
+				message: "Último teste realizado encontrado",
+				data: lastUserTest,
+			},
+			200,
+		);
+	})
+	.post(
+		"/add-custom-workout",
+		loggedIn,
+		zValidator("json", workoutSchema),
+		async (c) => {
+			const userContext = c.get("user");
+			if (!userContext) {
+				throw new Error("User not found");
+			}
+			const { id: userId } = userContext;
+
+			const workout = c.req.valid("json");
+			const parsedWorkout = parseWorkoutDto(workout);
+
+			const today = new Date();
+			const weekMondayStr = isMonday(today)
+				? format(today, "yyyy-MM-dd")
+				: format(previousMonday(today), "yyyy-MM-dd");
+
+			const currentWeek = await db.query.trainingWeeks.findFirst({
+				columns: { id: true },
+				where: and(
+					eq(trainingWeeks.userId, userId),
+					gte(trainingWeeks.weekStart, weekMondayStr),
+				),
+			});
+
+			if (!currentWeek) {
+				throw new HTTPException(500, {
+					message: "Nenhuma semana encontrada",
+				});
+			}
+
+			const verifyDuplicateWorkout = await db.query.workouts.findFirst({
+				where: eq(
+					workouts.scheduledStart,
+					format(parsedWorkout.scheduledStart, "yyyy-MM-dd"),
+				),
+			});
+
+			if (verifyDuplicateWorkout) {
+				await db
+					.delete(workouts)
+					.where(eq(workouts.id, verifyDuplicateWorkout.id));
+			}
+
+			await TrainingWeekOrchestratorService.saveWorkout({
+				trainingWeekId: currentWeek.id,
+				workout: parsedWorkout,
+			});
+
+			return c.json<SuccessResponse>(
+				{
+					success: true,
+					message: "Treino registrado com sucesso",
+				},
+				200,
+			);
+		},
+	);

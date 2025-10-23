@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/** biome-ignore-all lint/style/noNonNullAssertion: vo2 are always calculated */
 import type { TestFormData } from "@/shared/schemas";
-import { type TOnboarding } from "@/shared/types/index";
 
 import {
-  estimateFCmax,
-  estimateVO2,
-  estimateVO2ByTestType,
+	estimateFCmax,
+	estimateVO2,
+	estimateVO2ByTestType,
 } from "../calculations/performance";
 import {
-  calculatePaceMinKm,
-  calculateVamKmh,
-  formatPace,
-  timeStringToSeconds,
+	calculatePaceMinKm,
+	calculateVamKmh,
+	formatPace,
+	timeStringToSeconds,
 } from "../calculations/time";
 import { calculateTrainingZones } from "../calculations/zones";
 
@@ -21,36 +21,36 @@ import { calculateTrainingZones } from "../calculations/zones";
  * @returns Um objeto com os dados do teste
  */
 export function generateTest({
-  userAge,
-  testData,
+	userAge,
+	testData,
 }: {
-  userAge: number;
-  testData: TestFormData;
+	userAge: number;
+	testData: TestFormData;
 }) {
-  const timeInSeconds = timeStringToSeconds(testData.time!);
-  const vam = calculateVamKmh(testData.distanceM, timeInSeconds);
-  const paceMinKm = calculatePaceMinKm(testData.distanceM, timeInSeconds);
-  const formattedPace = formatPace(paceMinKm);
+	const timeInSeconds = timeStringToSeconds(testData.time!);
+	const vam = calculateVamKmh(testData.distanceM, timeInSeconds);
+	const paceMinKm = calculatePaceMinKm(testData.distanceM, timeInSeconds);
+	const formattedPace = formatPace(paceMinKm);
 
-  const fcmax = estimateFCmax(userAge);
-  const [_hours, min, seconds] = testData.time.split(":").map(Number);
-  const vo2Max = estimateVO2ByTestType(
-    testData.testType,
-    min!,
-    seconds!,
-  ) as number;
+	const fcmax = estimateFCmax(userAge);
+	const [_hours, min, seconds] = testData.time.split(":").map(Number);
+	const vo2Max = estimateVO2ByTestType(
+		testData.testType,
+		min!,
+		seconds!,
+	) as number;
 
-  const trainingZones = calculateTrainingZones(fcmax, vo2Max!);
+	const trainingZones = calculateTrainingZones(fcmax, vo2Max!);
 
-  return {
-    distanceM: testData.distanceM,
-    durationS: timeInSeconds,
-    vam,
-    paceMinKm: formattedPace,
-    fcmax,
-    vo2Max,
-    vo2: estimateVO2(vam),
-    testType: testData.testType,
-    trainingZones,
-  };
+	return {
+		distanceM: testData.distanceM,
+		durationS: timeInSeconds,
+		vam,
+		paceMinKm: formattedPace,
+		fcmax,
+		vo2Max,
+		vo2: estimateVO2(vam),
+		testType: testData.testType,
+		trainingZones,
+	};
 }
