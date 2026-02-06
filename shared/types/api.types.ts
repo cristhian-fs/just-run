@@ -61,7 +61,7 @@ export type TrainingPlan = {
 	coach: string | null;
 	weeklyVolume: number;
 	totalWeeks: number;
-	distances: string[];
+	distances: string[] | null;
 	createdAt: Date;
 };
 export type TrainingPlanWeek = {
