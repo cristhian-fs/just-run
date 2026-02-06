@@ -134,7 +134,6 @@ export const userRouter = new Hono<Context>()
 					createdAt: new Date(),
 					goalType: form.goal,
 					eventDate: raceDate,
-					weeklyFrequency: form.weeklyFrequency,
 				});
 
 				await tx.insert(tests).values({

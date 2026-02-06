@@ -8,7 +8,6 @@ import {
 	timestamp,
 	uuid,
 } from "drizzle-orm/pg-core";
-
 import { user } from "./auth";
 
 export const goalType = pgEnum("goal_type", [
@@ -30,7 +29,7 @@ export const goal = pgTable("goals", {
 		.references(() => user.id, { onDelete: "cascade" }),
 	goalType: goalType("goal_type"),
 	targetTime: text("target_time"),
-	weeklyFrequency: integer("weekly_frequency").notNull(),
+	weeklyFrequency: integer("weekly_frequency"),
 	eventDate: date("event_date"),
 	createdAt: timestamp("created_at").notNull(),
 });

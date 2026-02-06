@@ -53,12 +53,6 @@ export const MultiStepForm = ({
 				return; // Stop progression if validation fails
 			}
 
-			console.log({
-				fields: currentStep.fields,
-				values: methods.getValues(currentStep.fields),
-				isValid: isValid,
-			});
-
 			// grab values in current step and transform array to object
 			const currentStepValues = methods.getValues(currentStep.fields);
 			const formValues = Object.fromEntries(
@@ -72,8 +66,6 @@ export const MultiStepForm = ({
 			if (currentStep.validationSchema) {
 				const validationResult =
 					currentStep.validationSchema.safeParse(formValues);
-
-				console.log(validationResult);
 
 				if (!validationResult.success) {
 					validationResult.error.errors.forEach((err) => {

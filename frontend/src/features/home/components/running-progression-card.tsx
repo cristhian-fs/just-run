@@ -47,6 +47,12 @@ interface Props {
 	period: TSelectValue;
 }
 
+const MAP_SELECTED_VALUE: Record<TSelectValue, string> = {
+	"7 days": "7 dias",
+	"14 days": "14 dias",
+	"30 days": "30 dias",
+};
+
 export function RunningProgressionCard({
 	className,
 	data,
@@ -56,7 +62,7 @@ export function RunningProgressionCard({
 	return (
 		<DashboardCard
 			title='Progressão de volume'
-			description={`Volume de treinos nos ultimos ${period} dias`}
+			description={`Volume de treinos nos ultimos ${MAP_SELECTED_VALUE[period]}`}
 			icon={ChartArea}
 			className={className}
 			action={

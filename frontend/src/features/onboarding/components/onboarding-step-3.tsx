@@ -6,8 +6,14 @@ import type { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { useAddTest } from "@/features/settings/api/use-add-test";
 import { useUpdateProfile } from "@/features/settings/api/use-update-profile";
-import { useGeneratePeriodization } from "@/features/trainings/api/use-generate-periodization";
 import type { onboardingStep1, TestFormSchema } from "@/shared/schemas";
+
+const MAP_RACE_TO_DISTANCE_PARAMS = {
+	race5k: "5km",
+	race10k: "10km",
+	race21k: "21km",
+	race42k: "42km",
+};
 
 export function OnboardingStep3() {
 	const { getValues: getValuesStep1 } =
@@ -17,15 +23,9 @@ export function OnboardingStep3() {
 
 	const { mutateAsync: updateProfileMutate } = useUpdateProfile();
 	const { mutateAsync: addTestAsync } = useAddTest();
-	const { mutateAsync: generatePeriodizationAsync } =
-		useGeneratePeriodization();
 	const navigate = useNavigate();
 
-	const handleSubmit = async ({
-		generateUserPeriodization,
-	}: {
-		generateUserPeriodization: boolean;
-	}) => {
+	const handleSubmit = async () => {
 		try {
 			const profileData = getValuesStep1();
 			const testData = getValuesStep2();
@@ -51,20 +51,26 @@ export function OnboardingStep3() {
 					testType: testData.testType,
 					goal: testData.goal,
 					testDate: testData.testDate.toISOString(),
-					weeklyFrequency: testData.weeklyFrequency.toString(),
 					raceDate: testData.raceDate
 						? testData.raceDate.toISOString()
 						: undefined,
 				},
 			});
-
-			// 3. Gera periodização (opcional)
-			if (generateUserPeriodization) {
-				await generatePeriodizationAsync();
-			}
 			toast.success("Onboarding finalizado com sucesso.");
-			// 4. Navega somente se tudo deu certo
-			navigate({ to: "/app", replace: true });
+			navigate({
+				to: "/app/planos",
+				params: {
+					level: profileData.trainingLevel,
+					...(["race5k", "race10k", "race21k", "race42k"].includes(
+						testData.goal,
+					) && {
+						distance:
+							MAP_RACE_TO_DISTANCE_PARAMS[
+								testData.goal as keyof typeof MAP_RACE_TO_DISTANCE_PARAMS
+							],
+					}),
+				},
+			});
 		} catch (error) {
 			console.error("Erro ao finalizar onboarding:", error);
 			toast.error("Erro ao finalizar onboarding. Tente novamente.");
@@ -80,25 +86,18 @@ export function OnboardingStep3() {
 			className='space-y-4 flex flex-col min-h-screen justify-end p-6 py-24 md:min-h-0 md:py-0 md:justify-start'
 		>
 			<div className='flex flex-col relative z-10 max-w-lg mx-auto md:text-center'>
-				<h1 className='text-3xl font-semibold'>Planejamento de treinos</h1>
-				<p className='text-muted-foreground'>
-					Quer que nós criamos um planejamento de treinos específico para voce?
+				<h1 className='text-3xl font-semibold'>Planos de treinamento</h1>
+				<p className='text-muted-foreground mt-2'>
+					Com base nos dados que voce forneceu, aqui estao alguns planos de
+					treinamento que se encaixam no seu objetivo e nivel atual
 				</p>
 				<div className='flex flex-col gap-y-2 mt-6'>
 					<Button
 						className={"w-full"}
 						type='button'
-						onClick={() => handleSubmit({ generateUserPeriodization: true })}
+						onClick={() => handleSubmit()}
 					>
-						Criar planejamento
-					</Button>
-					<Button
-						variant='ghost'
-						type='button'
-						className={"w-full"}
-						onClick={() => handleSubmit({ generateUserPeriodization: false })}
-					>
-						Não, obrigado
+						Ver planos
 					</Button>
 				</div>
 			</div>

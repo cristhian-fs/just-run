@@ -15,9 +15,12 @@ export const TestFormSchema = z.object({
 	time: z
 		.string()
 		.regex(/^\d{2}:\d{2}:\d{2}$/, { message: "Formato deve ser hh:mm:ss" }),
-	weeklyFrequency: z.coerce.number().min(3).max(6),
 	goal: z.enum(trainingGoals),
-	raceDate: z.coerce.date().optional(),
+	raceDate: z
+		.union([z.string(), z.date()])
+		.transform((val) => (val ? new Date(val) : undefined))
+		.optional()
+		.or(z.literal("")),
 	testDate: z.coerce.date(),
 });
 
@@ -159,9 +162,10 @@ export const customPlanningSchema = z
 		startDate: z.coerce.date({
 			required_error: "Data inicial é obrigatória",
 		}),
-		endDate: z.coerce.date({
-			required_error: "Data final é obrigatória",
-		}),
+		endDate: z
+			.union([z.string(), z.date()])
+			.transform((val) => (val ? new Date(val) : undefined))
+			.optional(),
 		distance: z.string().min(1, "Distância deve ser maior que 0").optional(),
 		duration: z
 			.string()

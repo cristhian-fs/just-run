@@ -1,0 +1,1 @@
+ALTER TABLE "goals" ALTER COLUMN "weekly_frequency" DROP NOT NULL;

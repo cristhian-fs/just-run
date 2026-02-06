@@ -5,6 +5,8 @@ import { CalendarIcon, Loader } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useMemo } from "react";
 import { useForm, useWatch } from "react-hook-form";
+import { TimeInput } from "@/components/time-input";
+import { TimeValidation } from "@/components/time-validation";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -133,7 +135,7 @@ export function RegisterWorkoutForm({
 								name='date'
 								render={({ field }) => (
 									<FormItem className='flex flex-col'>
-										<FormLabel>Dia do teste</FormLabel>
+										<FormLabel>Dia do treino</FormLabel>
 										<Popover>
 											<PopoverTrigger asChild>
 												<FormControl>
@@ -260,18 +262,22 @@ export function RegisterWorkoutForm({
 								name='duration'
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Duração</FormLabel>
+										<FormLabel>Duração da corrida</FormLabel>
 										<FormControl>
-											<Input
-												type='time'
-												step='1'
-												className='appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
+											<TimeInput
+												format='long'
+												value={field.value}
+												onChange={field.onChange}
+												onBlur={field.onBlur}
 												placeholder='00:00:00'
-												{...field}
+												inputMode='numeric'
 											/>
 										</FormControl>
-										<FormDescription>Formato: HH:MM:SS</FormDescription>
-										<FormMessage />
+										{duration && (
+											<AnimatePresence mode='wait' initial={false}>
+												<TimeValidation time={duration} format={"long"} />
+											</AnimatePresence>
+										)}
 									</FormItem>
 								)}
 							/>
