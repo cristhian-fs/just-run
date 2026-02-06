@@ -208,9 +208,9 @@ export const convertPlanDataToUserWorkoutsData = ({
 
 	const trainingWeeks: Week[] = redistributedWeeks.map((week, weekIdx) => {
 		const weekStart = addDays(startPlanDate, weekIdx * 7);
-
 		const newWorkouts: Workout[] = week.planWorkouts.map((workout, index) => {
 			const scheduledStart = addDays(startPlanDate, weekIdx * 7 + index);
+
 			// Atualiza blocos e segmentos
 			const newBlocks: Block[] = workout.planBlocks.map((block) => {
 				const newSegments: Segment[] = block.planSegments.map(
@@ -223,7 +223,9 @@ export const convertPlanDataToUserWorkoutsData = ({
 						// Calcula plannedDistanceM se não existir
 						let plannedDistanceM = segment.plannedDistanceM;
 						if (
-							(plannedDistanceM === undefined || plannedDistanceM === null) &&
+							(plannedDistanceM === undefined ||
+								plannedDistanceM === null ||
+								plannedDistanceM === 0) &&
 							targetPaceSPerKm &&
 							segment.plannedDurationS
 						) {
@@ -244,7 +246,6 @@ export const convertPlanDataToUserWorkoutsData = ({
 						};
 					},
 				);
-
 				return {
 					blockKind: block.blockKind,
 					repeatCount: block.repeatCount,
@@ -254,12 +255,37 @@ export const convertPlanDataToUserWorkoutsData = ({
 				};
 			});
 
+			// Calcula totais do workout baseado nos segments
+			const allSegments = newBlocks.flatMap((block) =>
+				block.segments.flatMap((segment) =>
+					Array.from({ length: block.repeatCount }, () => segment),
+				),
+			);
+
+			const calculatedDistanceM =
+				allSegments.reduce((acc, s) => acc + (s.plannedDistanceM ?? 0), 0) ||
+				undefined;
+
+			const calculatedDurationS =
+				allSegments.reduce((acc, s) => acc + (s.plannedDurationS ?? 0), 0) ||
+				undefined;
+
+			const plannedDistanceM =
+				workout.plannedDistanceM !== 0 && workout.plannedDistanceM !== null
+					? workout.plannedDistanceM
+					: calculatedDistanceM;
+
+			const plannedDurationS =
+				workout.plannedDurationS !== 0 && workout.plannedDurationS !== null
+					? workout.plannedDurationS
+					: calculatedDurationS;
+
 			return {
 				title: workout.title ?? `Treino ${index + 1}`,
 				runType: workout.runType,
 				notes: workout.notes ?? undefined,
-				plannedDistanceM: workout.plannedDistanceM ?? undefined,
-				plannedDurationS: workout.plannedDurationS ?? undefined,
+				plannedDistanceM: plannedDistanceM,
+				plannedDurationS: plannedDurationS,
 				scheduledStart,
 				blocks: newBlocks,
 			};
@@ -268,17 +294,7 @@ export const convertPlanDataToUserWorkoutsData = ({
 		// Calcula o total de volume mínimo da semana
 		const totalVolumeMin = Math.floor(
 			newWorkouts.reduce((acc, curr) => {
-				return (
-					acc +
-					(curr.blocks ?? []).reduce((acc, curr) => {
-						return (
-							acc +
-							curr.segments.reduce((acc, curr) => {
-								return acc + (curr.plannedDistanceM ?? 0);
-							}, 0)
-						);
-					}, 0)
-				);
+				return acc + (curr.plannedDistanceM ?? 0);
 			}, 0) / 1000,
 		);
 
