@@ -1,4 +1,5 @@
 import { zValidator } from "@hono/zod-validator";
+import { addDays } from "date-fns";
 import { eq } from "drizzle-orm";
 import { Hono } from "hono";
 import z from "zod";
@@ -356,13 +357,16 @@ export const plansRouter = new Hono<Context>()
 						.where(eq(trainingWeeks.userId, userId));
 				});
 			}
+
+			const planEndDate: Date =
+				params.endDate ?? addDays(params.startDate, plan.planWeeks.length * 7);
 			await db.delete(activePlans).where(eq(activePlans.userId, userId));
 			await activatePlanToUser({
 				plan,
 				userId,
 				userTestData: { distance: +distanceM, duration: durationS },
 				startDate: params.startDate,
-				endDate: params.endDate,
+				endDate: planEndDate,
 			});
 
 			await db.insert(activePlans).values({
