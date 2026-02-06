@@ -36,13 +36,50 @@ export function MonthlySummaryCard({
 	}));
 
 	const getCongratsText = () => {
-		if (data.totalDistance > data.goalDistance) {
-			return `Bom trabalho! Voce superou sua meta mensal`;
+		const remainingDistance = data.goalDistance - data.totalDistance;
+		const progressPercentage = Math.round(
+			(data.totalDistance / data.goalDistance) * 100,
+		);
+
+		if (data.totalDistance >= data.goalDistance) {
+			const exceededDistance = data.totalDistance - data.goalDistance;
+			const exceededKm = exceededDistance / 1000;
+
+			if (exceededKm >= 1) {
+				return `Parabéns! Você superou sua meta em ${exceededKm.toFixed(1)}km (${progressPercentage}%)`;
+			}
+			return `Meta concluída! Parabéns pelo excelente trabalho!`;
 		}
-		if (data.totalDistance > 0 && data.totalDistance < data.goalDistance) {
-			return `Bom trabalho! Só faltam ${data.goalDistance - data.totalDistance}m`;
+
+		if (data.totalDistance > 0) {
+			const remainingKm = remainingDistance / 1000;
+
+			// Mensagens motivacionais baseadas no progresso
+			if (progressPercentage >= 90) {
+				return `Falta muito pouco! Apenas ${remainingKm.toFixed(1)}km para completar sua meta`;
+			}
+
+			if (progressPercentage >= 75) {
+				return `Você está quase lá! Faltam ${remainingKm.toFixed(1)}km (${progressPercentage}% concluído)`;
+			}
+
+			if (progressPercentage >= 50) {
+				return `Bom trabalho! Faltam ${remainingKm.toFixed(1)}km para sua meta`;
+			}
+
+			if (progressPercentage >= 25) {
+				return `Continue assim! Faltam ${remainingKm.toFixed(1)}km`;
+			}
+
+			// Menos de 25%
+			if (remainingKm >= 1) {
+				return `Você começou! Faltam ${remainingKm.toFixed(1)}km para sua meta`;
+			}
+			return `Você começou! Faltam ${remainingDistance}m`;
 		}
-		return `Você ainda nao fez nenhum treino esse mês`;
+
+		const goalKm = data.goalDistance / 1000;
+		return `Comece seu primeiro treino! Meta: ${goalKm.toFixed(1)}km`;
 	};
 
 	return (

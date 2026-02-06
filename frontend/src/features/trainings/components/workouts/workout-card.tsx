@@ -85,9 +85,10 @@ export const WorkoutCard = ({
 				<div className='flex items-center gap-x-2'>
 					<p className='text-muted-foreground text-sm'>
 						{RUN_TYPE_MAPPING[workout.runType]}{" "}
-						{workout.plannedDurationS && (
-							<span>• {Math.round(workout.plannedDurationS / 60)} min</span>
-						)}
+						{workout.plannedDurationS !== null &&
+							Number(workout.plannedDurationS) > 0 && (
+								<span>• {Math.round(workout.plannedDurationS / 60)} min</span>
+							)}
 						{workout.plannedDistanceM !== null &&
 							Number(workout.plannedDistanceM) > 0 && (
 								<span>• {Math.round(workout.plannedDistanceM / 1000)} km</span>
