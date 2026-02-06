@@ -30,7 +30,7 @@ export const Route = createFileRoute("/onboarding")({
 
 export const onboardingSteps: FormStep[] = [
 	{
-		title: "Informações pessoais",
+		title: "Bem vindo ao JustRun",
 		component: <OnboardingHome />,
 		icon: UserIcon,
 		position: 1,
@@ -59,15 +59,7 @@ export const onboardingSteps: FormStep[] = [
 		icon: Flag,
 		position: 3,
 		validationSchema: TestFormSchema,
-		fields: [
-			"testType",
-			"time",
-			"distanceM",
-			"weeklyFrequency",
-			"goal",
-			"testDate",
-			"raceDate",
-		],
+		fields: ["testType", "time", "distanceM", "goal", "testDate", "raceDate"],
 		mobileOnly: false,
 	},
 	{
@@ -113,8 +105,8 @@ function RouteComponent() {
 						email: user?.email ?? "",
 						gender: gender,
 						age: user?.age ?? 18,
-						weightKg: user?.weightKg ?? 70,
-						heightCm: user?.heightCm ?? 170,
+						weightKg: 70,
+						heightCm: 170,
 					}}
 				/>
 			</div>
