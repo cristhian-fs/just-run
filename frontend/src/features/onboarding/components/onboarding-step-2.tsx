@@ -177,29 +177,6 @@ export function OnboardingStep2() {
 					</FormItem>
 				)}
 			/>
-			<FormField
-				control={control}
-				name='weeklyFrequency'
-				render={({ field }) => (
-					<FormItem>
-						<FormLabel>Quantos dias da semana treina?</FormLabel>
-						<Select onValueChange={field.onChange}>
-							<FormControl>
-								<SelectTrigger className='w-full'>
-									<SelectValue placeholder='Dias da semana' />
-								</SelectTrigger>
-							</FormControl>
-							<SelectContent>
-								<SelectItem value='3'>3 dias</SelectItem>
-								<SelectItem value='4'>4 dias</SelectItem>
-								<SelectItem value='5'>5 dias</SelectItem>
-								<SelectItem value='6'>6 dias</SelectItem>
-							</SelectContent>
-						</Select>
-						<FormMessage />
-					</FormItem>
-				)}
-			/>
 
 			<FormField
 				control={control}
