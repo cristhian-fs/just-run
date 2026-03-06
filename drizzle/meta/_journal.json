@@ -92,6 +92,27 @@
       "when": 1770399654338,
       "tag": "0012_gifted_gamma_corps",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1772214436753,
+      "tag": "0013_modern_lockjaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1772501385937,
+      "tag": "0014_pretty_moon_knight",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1772750989541,
+      "tag": "0015_slim_shape",
+      "breakpoints": true
     }
   ]
 }
