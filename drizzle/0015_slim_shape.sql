@@ -1,0 +1,1 @@
+ALTER TYPE "public"."traning_type" ADD VALUE 'CROSS_TRAINING';
