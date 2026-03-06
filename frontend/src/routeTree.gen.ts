@@ -21,7 +21,9 @@ import { Route as AppTestesIndexRouteImport } from './routes/app/testes/index'
 import { Route as AppPlanosIndexRouteImport } from './routes/app/planos/index'
 import { Route as AppConfiguracoesIndexRouteImport } from './routes/app/configuracoes/index'
 import { Route as AppCalculadoraIndexRouteImport } from './routes/app/calculadora/index'
+import { Route as AppAnalyticsIndexRouteImport } from './routes/app/analytics/index'
 import { Route as AppPlanosPlanIdRouteImport } from './routes/app/planos/$planId'
+import { Route as AppAnalyticsAnalyticsIdRouteImport } from './routes/app/analytics/$analyticsId'
 
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
@@ -83,9 +85,19 @@ const AppCalculadoraIndexRoute = AppCalculadoraIndexRouteImport.update({
   path: '/calculadora/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppAnalyticsIndexRoute = AppAnalyticsIndexRouteImport.update({
+  id: '/analytics/',
+  path: '/analytics/',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppPlanosPlanIdRoute = AppPlanosPlanIdRouteImport.update({
   id: '/planos/$planId',
   path: '/planos/$planId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAnalyticsAnalyticsIdRoute = AppAnalyticsAnalyticsIdRouteImport.update({
+  id: '/analytics/$analyticsId',
+  path: '/analytics/$analyticsId',
   getParentRoute: () => AppRoute,
 } as any)
 
@@ -98,7 +110,9 @@ export interface FileRoutesByFullPath {
   '/app/planejamento': typeof AppPlanejamentoRoute
   '/app/zonas-de-treino': typeof AppZonasDeTreinoRoute
   '/app/': typeof AppIndexRoute
+  '/app/analytics/$analyticsId': typeof AppAnalyticsAnalyticsIdRoute
   '/app/planos/$planId': typeof AppPlanosPlanIdRoute
+  '/app/analytics': typeof AppAnalyticsIndexRoute
   '/app/calculadora': typeof AppCalculadoraIndexRoute
   '/app/configuracoes': typeof AppConfiguracoesIndexRoute
   '/app/planos': typeof AppPlanosIndexRoute
@@ -112,7 +126,9 @@ export interface FileRoutesByTo {
   '/app/planejamento': typeof AppPlanejamentoRoute
   '/app/zonas-de-treino': typeof AppZonasDeTreinoRoute
   '/app': typeof AppIndexRoute
+  '/app/analytics/$analyticsId': typeof AppAnalyticsAnalyticsIdRoute
   '/app/planos/$planId': typeof AppPlanosPlanIdRoute
+  '/app/analytics': typeof AppAnalyticsIndexRoute
   '/app/calculadora': typeof AppCalculadoraIndexRoute
   '/app/configuracoes': typeof AppConfiguracoesIndexRoute
   '/app/planos': typeof AppPlanosIndexRoute
@@ -128,7 +144,9 @@ export interface FileRoutesById {
   '/app/planejamento': typeof AppPlanejamentoRoute
   '/app/zonas-de-treino': typeof AppZonasDeTreinoRoute
   '/app/': typeof AppIndexRoute
+  '/app/analytics/$analyticsId': typeof AppAnalyticsAnalyticsIdRoute
   '/app/planos/$planId': typeof AppPlanosPlanIdRoute
+  '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/calculadora/': typeof AppCalculadoraIndexRoute
   '/app/configuracoes/': typeof AppConfiguracoesIndexRoute
   '/app/planos/': typeof AppPlanosIndexRoute
@@ -145,7 +163,9 @@ export interface FileRouteTypes {
     | '/app/planejamento'
     | '/app/zonas-de-treino'
     | '/app/'
+    | '/app/analytics/$analyticsId'
     | '/app/planos/$planId'
+    | '/app/analytics'
     | '/app/calculadora'
     | '/app/configuracoes'
     | '/app/planos'
@@ -159,7 +179,9 @@ export interface FileRouteTypes {
     | '/app/planejamento'
     | '/app/zonas-de-treino'
     | '/app'
+    | '/app/analytics/$analyticsId'
     | '/app/planos/$planId'
+    | '/app/analytics'
     | '/app/calculadora'
     | '/app/configuracoes'
     | '/app/planos'
@@ -174,7 +196,9 @@ export interface FileRouteTypes {
     | '/app/planejamento'
     | '/app/zonas-de-treino'
     | '/app/'
+    | '/app/analytics/$analyticsId'
     | '/app/planos/$planId'
+    | '/app/analytics/'
     | '/app/calculadora/'
     | '/app/configuracoes/'
     | '/app/planos/'
@@ -274,11 +298,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppCalculadoraIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/analytics/': {
+      id: '/app/analytics/'
+      path: '/analytics'
+      fullPath: '/app/analytics'
+      preLoaderRoute: typeof AppAnalyticsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/planos/$planId': {
       id: '/app/planos/$planId'
       path: '/planos/$planId'
       fullPath: '/app/planos/$planId'
       preLoaderRoute: typeof AppPlanosPlanIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/analytics/$analyticsId': {
+      id: '/app/analytics/$analyticsId'
+      path: '/analytics/$analyticsId'
+      fullPath: '/app/analytics/$analyticsId'
+      preLoaderRoute: typeof AppAnalyticsAnalyticsIdRouteImport
       parentRoute: typeof AppRoute
     }
   }
@@ -289,7 +327,9 @@ interface AppRouteChildren {
   AppPlanejamentoRoute: typeof AppPlanejamentoRoute
   AppZonasDeTreinoRoute: typeof AppZonasDeTreinoRoute
   AppIndexRoute: typeof AppIndexRoute
+  AppAnalyticsAnalyticsIdRoute: typeof AppAnalyticsAnalyticsIdRoute
   AppPlanosPlanIdRoute: typeof AppPlanosPlanIdRoute
+  AppAnalyticsIndexRoute: typeof AppAnalyticsIndexRoute
   AppCalculadoraIndexRoute: typeof AppCalculadoraIndexRoute
   AppConfiguracoesIndexRoute: typeof AppConfiguracoesIndexRoute
   AppPlanosIndexRoute: typeof AppPlanosIndexRoute
@@ -301,7 +341,9 @@ const AppRouteChildren: AppRouteChildren = {
   AppPlanejamentoRoute: AppPlanejamentoRoute,
   AppZonasDeTreinoRoute: AppZonasDeTreinoRoute,
   AppIndexRoute: AppIndexRoute,
+  AppAnalyticsAnalyticsIdRoute: AppAnalyticsAnalyticsIdRoute,
   AppPlanosPlanIdRoute: AppPlanosPlanIdRoute,
+  AppAnalyticsIndexRoute: AppAnalyticsIndexRoute,
   AppCalculadoraIndexRoute: AppCalculadoraIndexRoute,
   AppConfiguracoesIndexRoute: AppConfiguracoesIndexRoute,
   AppPlanosIndexRoute: AppPlanosIndexRoute,

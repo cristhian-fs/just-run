@@ -153,34 +153,30 @@ export const WorkoutSheet = ({ isOpen }: WorkoutSheetProps) => {
 					<Separator />
 					<AnimatePresence mode='wait'>
 						{isRegistering ? (
-							<>
-								<motion.div
-									key='registering'
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									exit={{ opacity: 0, y: -20 }}
-									transition={{ duration: 0.3 }}
-									className='custom-scrollbar space-y-4 overflow-y-auto p-4'
-								>
-									<RegisterWorkoutForm
-										runType={workout.runType}
-										onSubmit={handleRegisterWorkout}
-										isRegistering={isRegisteringWorkout}
-									/>
-								</motion.div>
-							</>
+							<motion.div
+								key='registering'
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								exit={{ opacity: 0, y: -20 }}
+								transition={{ duration: 0.3 }}
+								className='custom-scrollbar space-y-4 overflow-y-auto p-4'
+							>
+								<RegisterWorkoutForm
+									runType={workout.runType}
+									onSubmit={handleRegisterWorkout}
+									isRegistering={isRegisteringWorkout}
+								/>
+							</motion.div>
 						) : (
-							<>
-								<motion.div
-									key='details'
-									variants={containerVariant}
-									initial='hidden'
-									animate='show'
-									className='custom-scrollbar space-y-4 overflow-y-auto'
-								>
-									<WorkoutData workout={workoutData} />
-								</motion.div>
-							</>
+							<motion.div
+								key='details'
+								variants={containerVariant}
+								initial='hidden'
+								animate='show'
+								className='custom-scrollbar space-y-4 overflow-y-auto'
+							>
+								<WorkoutData workout={workoutData} />
+							</motion.div>
 						)}
 					</AnimatePresence>
 				</>

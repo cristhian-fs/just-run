@@ -1,84 +1,88 @@
 import type {
-	TIntensityZone,
-	TrainingZonesSelect,
-	WeeklyIntensityZoneVolume,
-	WorkoutWithBlocksAndSegments,
+  TIntensityZone,
+  TrainingZonesSelect,
+  WeeklyIntensityZoneVolume,
+  WorkoutWithBlocksAndSegments,
 } from "@/shared/types";
 
 import { paceStringToSeconds } from "./time";
 
 export function calculateUserWeeklyIntensity({
-	trainingZones,
-	workouts,
+  trainingZones,
+  workouts,
 }: {
-	trainingZones: TrainingZonesSelect[];
-	workouts: WorkoutWithBlocksAndSegments[];
+  trainingZones: TrainingZonesSelect[];
+  workouts: WorkoutWithBlocksAndSegments[];
 }): WeeklyIntensityZoneVolume[] {
-	const workoutSegments = workouts.flatMap((workout) => workout.segments ?? []);
-	const workoutBlocksSegments = workouts.flatMap(
-		(workout) =>
-			workout.blocks?.flatMap((block) => {
-				const repeatCount = block.repeatCount || 1;
-				return block.segments.flatMap((segment) =>
-					Array.from({ length: repeatCount }, () => ({ ...segment })),
-				);
-			}) ?? [],
-	);
-	const allWorkoutSegments = [...workoutSegments, ...workoutBlocksSegments];
+  const workoutSegments = workouts.flatMap((workout) => workout.segments ?? []);
+  const workoutBlocksSegments = workouts.flatMap(
+    (workout) =>
+      workout.blocks?.flatMap((block) => {
+        const repeatCount = block.repeatCount || 1;
+        return block.segments.flatMap((segment) =>
+          Array.from({ length: repeatCount }, () => ({ ...segment })),
+        );
+      }) ?? [],
+  );
+  const sortedZones = [...trainingZones].sort(
+    (a, b) =>
+      paceStringToSeconds(b.pace ?? "0:00") -
+      paceStringToSeconds(a.pace ?? "0:00"),
+  );
 
-	const weeklyIntensity: WeeklyIntensityZoneVolume[] = trainingZones.map(
-		(zone, index) => {
-			const zonePaceS = paceStringToSeconds(zone.pace ?? "0:00");
-			const nextZonePaceS = paceStringToSeconds(
-				trainingZones[index + 1]?.pace ?? "0:00",
-			);
+  const allWorkoutSegments =
+    workoutBlocksSegments.length > 0
+      ? workoutBlocksSegments
+      : workoutSegments;
 
-			const zoneWorkoutSegments = allWorkoutSegments.filter((segment) => {
-				const segmentPaceS = segment.targetPaceSPerKm;
-				return (
-					typeof segmentPaceS === "number" &&
-					segmentPaceS <= zonePaceS &&
-					segmentPaceS >= nextZonePaceS
-				);
-			});
+  const weeklyIntensity = sortedZones.map((zone, index) => {
+    const maxPace = paceStringToSeconds(zone.pace ?? "0:00");
+    const minPace =
+      index < sortedZones.length - 1
+        ? paceStringToSeconds(sortedZones[index + 1]?.pace ?? "0:00")
+        : 0;
 
-			const totalZoneVolume = zoneWorkoutSegments.reduce((acc, segment) => {
-				const volumeDistance = segment.plannedDistanceM;
+    const zoneWorkoutSegments = allWorkoutSegments.filter((segment) => {
+      const pace = segment.targetPaceSPerKm;
+      return typeof pace === "number" && pace >= minPace && pace < maxPace;
+    });
 
-				if (typeof volumeDistance === "number") return acc + volumeDistance;
+    const volume = zoneWorkoutSegments.reduce((acc, segment) => {
+      if (typeof segment.plannedDistanceM === "number") {
+        return acc + segment.plannedDistanceM;
+      }
 
-				if (
-					typeof segment.plannedDurationS === "number" &&
-					typeof segment.avgPaceSPerKm === "number" &&
-					segment.avgPaceSPerKm > 0
-				) {
-					const estimatedVolumeMetersDistance =
-						(segment.plannedDurationS / segment.avgPaceSPerKm) * 1000;
+      if (
+        typeof segment.plannedDurationS === "number" &&
+        typeof segment.targetPaceSPerKm === "number" &&
+        segment.targetPaceSPerKm > 0
+      ) {
+        return (
+          acc +
+          (segment.plannedDurationS / segment.targetPaceSPerKm) * 1000
+        );
+      }
 
-					return acc + estimatedVolumeMetersDistance;
-				}
+      return acc;
+    }, 0);
 
-				return acc;
-			}, 0);
+    return {
+      zone: zone.name as TIntensityZone,
+      volume,
+    };
+  });
 
-			return {
-				volume: totalZoneVolume,
-				zone: zone.name as TIntensityZone,
-			};
-		},
-	);
+  const mergedIntensity = weeklyIntensity.reduce((acc, item) => {
+    const existing = acc.find((i) => i.zone === item.zone);
 
-	const mergedIntensity = weeklyIntensity.reduce((acc, item) => {
-		const existing = acc.find((i) => i.zone === item.zone);
+    if (existing) {
+      existing.volume += item.volume;
+    } else {
+      acc.push({ ...item });
+    }
 
-		if (existing) {
-			existing.volume += item.volume;
-		} else {
-			acc.push({ ...item });
-		}
+    return acc;
+  }, [] as WeeklyIntensityZoneVolume[]);
 
-		return acc;
-	}, [] as WeeklyIntensityZoneVolume[]);
-
-	return mergedIntensity;
+  return mergedIntensity
 }
