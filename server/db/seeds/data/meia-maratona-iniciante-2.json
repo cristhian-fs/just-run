@@ -37,7 +37,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -61,7 +62,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -85,7 +87,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -118,7 +121,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -142,7 +146,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -181,7 +186,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -205,7 +211,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -229,7 +236,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -262,7 +270,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -286,7 +295,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -325,7 +335,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -349,7 +360,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -373,7 +385,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -406,7 +419,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -430,7 +444,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -469,7 +484,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -493,7 +509,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -517,7 +534,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -550,7 +568,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 11300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 11.3km",
@@ -574,7 +593,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -613,7 +633,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -637,7 +658,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -661,7 +683,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -694,7 +717,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -718,7 +742,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -757,7 +782,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -781,7 +807,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -805,7 +832,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -838,7 +866,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -852,7 +881,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 5000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 5km",
@@ -866,7 +896,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -890,7 +921,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -929,7 +961,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -953,7 +986,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -977,7 +1011,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1010,7 +1045,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 14500,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 14.5km",
@@ -1034,7 +1070,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1073,7 +1110,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1097,7 +1135,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1121,7 +1160,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1154,7 +1194,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 16100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 16.1km",
@@ -1178,7 +1219,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1217,7 +1259,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1241,7 +1284,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1265,7 +1309,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1298,7 +1343,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -1312,7 +1358,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 10000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 10km",
@@ -1326,7 +1373,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -1350,7 +1398,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1389,7 +1438,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1413,7 +1463,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1437,7 +1488,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1470,7 +1522,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 17700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 17.7km",
@@ -1494,7 +1547,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1533,7 +1587,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1557,7 +1612,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1581,7 +1637,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1614,7 +1671,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 19300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 19.3km",
@@ -1638,7 +1696,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1677,7 +1736,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1701,7 +1761,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -1725,7 +1786,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -1767,7 +1829,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 21097,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida na distância de meia maratona",

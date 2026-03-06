@@ -37,7 +37,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.4km",
@@ -70,7 +71,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.4km",
@@ -103,7 +105,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.4km",
@@ -127,7 +130,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 1800,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 30 minutos",
@@ -166,7 +170,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.8km",
@@ -199,7 +204,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.4km",
@@ -232,7 +238,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.8km",
@@ -256,7 +263,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 2100,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 35 minutos",
@@ -295,7 +303,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -328,7 +337,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.4km",
@@ -361,7 +371,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -385,7 +396,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 2400,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 40 minutos",
@@ -424,7 +436,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3600,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.6km",
@@ -457,7 +470,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 2400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 2.4km",
@@ -490,7 +504,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3600,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.6km",
@@ -514,7 +529,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 2700,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 45 minutos",
@@ -553,7 +569,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4km",
@@ -586,7 +603,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -619,7 +637,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4km",
@@ -643,7 +662,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 3000,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 50 minutos",
@@ -682,7 +702,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.4km",
@@ -715,7 +736,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -748,7 +770,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.4km",
@@ -772,7 +795,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 3300,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 55 minutos",
@@ -811,7 +835,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -844,7 +869,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -877,7 +903,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -901,7 +928,8 @@
                   "segmentKind": "WALK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Caminhada de 60 minutos",
@@ -940,7 +968,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -973,7 +1002,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -1015,7 +1045,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 5000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 5km",

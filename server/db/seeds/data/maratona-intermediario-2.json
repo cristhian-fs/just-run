@@ -28,7 +28,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -52,7 +53,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -76,7 +78,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -100,7 +103,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -133,7 +137,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -157,7 +162,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -187,7 +193,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -211,7 +218,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -235,7 +243,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -259,7 +268,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -292,7 +302,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -316,7 +327,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 14500,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 14.5km",
@@ -346,7 +358,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -370,7 +383,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -394,7 +408,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -418,7 +433,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -451,7 +467,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -475,7 +492,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.7km",
@@ -505,7 +523,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -529,7 +548,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -553,7 +573,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -577,7 +598,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -610,7 +632,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -634,7 +657,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 17700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 17.7km",
@@ -664,7 +688,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -688,7 +713,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -712,7 +738,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -736,7 +763,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -769,7 +797,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -793,7 +822,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 19300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 19.3km",
@@ -823,7 +853,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -847,7 +878,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -871,7 +903,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -895,7 +928,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -928,7 +962,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -952,7 +987,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 14500,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 14.5km",
@@ -982,7 +1018,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1006,7 +1043,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1030,7 +1068,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 11300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 11.3km",
@@ -1054,7 +1093,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1087,7 +1127,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 11300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 11.3km",
@@ -1111,7 +1152,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 22500,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 22.5km",
@@ -1141,7 +1183,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1165,7 +1208,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1189,7 +1233,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 11300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 11.3km",
@@ -1213,7 +1258,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1246,7 +1292,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 11300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 11.3km",
@@ -1270,7 +1317,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 24100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 24.1km",
@@ -1300,7 +1348,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1324,7 +1373,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1348,7 +1398,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1372,7 +1423,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1414,7 +1466,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 21097,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida na distância de meia maratona",
@@ -1444,7 +1497,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1468,7 +1522,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1492,7 +1547,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1516,7 +1572,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1549,7 +1606,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1573,7 +1631,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 27400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 27.4km",
@@ -1603,7 +1662,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1627,7 +1687,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1651,7 +1712,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1675,7 +1737,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1708,7 +1771,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1732,7 +1796,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 29000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 29km",
@@ -1762,7 +1827,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1786,7 +1852,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1810,7 +1877,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1834,7 +1902,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1867,7 +1936,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1891,7 +1961,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 21000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 21km",
@@ -1921,7 +1992,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -1945,7 +2017,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -1969,7 +2042,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1993,7 +2067,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2026,7 +2101,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2050,7 +2126,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 32200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 32.2km",
@@ -2080,7 +2157,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -2104,7 +2182,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2128,7 +2207,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2152,7 +2232,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2185,7 +2266,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -2209,7 +2291,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 19300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 19.3km",
@@ -2239,7 +2322,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -2263,7 +2347,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2287,7 +2372,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -2311,7 +2397,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2344,7 +2431,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2368,7 +2456,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 32200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 32.2km",
@@ -2398,7 +2487,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -2422,7 +2512,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2446,7 +2537,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -2470,7 +2562,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2503,7 +2596,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -2527,7 +2621,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 19300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 19.3km",
@@ -2557,7 +2652,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -2581,7 +2677,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -2605,7 +2702,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -2629,7 +2727,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -2662,7 +2761,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -2686,7 +2786,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -2716,7 +2817,8 @@
                   "segmentKind": "REST",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Descanso ou cross training, qualquer duração",
@@ -2740,7 +2842,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -2764,7 +2867,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -2806,7 +2910,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 3200,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 3.2km",
@@ -2830,7 +2935,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 42195,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida na distância de maratona",

@@ -28,7 +28,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -52,7 +53,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -76,7 +78,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -90,7 +93,8 @@
                   "segmentKind": "THRESHOLD",
                   "plannedDurationS": 1500,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 2
+                  "orderInBlock": 2,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Tempo run 35 minutos",
@@ -104,7 +108,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -128,7 +133,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -161,7 +167,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -185,7 +192,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -215,7 +223,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -239,7 +248,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 5900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 5.9km",
@@ -263,7 +273,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -277,7 +288,8 @@
                   "segmentKind": "INTERVAL",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "8 x 400m",
@@ -291,7 +303,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -315,7 +328,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -348,7 +362,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -372,7 +387,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -402,7 +418,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -426,7 +443,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -450,7 +468,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -464,7 +483,8 @@
                   "segmentKind": "THRESHOLD",
                   "plannedDurationS": 1800,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 2
+                  "orderInBlock": 2,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Tempo run 40 minutos",
@@ -478,7 +498,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -502,7 +523,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -535,7 +557,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -559,7 +582,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -589,7 +613,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -613,7 +638,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 7300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 7.3km",
@@ -637,7 +663,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -651,7 +678,8 @@
                   "segmentKind": "INTERVAL",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "9 x 400m",
@@ -665,7 +693,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -689,7 +718,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -731,7 +761,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 5000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 5km",
@@ -761,7 +792,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -785,7 +817,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8100,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.1km",
@@ -809,7 +842,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -823,7 +857,8 @@
                   "segmentKind": "THRESHOLD",
                   "plannedDurationS": 2100,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 2
+                  "orderInBlock": 2,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Tempo run 45 minutos",
@@ -837,7 +872,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -861,7 +897,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -894,7 +931,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -918,7 +956,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -948,7 +987,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -972,7 +1012,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 8900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 8.9km",
@@ -996,7 +1037,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -1010,7 +1052,8 @@
                   "segmentKind": "INTERVAL",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "10 x 400m",
@@ -1024,7 +1067,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -1048,7 +1092,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1081,7 +1126,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1105,7 +1151,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 11300,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 11.3km",
@@ -1135,7 +1182,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1159,7 +1207,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 9700,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 9.7km",
@@ -1183,7 +1232,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -1197,7 +1247,8 @@
                   "segmentKind": "THRESHOLD",
                   "plannedDurationS": 2400,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 2
+                  "orderInBlock": 2,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Tempo run 50 minutos",
@@ -1211,7 +1262,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -1235,7 +1287,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 6400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 6.4km",
@@ -1268,7 +1321,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 3600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Cross training 60 minutos",
@@ -1292,7 +1346,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 12900,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 12.9km",
@@ -1322,7 +1377,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1346,7 +1402,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 4800,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 4.8km",
@@ -1370,7 +1427,8 @@
                   "segmentKind": "WARMUP",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Aquecimento de pelo menos 10 minutos",
@@ -1384,7 +1442,8 @@
                   "segmentKind": "INTERVAL",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 400,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "5 x 400m",
@@ -1398,7 +1457,8 @@
                   "segmentKind": "COOLDOWN",
                   "plannedDurationS": 600,
                   "plannedDistanceM": 0,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Desaquecimento",
@@ -1422,7 +1482,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 1600,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 1.6km",
@@ -1464,7 +1525,8 @@
                   "segmentKind": "WORK",
                   "plannedDurationS": 0,
                   "plannedDistanceM": 10000,
-                  "orderInBlock": 1
+                  "orderInBlock": 1,
+                  "paceReferenceEnum": null
                 }
               ],
               "description": "Corrida de 10km",
